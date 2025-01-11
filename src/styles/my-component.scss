@@ -1,0 +1,13 @@
+@use './variables' as *;
+
+:host {
+  display: block;
+  border: 1px solid $primary-color;
+  border-radius: 8px;
+  padding: 16px;
+  font-family: $font-family;
+}
+
+h2 {
+  color: $primary-color;
+}

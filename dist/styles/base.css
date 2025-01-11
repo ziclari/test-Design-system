@@ -1,0 +1,91 @@
+@charset "UTF-8";
+/* src/styles/base.scss */
+/* Primero, incluir la fuente Manrope desde Google Fonts (CDN) */
+@import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
+/* Definir la fuente local con @font-face */
+@font-face {
+  font-family: "Manrope";
+  src: url("/assets/Manrope/Manrope-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("/assets/Manrope/Manrope-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("/assets/Manrope/Manrope-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+/* Botón Secundario */
+button.button--secondary {
+  background-color: #95a5a6; /* Color secundario */
+  color: #2c3e50; /* Color de texto */
+}
+button.button--secondary:hover {
+  background-color: rgb(121.2769230769, 141.4615384615, 142.7230769231);
+}
+
+/* Botón de Éxito */
+button.button--success {
+  background-color: #2ecc71; /* Color de éxito */
+}
+button.button--success:hover {
+  background-color: rgb(36.616, 162.384, 89.948);
+}
+
+/* Botón de Advertencia */
+button.button--warning {
+  background-color: #f39c12; /* Color de advertencia */
+}
+button.button--warning:hover {
+  background-color: rgb(199.8795180723, 126.5060240964, 10.1204819277);
+}
+
+/* Botón de Peligro */
+button.button--danger {
+  background-color: #e74c3c; /* Color de peligro */
+}
+button.button--danger:hover {
+  background-color: rgb(213.698630137, 43.8356164384, 26.301369863);
+}
+
+body {
+  font-family: "Manrope", "Roboto", "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p {
+  font-family: "Roboto", "Arial", sans-serif;
+}
+
+/* Estilos Base para el Botón */
+button {
+  display: inline-block;
+  padding: 1.5rem 0.75em;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: #40C4FF;
+  color: #40C4FF;
+}
+button:hover {
+  background-color: rgb(32.1, 186.1460732984, 255);
+}
+button:disabled {
+  background-color: #b0b0b0;
+  cursor: not-allowed;
+}
+
+/*# sourceMappingURL=base.css.map */
