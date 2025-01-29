@@ -1,0 +1,46 @@
+.glide__controls{
+    display: flex;
+    justify-content: center;
+    @include media-query('md'){
+        justify-content: space-between;
+    }
+  }
+
+  .glide__bullet {
+    width: 8px;
+    height: 8px;
+    border-radius: 50px;
+    background-color: get-color('grey');
+    border: none;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .glide__bullet--active {
+    background-color: get-color('accent-blue');
+  }
+  
+  .glide__arrows{
+    display: none;
+    gap: 0.5rem;
+    @include media-query('md'){
+        display: flex;
+    }
+  }
+  .glide__arrow {
+    background-color: transparent;
+    border: 2px solid get-color('accent-blue');
+    padding: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    color: var(--color-text);
+  }
+  
+  .glide__arrow:hover {
+    background-color: get-color('accent-blue');
+  }

@@ -1,0 +1,176 @@
+
+/**
+ * BASE SIZE
+ * All calculations are based on this. It’s recommended that
+ * you keep it at 1rem because that is the root font size. You
+ * can set it to whatever you like and whatever unit you like.
+ */
+ $gorko-base-size: 1rem;
+
+ /**
+  * SIZE SCALE
+  * This is a Major Third scale that powers all the utilities that
+  * it is relevant for (font-size, margin, padding). All items are
+  * calcuated off the base size, so change that and cascade across
+  * your whole project.
+  */
+  $gorko-size-scale: (
+    // Tamaños más pequeños (subtextos o decorativos)
+    '100': $gorko-base-size * 0.33,
+    '200': $gorko-base-size * 0.64,
+  
+    // Tamaño base y escala normal
+    '300': $gorko-base-size * 0.8,
+    '400': $gorko-base-size,
+    '500': $gorko-base-size * 1.33,
+  
+    // Tamaños grandes (títulos, encabezados principales)
+    '600': $gorko-base-size * 1.77,
+    '700': $gorko-base-size * 2.37,
+    '800': $gorko-base-size * 3.16, // Escala ascendente adicional
+    '900': $gorko-base-size * 4.21,  // Títulos extremadamente grandes
+    '1000': $gorko-base-size * 5.59,
+  );
+ /**
+  * COLORS
+  * Colors are shared between backgrounds and text by default. 
+  * You can also use them to power borders, fills or shadows, for example.
+  */
+
+ $gorko-colors: (
+    'dark-blue': #002669,
+    'light-dark-blue': #183380,
+    'dark-accent-blue': #0088CC,
+    'accent-blue': #40C4FF,
+    'light-blue': #B9E7F8,
+    'almost-white': #E6F2FF,
+    'transparent-teal': rgba(0, 236, 236, 0.05),
+    'transparent-white': rgba(255, 255, 255, 0.7),
+    'almost-black': #333333,
+    'white': #ffffff,
+    'black': #000000,
+    'grey': #D9D9D9,
+    'yellow': #FFC021,
+    'bright-yellow': #e4d725,
+    'red': #ff5151,
+    'bright-red': #d32525,
+    'green': #309b62,
+    'bright-green': #25D366,
+ );
+ 
+  $lightblue-colors: (
+    'background-header': map-get($gorko-colors, 'dark-blue'),
+    'text-header': map-get($gorko-colors, 'almost-white'),
+    'background': map-get($gorko-colors, 'almost-white'),
+    'primary': map-get($gorko-colors, 'accent-blue'),
+    'secondary': map-get($gorko-colors, 'light-dark-blue'),
+    'text': map-get($gorko-colors, 'almost-black'),
+    'background-card': map-get($gorko-colors, 'transparent-white'),
+    'link': map-get($gorko-colors, 'dark-accent-blue'),
+    'highlight': map-get($gorko-colors, 'dark-accent-blue'),
+    'red': map-get($gorko-colors, 'red'),
+    'yellow': map-get($gorko-colors, 'yellow'),
+    'green': map-get($gorko-colors, 'green'),
+    'grey': map-get($gorko-colors, 'grey'),
+    'light-blue': map-get($gorko-colors, 'light-blue'),
+  );
+
+  $darkblue-colors: (
+    'background-header': map-get($gorko-colors, 'dark-blue'),
+    'text-header': map-get($gorko-colors, 'almost-white'),
+    'background': map-get($gorko-colors, 'light-dark-blue'),
+    'primary': map-get($gorko-colors, 'accent-blue'),
+    'secondary': map-get($gorko-colors, 'dark-blue'),
+    'text': map-get($gorko-colors, 'almost-white'),
+    'background-card': map-get($gorko-colors, 'transparent-teal'),
+    'link': map-get($gorko-colors, 'accent-blue'),
+    'highlight': map-get($gorko-colors, 'accent-blue'),
+    'red': map-get($gorko-colors, 'bright-red'),
+    'yellow': map-get($gorko-colors, 'bright-yellow'),
+    'green': map-get($gorko-colors, 'bright-green'),
+    'grey': map-get($gorko-colors, 'grey'),
+    'light-blue': map-get($gorko-colors, 'light-blue'),
+  );
+
+
+ /**
+  * CORE CONFIG
+  * This powers everything from utility class generation to breakpoints
+  * to enabling/disabling pre-built components/utilities.
+  */
+ $gorko-config: (
+  'css-vars':(
+    'themes':(
+      'default':(
+        'tokens':(
+          'color':$lightblue-colors
+        )
+      ), 
+      'darkblue':(
+      'prefix': '.dark',
+      'tokens':(
+          'color': $darkblue-colors
+        )
+    ),
+    ),
+  ),
+   'bg': (
+     'items': $gorko-colors,
+     'output': 'standard',
+     'property': 'background'
+   ),
+   'color': (
+     'items': $gorko-colors,
+     'output': 'standard',
+     'property': 'color'
+   ),
+   'font': (
+     'items': (
+       'base': '"OpenSans", roboto, Helvetica, Arial, sans-serif',
+       'mono': '"Manrope", roboto, Courier New, Courier, monospace'
+     ),
+     'output': 'standard',
+     'property': 'font-family'
+   ),
+   'gap-top': (
+     'items': $gorko-size-scale,
+     'output': 'standard',
+     'property': 'margin-top'
+   ),
+   'pad-top': (
+     'items': $gorko-size-scale,
+     'output': 'standard',
+     'property': 'padding-top'
+   ),
+   'gap-bottom': (
+     'items': $gorko-size-scale,
+     'output': 'standard',
+     'property': 'margin-bottom'
+   ),
+   'pad-bottom': (
+     'items': $gorko-size-scale,
+     'output': 'standard',
+     'property': 'padding-bottom'
+   ),
+   'text': (
+     'items': $gorko-size-scale,
+     'output': 'responsive',
+     'property': 'font-size'
+   ),
+   'weight': (
+     'items': (
+       'medium': '500',
+       'bold': '700'
+     ),
+     'output': 'standard',
+     'property': 'font-weight'
+   ),
+   'breakpoints': (
+     'sm': '(min-width: 40em)',
+     'md': '(min-width: 48em)',
+     'lg': '(min-width: 64em)',
+     'xl': '(min-width: 80em)',
+     'xxl': '(min-width: 96em)',
+   )
+ );
+ 

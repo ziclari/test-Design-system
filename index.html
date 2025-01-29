@@ -1,33 +1,426 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prueba de My Lit Library</title>
-  <link rel="stylesheet" href="dist/styles/base.css" />
-  <script type="module" src="../src/components/my-component.js"></script>
-</head>
-<body>
-  <h1>Prueba de la Librería Lit</h1>
-  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore beatae tenetur voluptas itaque deleniti quis, autem, qui dignissimos amet porro eos sint consectetur possimus consequuntur sapiente non voluptatibus officia accusantium?</p>
-  <button>Boton loco</button>
-  <my-component title="Este es un título dinámico"></my-component>
-  <!-- Botón Predeterminado (estilo base) -->
-<button>Botón Predeterminado</button>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" >
+    <title>Inicio Airontools</title>
+    <link rel="stylesheet" media="all" href="/css/global.css" >
+    <link rel="stylesheet" media="print" href="/fonts/fonts.css" onload="this.media='all'">
+    <link href="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.1/dist/css/glide.core.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/images/icon.ico">
+  <style>
+    .hover-link{
+      text-decoration: none;
+    }
+    .hover-link:hover{
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+    }
+ 
+  </style>
+  </head>
+  
+<body class="font-base">
 
-<!-- Botón Secundario -->
-<button class="button--secondary">Botón Secundario</button>
+<header class="site-head">
+  <div class="wrapper site-head__inner">
+      
+        <img src="/images/logo_pq.png" class="logo" alt="Logo" >  
+        <ul class="horizontal-list">
+          <li>Inicio
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6z"/></svg>
+          </li>
+          <li>Productos Destacados
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6z"/></svg>
+          </li>
+          <li>Soluciones
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6z"/></svg>
+          </li>
+        </ul>
+      
+      
+      <div class="cta-group" style="font-size: 16px;">
+        <button class="button ghost">Inicia Sesión</button>
+        <button class="button">Contáctanos</button>
+      </div>
+  </div>
+</header>
 
-<!-- Botón de Éxito -->
-<button class="button--success">Botón de Éxito</button>
 
-<!-- Botón de Advertencia -->
-<button class="button--warning">Botón de Advertencia</button>
+<main>
 
-<!-- Botón de Peligro -->
-<button class="button--danger">Botón de Peligro</button>
+  <section class="hero">
+    <video  autoplay="true" muted="true" loop="true" >
+      <source src="/images/video/Intro.mp4" type="video/mp4">
+      Tu navegador no soporta el formato de video
+    </video>
+
+    <div class="wrapper" style="width: 100%;">  
+      <h1>
+        <strong>Herramientas</strong>  de <br>
+        MÁXIMO  <strong>Rendimiento</strong>
+        </h1>
+        <p>
+          Profesionales dedicados a la fabricación especializada
+          de herramientas neumáticas industriales y equipos de torque.
+        </p>
+        <div class="cta-group ">
+          <button class="button light-blue gap-top-400">Más información
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 11v2h12l-5.5 5.5l1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5L16 11z"/></svg>
+          </button>
+        </div>
+      </div> 
+  </section>
+ <!--
+  
+  <svg preserveAspectRatio="none" class="wave" width="1440" height="134" viewBox="0 0 1440 134" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="1440" height="134" transform="matrix(-1 0 0 -1 1440 134)" fill="#E6F2FF"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M1440 134L1359.49 114.333C1280.18 94.6667 1119.15 55.3333 959.333 59.2667C799.512 63.2 638.488 110.4 478.667 114.333C318.845 118.267 157.822 78.9333 78.5116 59.2667L-2 39.6V16H78.5116C157.822 16 318.845 16 478.667 16C638.488 16 799.512 16 959.333 16C1119.15 16 1280.18 16 1359.49 16H1440V134Z" fill="url(#_24_226__paint0_linear_24_226)"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M1440 82L1359.49 68.3333C1280.18 54.6667 1119.15 27.3333 959.333 30.0667C799.512 32.8 638.488 65.6 478.667 68.3333C318.845 71.0667 157.822 43.7333 78.5116 30.0667L-2 16.4V0H78.5116C157.822 0 318.845 0 478.667 0C638.488 0 799.512 0 959.333 0C1119.15 0 1280.18 0 1359.49 0H1440V82Z" fill="url(#_24_226__paint1_linear_24_226)"></path><defs><linearGradient id="_24_226__paint0_linear_24_226" x1="347" y1="75" x2="352.5" y2="240" gradientUnits="userSpaceOnUse"><stop offset="0.147733" stop-color="#A2DFF6"></stop><stop offset="0.989445" stop-color="#E6F2FF"></stop></linearGradient><linearGradient id="_24_226__paint1_linear_24_226" x1="316" y1="2.13083e-07" x2="316" y2="41" gradientUnits="userSpaceOnUse"><stop offset="0.005" stop-color="#55C4EF"></stop><stop offset="1" stop-color="#A2DFF6"></stop></linearGradient></defs></svg>
+ --> <svg preserveAspectRatio="none" class="wave" width="1440" height="100" viewBox="0 0 1440 134" fill="none" xmlns="http://www.w3.org/2000/svg"
+    ><rect width="1440" height="100" transform="matrix(-1 0 0 -1 1440 134)" fill="#E6F2FF"></rect>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M1440 134L1359.49 114.333C1280.18 94.6667 1119.15 55.3333 959.333 59.2667C799.512 63.2 638.488 110.4 478.667 114.333C318.845 118.267 157.822 78.9333 78.5116 59.2667L-2.00006 39.6V16H78.5116C157.822 16 318.845 16 478.667 16C638.488 16 799.512 16 959.333 16C1119.15 16 1280.18 16 1359.49 16H1440V134Z" fill="url(#_3_102__paint0_linear_3_102)"></path>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M1440 82L1359.49 68.3333C1280.18 54.6667 1119.16 27.3333 959.333 30.0667C799.512 32.8 638.488 65.6 478.667 68.3333C318.845 71.0667 157.822 43.7333 78.5116 30.0667L-1.99994 16.4V0H78.5116C157.822 0 318.845 0 478.667 0C638.488 0 799.512 0 959.333 0C1119.16 0 1280.18 0 1359.49 0H1440V82Z" fill="#183380"></path>
+    <defs><linearGradient id="_3_102__paint0_linear_3_102" x1="-2" y1="75" x2="1440" y2="75" gradientUnits="userSpaceOnUse"><stop offset="0.4" stop-color="#55C4EF"></stop><stop offset="1" stop-color="#E6F2FF"></stop></linearGradient></defs></svg>
+ 
+
+ 
+    
+
+    <section class=" wrapper category-section">
+      <h2>Categorías</h2>
+      
+      <div class="category-header">
+        <p>Para Profesionales como tú</p>
+        <div class="cta-group">
+          <button class="button">
+            Descarga nuestro catálogo
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M2 12h2v5h16v-5h2v5c0 1.11-.89 2-2 2H4a2 2 0 0 1-2-2zm10 3l5.55-5.46l-1.42-1.41L13 11.25V2h-2v9.25L7.88 8.13L6.46 9.55z"/>
+            </svg>
+          </button>
+          <button class="button ghost">
+            Ver más
+          </button>
+        </div>
+      </div>
+    
+      <div class="glide categories-container">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide card-product">
+              <img src="/images/categories/torque.jpg" alt="Herramientas de Torque">
+              <h4>HERRAMIENTAS DE TORQUE</h4>
+            </li>
+            <li class="glide__slide card-product">
+              <img src="/images/categories/dados.jpg" alt="Dados y Accesorios">
+              <h4>DADOS Y ACCESORIOS</h4>
+            </li>
+            <li class="glide__slide card-product">
+              <img src="/images/categories/balancin.JPG" alt="Balancines">
+              <h4>BALANCINES</h4>
+            </li>
+            <li class="glide__slide card-product">
+              <img src="/images/categories/neumatica.JPG" alt="Herramientas Neumáticas">
+              <h4>HERRAMIENTAS NEUMÁTICAS</h4>
+            </li>
+          </ul>
+          <div class="glide__controls">
+            <div class="glide__bullets" data-glide-el="controls[nav]">
+              <button class="glide__bullet" data-glide-dir="=0"></button>
+              <button class="glide__bullet" data-glide-dir="=1"></button>
+              <button class="glide__bullet" data-glide-dir="=2"></button>
+              <button class="glide__bullet" data-glide-dir="=3"></button>
+            </div>
+            <div class="glide__arrows" data-glide-el="controls">
+              <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M20 11v2H8l5.5 5.5l-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5L8 11z"/></svg></button>
+              <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 11v2h12l-5.5 5.5l1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5L16 11z"/></svg></button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+        
+
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.0.2/glide.js"></script>
+
+    <script type="module">
+      document.addEventListener('DOMContentLoaded', function () {
+      new Glide('.glide', {
+          type: 'carousel',
+          startAt: 0,
+          perView: 4,
+          breakpoints: {
+            1400: {
+              perView: 3
+            },
+            1024: {
+              perView: 2
+            },
+            800: {
+              perView: 1
+            },
+          }
+        }).mount();
+      });
+    </script>
+    
+
+  <!--Soluciones de Airontools-->
+  <section class="dark" style="position: relative;">
+    <svg preserveAspectRatio="none" class="wave" width="1440" height="100" viewBox="0 0 1440 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1440" height="100" fill="#E6F2FF"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.399904L80.5117 20.0666C159.822 39.7332 320.845 79.0666 480.667 75.1332C640.488 71.1999 801.512 23.9999 961.333 20.0666C1121.16 16.1332 1282.18 55.4666 1361.49 75.1332L1442 94.7999V118.4H1361.49C1282.18 118.4 1121.16 118.4 961.333 118.4C801.512 118.4 640.488 118.4 480.667 118.4C320.845 118.4 159.822 118.4 80.5117 118.4H0V0.399904Z" fill="url(#_3_284__paint0_linear_3_284)"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M0 52.3999L80.5117 66.0666C159.822 79.7332 320.845 107.067 480.667 104.333C640.488 101.6 801.512 68.7999 961.333 66.0666C1121.15 63.3332 1282.18 90.6666 1361.49 104.333L1442 118V134.4H1361.49C1282.18 134.4 1121.15 134.4 961.333 134.4C801.512 134.4 640.488 134.4 480.667 134.4C320.845 134.4 159.822 134.4 80.5117 134.4H0V52.3999Z" fill="#183380"></path><defs><linearGradient id="_3_284__paint0_linear_3_284" x1="1442" y1="59.3999" x2="0" y2="59.3999" gradientUnits="userSpaceOnUse"><stop offset="0.4" stop-color="#55C4EF"></stop><stop offset="1" stop-color="#E6F2FF"></stop></linearGradient></defs></svg>
+     
+      <div class="curveWrap">
+        <svg width="100%" height="100%" viewBox="0 0 1200 100" xmlns="http://www.w3.org/2000/svg">
+            <g class="curve" fill="none">
+                <path d="M 0, 60 S 300, -60, 600, 60, 800, -120, 1200 60" />
+                <path d="M 0, 60 S 200, -60, 400, 60, 900, -120, 1200 60" />
+                <path d="M 0, 60 S 200, -70, 400, 70, 800, -120, 1200 60" />
+            </g>
+        </svg>
+    </div>
+     
+      <div class="wrapper">
+        <div class="flow solutions-header">
+          <h2>
+            Las <strong>soluciones</strong>
+             están <br>en Airon Tools
+          </h2>
+          <p> 
+            En AironTools, sabemos que cada cliente tiene necesidades únicas. Por eso, ofrecemos servicio y reparación industrial adaptados a tus requerimientos, garantizando máximo rendimiento y durabilidad.</p>
+        </div>
+      
+       <div class="solutions">
+        <a class="card hover-link top-border" href="#">
+          <div class="content flow">
+            <h4>Mantenimiento y reparación</h4>
+            <p>
+              Servicio especializado en mantenimiento y reparación, garantizando su óptimo funcionamiento, mayor durabilidad y eficiencia en cada operación. 
+            </p>
+            <div class="cta-group"> 
+              <button class="button"> 
+                Saber más
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 11v2h12l-5.5 5.5l1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5L16 11z"/></svg>
+              </button>
+              <button class="button ghost">
+                Cotiza
+              </button>
+            </div>
+          </div>
+            <img src="/images/solutions/reparacion.jpg" alt="" srcset="">
+        </a>
+         <a class="card hover-link" href="#">
+          <img src="/images/solutions/Calibracion.jpg" alt="">
+           <div class="content flow">
+             <h4>Servicio de Calibración</h4>
+             <p>
+              Garantizamos la calibración de torque certificada para asegurar la precisión, seguridad y cumplimiento normativo.
+             </p>
+             <div class="cta-group">
+              <button class="button ghost">
+                Contáctanos
+              </button>
+            </div>
+           </div>
+         </a>
+         
+        <div class="last card hover-link" href="#">
+            <div class="content flow">
+              <h4>Asesoría Técnica Especializada</h4>
+              <p>
+                Optimiza tus procesos con nuestra asesoría técnica profesional, garantizando el uso eficiente, mantenimiento y rendimiento óptimo.
+              </p>
+              <div class="cta-group">
+                <button class="button">
+                  Descubre más
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 11v2h12l-5.5 5.5l1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5L16 11z"/></svg>
+                </button>
+                <button class="button ghost">
+                  Llámanos
+                </button>
+              </div>
+            </div>
+            <img src="/images/solutions/asesoria.png" alt="">
+        </div>
+        </div>
+         
+      
+      </div>
+  </section>
+
+  
+  <svg preserveAspectRatio="none" class="wave" width="1440" height="100" viewBox="0 0 1440 134" fill="none" xmlns="http://www.w3.org/2000/svg"
+  ><rect width="1440" height="100" transform="matrix(-1 0 0 -1 1440 134)" fill="#E6F2FF"></rect>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M1440 134L1359.49 114.333C1280.18 94.6667 1119.15 55.3333 959.333 59.2667C799.512 63.2 638.488 110.4 478.667 114.333C318.845 118.267 157.822 78.9333 78.5116 59.2667L-2.00006 39.6V16H78.5116C157.822 16 318.845 16 478.667 16C638.488 16 799.512 16 959.333 16C1119.15 16 1280.18 16 1359.49 16H1440V134Z" fill="url(#_3_102__paint0_linear_3_102)"></path>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M1440 82L1359.49 68.3333C1280.18 54.6667 1119.16 27.3333 959.333 30.0667C799.512 32.8 638.488 65.6 478.667 68.3333C318.845 71.0667 157.822 43.7333 78.5116 30.0667L-1.99994 16.4V0H78.5116C157.822 0 318.845 0 478.667 0C638.488 0 799.512 0 959.333 0C1119.16 0 1280.18 0 1359.49 0H1440V82Z" fill="#183380"></path>
+  <defs><linearGradient id="_3_102__paint0_linear_3_102" x1="-2" y1="75" x2="1440" y2="75" gradientUnits="userSpaceOnUse"><stop offset="0.4" stop-color="#55C4EF"></stop><stop offset="1" stop-color="#E6F2FF"></stop></linearGradient></defs></svg>
+
+
+  <!--Otras Soluciones de Airontools-->
+
+  <div class="wrapper">
+      <section class="industry-allies-section">
+        <h2 class="section-title">No solo somos herramientas, <br> ¡Somos <strong>aliados</strong> para tu industria!</h2>
+        <div class="content-container">
+          <img 
+            src="/images/conversor2.jpg" 
+            alt="Herramientas industriales" 
+            class="image-container">
+          <div class="text-content">
+            <h3>¡Conoce nuestro conversor de unidades!</h3>
+            <p>Nos aseguramos de poner a tu alcalce las herramientas necesarias para facilitar tu trabajo.</p>
+            <button class="button">
+              Conversor de unidades
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M4 11v2h12l-5.5 5.5l1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5L16 11z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+      
+  </div>
+  
+<section class=" wrapper clients-section">
+  <h2 class="clients-section__title">Nuestros clientes</h2>
+  
+  <div class="clients-slider">
+    <div class="clients-slider__track">
+      <!-- Duplica los elementos originales para el efecto infinito -->
+      <div class="clients-slider__slide">
+        <img src="/images/clients/1.jpg" alt="Cliente">
+      </div>
+      <div class="clients-slider__slide">
+        <img src="/images/clients/2.jpg" alt="Cliente">
+      </div>
+      <div class="clients-slider__slide">
+        <img src="/images/clients/3.jpg" alt="Cliente">
+      </div>
+      <div class="clients-slider__slide">
+        <img src="/images/clients/4.jpg" alt="Cliente">
+      </div>
+      <div class="clients-slider__slide">
+        <img src="/images/clients/5.png" alt="Cliente">
+      </div>
+      <div class="clients-slider__slide">
+        <img src="/images/clients/6.jpg" alt="Cliente">
+      </div>
+      <div class="clients-slider__slide">
+        <img src="/images/clients/7.jpg" alt="Cliente">
+      </div>
+      <div class="clients-slider__slide">
+        <img src="/images/clients/8.png" alt="Cliente">
+      </div>
+      <div class="clients-slider__slide">
+        <img src="/images/clients/9.png" alt="Cliente">
+      </div>
+      <div class="clients-slider__slide">
+        <img src="/images/clients/10.jpg" alt="Cliente">
+      </div>
+      <div class="clients-slider__slide">
+        <img src="/images/clients/11.jpg" alt="Cliente">
+      </div>
+      <div class="clients-slider__slide">
+        <img src="/images/clients/12.jpg" alt="Cliente">
+      </div>
+      <div class="clients-slider__slide">
+        <img src="/images/clients/13.jpeg" alt="Cliente">
+      </div>
+      <div class="clients-slider__slide">
+        <img src="/images/clients/14.jpg" alt="Cliente">
+      </div>
+      <div class="clients-slider__slide">
+        <img src="/images/clients/15.png" alt="Cliente">
+      </div>
+      <!--duplicacion-->
+      <div class="clients-slider__slide">
+        <img src="/images/clients/1.jpg" alt="Cliente">
+      </div>
+      <div class="clients-slider__slide">
+        <img src="/images/clients/2.jpg" alt="Cliente">
+      </div>
+      <div class="clients-slider__slide">
+        <img src="/images/clients/3.jpg" alt="Cliente">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" style="border-bottom: 8px solid var(--color-primary);">
+  <svg preserveAspectRatio="none" class="wave" width="1440" height="100" viewBox="0 0 1440 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1440" height="100" fill="#E6F2FF"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.399904L80.5117 20.0666C159.822 39.7332 320.845 79.0666 480.667 75.1332C640.488 71.1999 801.512 23.9999 961.333 20.0666C1121.16 16.1332 1282.18 55.4666 1361.49 75.1332L1442 94.7999V118.4H1361.49C1282.18 118.4 1121.16 118.4 961.333 118.4C801.512 118.4 640.488 118.4 480.667 118.4C320.845 118.4 159.822 118.4 80.5117 118.4H0V0.399904Z" fill="url(#_3_284__paint0_linear_3_284)"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M0 52.3999L80.5117 66.0666C159.822 79.7332 320.845 107.067 480.667 104.333C640.488 101.6 801.512 68.7999 961.333 66.0666C1121.15 63.3332 1282.18 90.6666 1361.49 104.333L1442 118V134.4H1361.49C1282.18 134.4 1121.15 134.4 961.333 134.4C801.512 134.4 640.488 134.4 480.667 134.4C320.845 134.4 159.822 134.4 80.5117 134.4H0V52.3999Z" fill="#183380"></path><defs><linearGradient id="_3_284__paint0_linear_3_284" x1="1442" y1="59.3999" x2="0" y2="59.3999" gradientUnits="userSpaceOnUse"><stop offset="0.4" stop-color="#55C4EF"></stop><stop offset="1" stop-color="#E6F2FF"></stop></linearGradient></defs></svg>
+   
+    <div class="questions-section">
+      <div class="content">
+        <h2>¿Aún tienes dudas?</h2>
+        <p>Estamos aquí para ayudarte con cualquier consulta</p>
+        <button class="button">Contactar</button>
+      </div>
+      <img class="image" src="/images/bottom/unnamed.png" alt="Ayuda" />
+    </div>
+    
+</section>
+  
 
 
 
+</main>
+
+<footer class="footer">
+  <div class="footer-container wrapper">
+      <div class="footer-column">
+          <img src="/images/logo_pq.png" alt="Iron Tools Logo" class="footer-logo">
+          <p>Únete a nuestro boletín para recibir novedades y lanzamientos.</p>
+          <form class="newsletter-form">
+              <input type="email" placeholder="Ingresa tu correo">
+              <button type="submit" class="button">Suscribirse
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 11v2h12l-5.5 5.5l1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5L16 11z"/></svg>
+              </button>
+          </form>
+          <p class="privacy-notice">Al suscribirte, aceptas nuestra Política de Privacidad y consientes recibir actualizaciones.</p>
+      </div>
+
+      <div class="footer-column">
+          <h4>Columna Uno</h4>
+          <ul class="footer-links">
+              <li><a href="#">Productos Pneumáticos</a></li>
+              <li><a href="#">Herramientas de Torque</a></li>
+              <li><a href="#">Soluciones Hidráulicas</a></li>
+              <li><a href="#">Servicios de Reparación</a></li>
+              <li><a href="#">Atención al Cliente</a></li>
+          </ul>
+      </div>
+
+      <div class="footer-column">
+          <h4>Columna Dos</h4>
+          <ul class="footer-links">
+              <li><a href="#">Nuestras Marcas</a></li>
+              <li><a href="#">Sobre Nosotros</a></li>
+              <li><a href="#">Blog Industrial</a></li>
+              <li><a href="#">Testimonios Clientes</a></li>
+              <li><a href="#">Política de Privacidad</a></li>
+          </ul>
+      </div>
+
+      <div class="footer-column">
+          <h4>Síguenos</h4>
+          <ul class="social-links">
+              <li><a href="#"><span>Facebook</span></a></li>
+              <li><a href="#"><span>Instagram</span></a></li>
+              <li><a href="#"><span>X</span></a></li>
+              <li><a href="#"><span>LinkedIn</span></a></li>
+              <li><a href="#"><span>Youtube</span></a></li>
+          </ul>
+      </div>
+  </div>
+
+  <div class="footer-bottom wrapper">
+      <p>© 2024 Airontools. Todos los derechos reservados.</p>
+      <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookies Settings</a>
+      </div>
+  </div>
+</footer>
 </body>
 </html>

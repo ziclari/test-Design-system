@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+.site-head {
+    padding: 0.8rem 0;
+    background-color: var(--color-background-header);
+    color: var(--color-text-header);
+    border-bottom: 1px solid #ffffff2f;
+
+    &__inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo{
+      width: 100px;
+      height: 60px;
+      object-fit: contain;
+    }
+    // Right margin prevents any collisions with the title
+    h1 {
+      margin: 0.5rem 1rem 0.5rem 0;
+    }
+
+}
+  
+
+  

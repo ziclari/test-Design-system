@@ -1,0 +1,152 @@
+/**
+ * Forms
+ */
+$forms: (
+  '[type=color], [type=date], [type=datetime], [type=datetime-local], [type=email],        [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=url], [type=week], [type=time], select, textarea'
+) !default;
+$buttons: ('.button, a.button, button, [type=submit], [type=reset], [type=button]') !default;
+$input-background: #ffffff !default;
+$placeholder: lighten(get-color('grey'), 20%) !default;
+$form-border: 2px solid get-color('grey') !default;
+$form-border-hover: 2px solid  darken(get-color('grey'), 20%) !default;
+$form-border-focus: 2px solid get-color('accent-blue') !default;
+$padding: 0.5rem;
+$margins: 64px;
+$border-radius: 8px !default;
+// Display for all input fields (except buttons and checkbox)
+%forms {
+  display: block;
+  border: $form-border;
+  border-radius: $border-radius;
+  padding: 0.75rem;
+  outline: none;
+  background: $input-background;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 100%;
+  line-height: 1;
+}
+
+// Input fields on hover
+%forms-hover {
+  border: $form-border-hover;
+}
+
+// Input fields on focus
+%forms-focus {
+  border: $form-border-focus;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 6px lighten(get-color('accent-blue'), 30%);
+}
+
+// Variable containing all input fields
+#{$forms} {
+  @extend %forms;
+
+  &:hover {
+    @extend %forms-hover;
+  }
+
+  &:focus,
+  &:active {
+    @extend %forms-focus;
+  }
+}
+
+textarea {
+  overflow: auto;
+  height: auto;
+}
+
+fieldset {
+  border: 1px solid get-color('grey');
+  border-radius: $border-radius;
+  padding: $padding;
+  margin: $margins 0;
+}
+
+legend {
+  padding: 0 0.5rem;
+  font-weight: 600;
+}
+
+// Fix issues with select
+select {
+  color: currentColor;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: $input-background;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAJBAMAAADN8WE8AAAAJ1BMVEUAAABHcEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB9YSk7AAAADXRSTlPXABaehSjPsTwKw2xUcKPlSQAAADtJREFUCNdjMGBgYGAWBAKGACCLFcwSAbIcwSyhBAY2RTBLcAMDtyCENYthJZQlw3AQyhIsF4SxOiAsAFMMCKPY35E7AAAAAElFTkSuQmCC);
+  background-position: right center;
+  background-repeat: no-repeat;
+  line-height: 1; // ensures text doesn't get cut off
+}
+
+select::-ms-expand {
+  display: none; // dropdown icon fix for IE
+}
+
+// Make range full width
+[type='range'] {
+  width: 100%;
+}
+
+// Labels
+label {
+  font-weight: 600;
+  max-width: 100%;
+  display: block;
+  margin: 1rem 0 0.5rem;
+}
+
+@include media-query('md') {
+  .split-form {
+    // Split forms have right aligned labels and margins on the column
+    label {
+      text-align: right;
+      padding: 0 0.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+// Form validation
+input,
+select,
+textarea {
+  accent-color: get-color('accent-color');
+  &.has-error {
+    border: 1px solid get-color('red');
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 6px lighten(get-color('red'), 35%);
+  }
+
+  &.is-success {
+    border: 1px solid get-color('green');
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 6px lighten(get-color('green'), 25%);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    &.has-error {
+      @extend .has-error;
+    }
+
+    &.is-success {
+      @extend .is-success;
+    }
+  }
+}
+
+// Placeholder Text
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-moz-placeholder,
+:-ms-input-placeholder {
+  color: $placeholder;
+}
+
+input[type=checkbox], input[type=radio] {
+  width: 16px;
+  height: 16px;
+}

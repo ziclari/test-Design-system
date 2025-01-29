@@ -7,11 +7,8 @@
     "example": "examples"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:css": "sass src/styles:src/styles --no-source-map",
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
+    "start": "npx sass scss/global.scss css/global.css --watch",
+    "build": "npx sass scss/global.scss css/global.css --style=compressed"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,64 @@
+.button {
+  @extend .radius;
+  font: inherit;
+  display: inline-flex;
+  line-height: 1;
+  text-decoration: none;
+  border: 2px solid var(--color-primary); // Azul por defecto
+  background: var(--color-primary);      // Azul por defecto
+  color: black;
+  padding: 0.9rem 1.5rem;
+  position: relative;
+  transition: 0.3s;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+
+  @include apply-utility('weight', 'bold');
+
+  &:hover {
+    filter: brightness(90%);
+  }
+
+  &:focus {
+    outline-offset: -0.4rem;
+    outline: 1px solid;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &.ghost {
+    border-color: var(--color-primary);
+    background: transparent;
+    color:  currentColor;
+  }
+  // 3. Variantes de color dinámico
+  @each $color in ('green', 'red', 'yellow', 'gray', 'light-blue') {
+    &.#{$color} {
+      background-color: var(--color-#{$color});
+      border-color: var(--color-#{$color});
+
+      &:hover {
+        filter: brightness(90%); // Oscurece el botón al 90% de su brillo
+      }
+    }
+
+    &.ghost.#{$color} {
+      background-color: transparent;
+      color: var(--color-#{$color});
+
+      &:hover {
+        background: rgba(var(--color-#{$color}-rgb), 0.1); // Usar rgba para el hover
+      }
+    }
+  }
+}
+
+
+.cta-group{
+  display: flex;
+  gap: get-size('200');
+  flex-wrap: wrap;
+}

@@ -1,0 +1,97 @@
+.category-section {
+    padding: auto;
+    padding-top: 5rem;
+  
+    h2 {
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+    .category-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+  
+      p {
+        font-size: get-size('500');
+      }
+    }
+  
+    .categories-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 1rem;
+  
+      @include media-query('sm') {
+        justify-content: space-around; /* Alinea mejor en pantallas más pequeñas */
+      }
+  
+      @include media-query('xl') {
+        justify-content: space-between; /* Espaciado en pantallas medianas */
+      }
+  
+      .card-product {
+        flex: 1;
+        min-width: 250px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        text-align: center;
+        cursor: pointer;
+        max-height: 400px;
+        img {
+          width: 100%;
+          height: 400px;
+          object-fit: cover;
+          border-radius: 8px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px;
+        
+        }
+  
+        h4 {
+          margin-top: 1rem;
+          font-size: 1.2rem;
+        }
+  
+        &:hover img {
+          transform: translateY(-5px);
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 16px;
+        }
+
+        @include media-query('sm') {
+          max-height: none;
+        }
+      }
+    }
+  
+    @include media-query('sm') {
+      .categories-container {
+        gap: 16px;
+      }
+    }
+  
+    @include media-query('md') {
+      .categories-container {
+        gap: 24px;
+      }
+  
+      .category-card {
+        min-width: 300px;
+      }
+    }
+  
+    @include media-query('lg') {
+      .categories-container {
+        gap: 32px;
+      }
+  
+      .category-card {
+        min-width: 320px;
+      }
+    }
+  }

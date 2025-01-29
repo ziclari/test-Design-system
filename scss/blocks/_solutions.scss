@@ -1,0 +1,30 @@
+.solutions-header{
+  padding-top: 3rem;
+  p{
+    font-size: get-size('500');
+    max-width: 800px;
+  }
+}
+.solutions {
+    display: grid;
+    grid-template-columns: 1fr; /* Apilado en pantallas pequeñas */
+    grid-template-rows: auto; 
+    gap: 16px;
+    padding: auto;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    @include media-query('md') {
+      grid-template-columns: repeat(2, 1fr); /* Vuelve a dos columnas en pantallas medianas */
+      grid-template-rows: 1fr 0.5fr; /* Restablece filas */
+    }
+
+.last {
+    display: flex;
+    grid-column: 1 / -1; /* Ocupa toda la fila en pantallas pequeñas */
+    flex-direction: column;
+    @include media-query('lg') {
+      grid-column: span 2 / span 2; /* Vuelve a abarcar dos columnas en pantallas medianas */
+      flex-direction: row;
+    }
+  }
+}  

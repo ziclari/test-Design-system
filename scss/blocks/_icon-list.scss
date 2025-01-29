@@ -1,0 +1,22 @@
+.icon-list {
+    list-style: none;
+    padding: 0; 
+    margin: 0;
+    font-size: get-size('400');
+  &.li {
+    display: flex;
+    align-items: center;
+    margin-bottom: get-size('200');
+  }
+  
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: get-size('300');
+    fill: get-color('dark-accent-blue'); 
+  }
+  
+  &.li:hover {
+    color: var(--primary-color);
+  }
+}

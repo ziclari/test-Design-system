@@ -1,0 +1,52 @@
+.splitter {
+  > :last-child {
+    margin-top: get-size('500'); // Margen superior por defecto (para pantallas pequeñas)
+  }
+
+  @include media-query('md') {
+    display: flex;
+    > * {
+      flex-grow: 1;
+      flex-basis: 48%; // 48% en pantallas medianas
+    }
+
+    > :last-child {
+      margin-top: 0; // Eliminar margen superior
+      margin-left: get-size('500'); // Agregar margen izquierdo
+    }
+  }
+}
+  .splitter-3 {
+    @include media-query('md') {
+      display: flex;
+      gap: get-size('500'); // Espaciado uniforme entre todos los elementos.
+  
+      > * {
+        flex: 1; // Todos los elementos tendrán el mismo tamaño.
+        min-width: 0; // Asegura que los elementos no desborden.
+      }
+    }
+  }
+  
+  .splitter-4 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: get-size('300');
+  
+    > * {
+      flex-basis: 100%;
+    }
+  
+    @include media-query('md') {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+    }
+  }
+
+.hide-on-small{
+    display: none;
+    @include media-query('md'){
+        display: block;
+    }
+}

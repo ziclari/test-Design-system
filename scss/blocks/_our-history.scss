@@ -1,0 +1,75 @@
+/* Estilos base para móviles */
+.parent {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna en móviles */
+    grid-template-rows: auto; /* Filas automáticas */
+    gap: 8px;
+
+    /* Ocultar el image-container en móviles */
+    .image-container {
+        display: none;
+    }
+}
+/* Estilos para tablets (pantallas medianas) */
+@include media-query('sm') {
+    .parent {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en tablets */
+        grid-template-rows: 0.5fr repeat(2, 1fr); /* Reajuste de filas */
+   
+    /* Mostrar el image-container en tablets y desktop */
+    .image-container {
+        display: block; /* Mostrar el contenedor de la imagen */
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+        transition: background-image 0.5s ease-in-out;
+        background-image: url('https://www.airontools.com.mx/images/airontools.jpg');
+        width: 90%; /* Ajuste de ancho para tablets */
+        height: auto; /* Altura automática */
+    }
+
+    .div2 {
+        grid-row: span 2 / span 2;
+        grid-column-start: 1;
+        grid-row-start: 2;
+    }
+
+    .div3 {
+        grid-column-start: 2;
+        grid-row-start: 1;
+    }
+
+    .div5 {
+        grid-column-start: 2;
+    }
+}
+
+}
+
+/* Estilos para pantallas grandes (desktop) */
+@include media-query('lg') {
+    .parent {
+        grid-template-columns: repeat(2, 1fr); /* Mantener dos columnas */
+        grid-template-rows: 0.5fr repeat(2, 1fr); /* Mantener filas */
+    
+    .image-container {
+        width: 90%; /* Ajuste de ancho para desktop */
+        height: 300px; /* Altura fija para desktop */
+    }
+}
+
+}
+
+/* Efectos hover para las tarjetas */
+.timeline-card:nth-child(2):hover ~ .image-container {
+    background-image: url('https://images.unsplash.com/photo-1507099985932-87a4520ed1d5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+.timeline-card:nth-child(3):hover ~ .image-container {
+    background-image: url('https://images.unsplash.com/photo-1544725121-be3bf52e2dc8?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+.timeline-card:nth-child(4):hover ~ .image-container {
+    background-image: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
