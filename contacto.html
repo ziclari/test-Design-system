@@ -69,7 +69,7 @@
     
   </div>
 
-  <form class="flow pad-top-700 pad-bottom-700 hide-on-small">
+  <form class="hide-on-small">
     <label for="theme">Seleccionar tema:</label>
     <select id="theme" name="theme" required>
       <option value="" disabled selected>Seleccione un tema</option>
@@ -81,9 +81,6 @@
     
     <label for="first-name">Nombre:</label>
     <input type="text" id="first-name" name="first-name" placeholder="Escribe tu nombre" required />
-    
-    <label for="last-name">Apellido:</label>
-    <input type="text" id="last-name" name="last-name" placeholder="Escribe tu apellido" required />
     
     <label for="email">Correo Electrónico:</label>
     <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required />
@@ -146,8 +143,8 @@
         </div>
       </section>
     </div>
-          <div style="display: flex; gap: 4rem; flex-wrap: wrap;">
-            <section class="card large" style="max-width: 950px;">
+          <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+            <section class="card large with-mini-group">
               <div class="content flow">
                 <h3>¡Contecta con nosotros en <br> nuestras  redes sociales!</h3>
                 <p>Hecha para la durabilidad y muchas cosas más, es una herramienta profesional. Hecha para las cosas profesionales.</p>
@@ -201,12 +198,12 @@
     <path fill-rule="evenodd" clip-rule="evenodd" d="M1440 134L1359.49 114.333C1280.18 94.6667 1119.15 55.3333 959.333 59.2667C799.512 63.2 638.488 110.4 478.667 114.333C318.845 118.267 157.822 78.9333 78.5116 59.2667L-2.00006 39.6V16H78.5116C157.822 16 318.845 16 478.667 16C638.488 16 799.512 16 959.333 16C1119.15 16 1280.18 16 1359.49 16H1440V134Z" fill="url(#_3_102__paint0_linear_3_102)"></path>
     <path fill-rule="evenodd" clip-rule="evenodd" d="M1440 82L1359.49 68.3333C1280.18 54.6667 1119.16 27.3333 959.333 30.0667C799.512 32.8 638.488 65.6 478.667 68.3333C318.845 71.0667 157.822 43.7333 78.5116 30.0667L-1.99994 16.4V0H78.5116C157.822 0 318.845 0 478.667 0C638.488 0 799.512 0 959.333 0C1119.16 0 1280.18 0 1359.49 0H1440V82Z" fill="#183380"></path>
     <defs><linearGradient id="_3_102__paint0_linear_3_102" x1="-2" y1="75" x2="1440" y2="75" gradientUnits="userSpaceOnUse"><stop offset="0.4" stop-color="#55C4EF"></stop><stop offset="1" stop-color="#E6F2FF"></stop></linearGradient></defs></svg>
-    <section class="wrapper flow" style="margin-top: 5rem; margin-bottom: 10rem;">
+    <section class="wrapper flow" style="margin-top: 5rem; margin-bottom: 5rem;">
       <h3>Ubicaciones</h3> 
       <p class="text-500">Nuestras distribuidoras y oficinas en México</p>
   
       <div class="card large">
-          <div class="flow locations__info">
+          <div class="content flow">
               <h4>Matriz CDMX</h4>
               <p>Calz de Guadalupe 572, Industrial, Gustavo A. Madero 07800 Mexico City, Mexico<br>
                   Phone: +52 55 8589 7373<br>
@@ -218,37 +215,43 @@
       </div>
   
       <div class="locations__grid">
-          <div class="card flow">
+          <div class="card">
               <img src="/images/temp.PNG" alt="Monterrey Office" class="locations__image">
-              <h4>Oficina Monterrey</h4>
-              <p>Malva #130, Residencial Enrramada 3ra Sección, C.P.66635 Apodaca NL<br>
-                  Phone: 81-83-12-71-39<br>
-                  Email: airon.mty@airontools.com
-              </p>
-              <button class="button ghost">Mapa</button>
+              <div class="content flow">
+                <h4>Oficina Monterrey</h4>
+                <p>Malva #130, Residencial Enrramada 3ra Sección, C.P.66635 Apodaca NL<br>
+                    Phone: 81-83-12-71-39<br>
+                    Email: airon.mty@airontools.com
+                </p>
+                <button class="button ghost">Mapa</button>
+              </div>
           </div>
-          <div class="card flow">
+          <div class="card">
               <img src="/images/temp.PNG" alt="Queretaro Office" class="locations__image">
-              <h4>Oficina Querétaro</h4>
-              <p>Son Juana Ines de la Cruz, Col. El Tintero, Santiago Querétaro<br>
-                  Phone: 44-23-72-40-76<br>
-                  Email: airon.qro@airontools.com
-              </p>
-              <button class="button ghost">Mapa</button>
+              <div class="content flow">
+                <h4>Oficina Querétaro</h4>
+                <p>Son Juana Ines de la Cruz, Col. El Tintero, Santiago Querétaro<br>
+                    Phone: 44-23-72-40-76<br>
+                    Email: airon.qro@airontools.com
+                </p>
+                <button class="button ghost">Mapa</button>
+              </div>
           </div>
-          <div class="card flow">
+          <div class="card">
               <img src="/images/temp.PNG" alt="Guadalajara Office" class="locations__image">
-              <h4>Oficina Guadalajara</h4>
-              <p>Av. Isla Raza #2502 Int. 14, Col. Jardines del Sur, C.P. 44950 Guadalajara, Jalisco<br>
-                  Phone: 33 1164 4410<br>
-                  Email: airon.gdl@airontools.com
-              </p>
-              <button class="button ghost">Mapa</button>
+              <div class="content flow">
+                <h4>Oficina Guadalajara</h4>
+                <p>Av. Isla Raza #2502 Int. 14, Col. Jardines del Sur, C.P. 44950 Guadalajara, Jalisco<br>
+                    Phone: 33 1164 4410<br>
+                    Email: airon.gdl@airontools.com
+                </p>
+                <button class="button ghost">Mapa</button>
+              </div>
           </div>
       </div>
   </section>
   
-  <section class="dark" style="border-bottom: 4px solid var(--color-primary); margin-top: 5rem;">
+  <section class="dark" style="border-bottom: 4px solid var(--color-primary); margin-top: 2rem;">
     <svg preserveAspectRatio="none" class="wave" width="1440" height="100" viewBox="0 0 1440 135" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="1440" height="100" fill="#E6F2FF"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.399904L80.5117 20.0666C159.822 39.7332 320.845 79.0666 480.667 75.1332C640.488 71.1999 801.512 23.9999 961.333 20.0666C1121.16 16.1332 1282.18 55.4666 1361.49 75.1332L1442 94.7999V118.4H1361.49C1282.18 118.4 1121.16 118.4 961.333 118.4C801.512 118.4 640.488 118.4 480.667 118.4C320.845 118.4 159.822 118.4 80.5117 118.4H0V0.399904Z" fill="url(#_3_284__paint0_linear_3_284)"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M0 52.3999L80.5117 66.0666C159.822 79.7332 320.845 107.067 480.667 104.333C640.488 101.6 801.512 68.7999 961.333 66.0666C1121.15 63.3332 1282.18 90.6666 1361.49 104.333L1442 118V134.4H1361.49C1282.18 134.4 1121.15 134.4 961.333 134.4C801.512 134.4 640.488 134.4 480.667 134.4C320.845 134.4 159.822 134.4 80.5117 134.4H0V52.3999Z" fill="#183380"></path><defs><linearGradient id="_3_284__paint0_linear_3_284" x1="1442" y1="59.3999" x2="0" y2="59.3999" gradientUnits="userSpaceOnUse"><stop offset="0.4" stop-color="#55C4EF"></stop><stop offset="1" stop-color="#E6F2FF"></stop></linearGradient></defs></svg>
      

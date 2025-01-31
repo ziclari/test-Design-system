@@ -35,7 +35,7 @@
     color:  currentColor;
   }
   // 3. Variantes de color dinámico
-  @each $color in ('green', 'red', 'yellow', 'gray', 'light-blue') {
+  @each $color in ('green', 'red', 'yellow', 'gray', 'light-blue', 'secondary') {
     &.#{$color} {
       background-color: var(--color-#{$color});
       border-color: var(--color-#{$color});

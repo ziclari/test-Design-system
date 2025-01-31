@@ -34,7 +34,6 @@
   
       .card-product {
         flex: 1;
-        min-width: 250px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -43,10 +42,9 @@
         transition: all 0.3s ease;
         text-align: center;
         cursor: pointer;
-        max-height: 400px;
         img {
           width: 100%;
-          height: 400px;
+          height: 350px;
           object-fit: cover;
           border-radius: 8px;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px;

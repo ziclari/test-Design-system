@@ -1,36 +1,27 @@
-
 .table-group {
-    border: 1px solid get-color('grey');
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  
-    h3 {
-      --flow-space: #{get-size('600')};
-    }
-  
-    table {
-      --flow-space: 0.2rem;
-  
-      width: 100%;
-      min-width: 30rem;
-    }
-  
-    td,
-    h3 {
-      padding: 0.5rem 1rem;
-    }
-  
-    tr:first-child {
-      border-top: 1px solid get-color('grey');
-    }
-  
-    tr:nth-child(odd) td {
-      background: get-color('transparent-white');
-    }
-  
-    td:nth-child(3) {
-      text-align: right;
-    }
-  }
-  
-  
+  overflow-x: auto; 
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+table {
+  width: 100%;
+  min-width: 30rem;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+th, td {
+  padding: 0.5rem 1rem;
+  text-align: left;
+}
+
+th {
+  background-color: var(--color-primary);
+  font-weight: bold;
+}
+
+tr:nth-child(odd) td {
+  background-color: var(--color-light-blue);
+}

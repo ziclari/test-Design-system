@@ -28,6 +28,9 @@ body {
     font-family: 'OpenSansCondensed';
     text-transform: uppercase;
   }
+  .line{
+    border-bottom: 4px solid var(--color-highlight);
+  }
 
   h1,
   h2,
@@ -137,4 +140,5 @@ body {
 @import 'blocks/glide-carousel';
 @import 'blocks/our-history';
 @import 'blocks/locations';
-
+@import 'blocks/details';
+@import 'blocks/product-gallery';
