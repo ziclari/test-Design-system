@@ -15,8 +15,13 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.20",
+    "gulp": "^5.0.0",
+    "gulp-sass": "^6.0.0",
     "lit": "^3.2.1",
-    "sass": "^1.83.1",
+    "sass": "^1.83.4",
     "vite": "^6.0.7"
+  },
+  "dependencies": {
+    "sassdoc": "^2.7.4"
   }
 }
