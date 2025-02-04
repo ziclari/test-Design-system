@@ -3,7 +3,7 @@ body {
     line-height: 1.5;
     font-size: ab.get-size('400');
     color: var(--color-text);
-    font-family: 'OpenSans', Arial, sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
 }
 
 .dark {
@@ -12,7 +12,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'OpenSansCondensed', 'OpenSans', Arial, sans-serif; 
+    font-family: 'OpenSansCondensed', "Roboto Condensed", 'Open Sans', Arial, sans-serif; 
     text-transform: uppercase;
 }
 
