@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+// 1. Vendors
+@use 'vendors/reset';
+
+// 2. Base stuff
+@use 'base/base';
+@use 'base/fonts';
+@use 'base/helpers';
+@use 'base/typography';
+
+// 3. Layout-related sections
+@use 'layout/footer';
+@use 'layout/header';
+@use 'layout/hero';
+@use 'layout/waves';
+@use 'layout/columns';
+
+
+// 4. Components
+@use 'components/button';
+@use 'components/card';
+@use 'components/details';
+@use 'components/forms';
+@use 'components/glide-carousel';
+@use 'components/pill';
+@use 'components/summary';
+@use 'components/table-group';
+@use 'components/user';
+
+// 5. Pages
+@use 'pages/inicio/categories';
+@use 'pages/inicio/client-carousel';
+@use 'pages/inicio/industry-allies';
+@use 'pages/inicio/more-questions';
+@use 'pages/inicio/solutions';
+
+// 6. Themes
+@use 'themes/themes';

@@ -1,6 +1,7 @@
+@use '../abstracts' as ab;
 /// Espaciado y distribución de elementos en un diseño de dos columnas.
 ///
-/// Este mixin crea un diseño de dos columnas con un margen superior en dispositivos pequeños
+/// Este crea un diseño de dos columnas con un margen superior en dispositivos pequeños
 /// y un diseño flexible con márgenes laterales en dispositivos medianos y grandes.
 ///
 /// @example
@@ -11,10 +12,10 @@
 /// @group layout
 .two-column {
     > :last-child {
-        margin-top: get-size('500'); // Margen superior por defecto (para pantallas pequeñas)
+        margin-top:ab.get-size('500'); // Margen superior por defecto (para pantallas pequeñas)
     }
 
-    @include media-query('md') {
+    @include ab.media-query('md') {
         display: flex;
         > * {
             flex-grow: 1;
@@ -23,14 +24,14 @@
 
         > :last-child {
             margin-top: 0; // Eliminar margen superior
-            margin-left: get-size('500'); // Agregar margen izquierdo
+            margin-left:ab.get-size('500'); // Agregar margen izquierdo
         }
     }
 }
 
 /// Diseño flexible de tres columnas con espaciado uniforme.
 ///
-/// Este mixin crea un diseño de tres columnas con espaciado uniforme entre los elementos
+/// Este crea un diseño de tres columnas con espaciado uniforme entre los elementos
 /// en dispositivos medianos y grandes.
 ///
 /// @example
@@ -41,9 +42,9 @@
 /// </div>
 /// @group layout
 .three-column {
-    @include media-query('md') {
+    @include ab.media-query('md') {
         display: flex;
-        gap: get-size('500'); // Espaciado uniforme entre todos los elementos.
+        gap:ab.get-size('500'); // Espaciado uniforme entre todos los elementos.
 
         > * {
             flex: 1; // Todos los elementos tendrán el mismo tamaño.
@@ -54,7 +55,7 @@
 
 /// Diseño adaptable de cuatro elementos con ajuste de línea.
 ///
-/// Este mixin crea un diseño de cuatro elementos que se ajusta a diferentes tamaños de pantalla.
+/// Este crea un diseño de cuatro elementos que se ajusta a diferentes tamaños de pantalla.
 /// En pantallas pequeñas, los elementos se apilan verticalmente.
 /// En pantallas medianas y grandes, se muestran en un diseño de cuadrícula de dos columnas.
 ///
@@ -69,13 +70,13 @@
 .four-column {
     display: flex;
     flex-wrap: wrap;
-    gap: get-size('300');
+    gap:ab.get-size('300');
 
     > * {
         flex-basis: 100%; // Ocupan todo el ancho en pantallas pequeñas
     }
 
-    @include media-query('md') {
+    @include ab.media-query('md') {
         display: grid;
         grid-template-columns: repeat(2, 1fr); // Dos columnas en pantallas medianas y grandes
         grid-template-rows: auto;

@@ -1,8 +1,8 @@
-
+@use "../abstracts" as ab;
 .pill {
   display: inline-block;
   padding: 0.3rem 0.35rem;
-  font-size: get-size('400');
+  font-size:ab.get-size('400');
   text-decoration: none;
   line-height: 1;
   white-space: nowrap;
@@ -10,7 +10,7 @@
 
   // Apply a default background colour if no token set
   &:not([class*='bg-']) {
-    background: get-color('grey');
+    background: ab.get-color('grey');
   }
 
   // Capitalize only in english

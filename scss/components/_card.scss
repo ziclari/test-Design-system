@@ -1,4 +1,4 @@
-
+@use '../abstracts' as ab;
 // 1. Base común para todas las cards
 @mixin card-base() {
     margin-top: 1rem;
@@ -51,7 +51,7 @@
       margin-bottom: 0.5rem;
     }
 
-    @include media-query('lg'){
+    @include ab.media-query('lg'){
       max-height: 400px;
       img {
         border-radius: 8px;
@@ -67,7 +67,7 @@
     }
 
     &.large {
-      @include media-query('lg') {
+      @include ab.media-query('lg') {
         flex-direction: row;
         max-height: 250px;
         > * {
@@ -100,7 +100,7 @@
       justify-content: center;
       gap: 0.6rem;
       text-align: center;
-      font-size: get-size('300');
+      font-size:ab.get-size('300');
       align-items: center;
   
       svg {
@@ -109,7 +109,7 @@
         height: 40px;
       }
     }
-    @include media-query('lg') {
+    @include ab.media-query('lg') {
       justify-content: space-between;
     }
 }
@@ -117,7 +117,7 @@
   // 3. Mini-groups (layout de grupos)
 .mini-group {
     display: grid;
-    gap: get-size('300'); 
+    gap:ab.get-size('300'); 
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
     margin-bottom: 1rem;
@@ -155,7 +155,7 @@
     width: 30px;
     height: 30px;
     flex-shrink: 0;
-    color: get-color('accent-blue');
+    color: ab.get-color('accent-blue');
   }
   .content {
       border-left: 2px solid white;
@@ -208,7 +208,7 @@
     }
   } 
   .card-product-info h4 {
-    font-size: get-size('500');
+    font-size:ab.get-size('500');
   }
   .card-product-info h4, .card-product-info p {
       display: none; /* Ocultar todo excepto el nombre, modelo, disponibilidad y botones */

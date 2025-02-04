@@ -1,24 +1,25 @@
+@use '../abstracts' as ab;
 .hero{
     min-height: 84vh;
     display: flex;
     justify-content: start;
     align-items: center;
-    background: linear-gradient( transparent 80%, get-color(light-dark-blue) 100%);
+    background: linear-gradient( transparent 80%,ab.get-color(light-dark-blue) 100%);
     padding: 0px;
     position: relative;
-    color: get-color(almost-white);
+    color:ab.get-color(almost-white);
     h1 {
-        font-size: get-size('800');
-        margin-bottom: get-size('700');
+        font-size:ab.get-size('800');
+        margin-bottom:ab.get-size('700');
     }
 
     strong {
-        color: get-color(accent-blue);
+        color:ab.get-color(accent-blue);
     }
     p {
         max-width: 800px;
-        font-size: get-size('500');
-        margin-bottom: get-size('200');
+        font-size:ab.get-size('500');
+        margin-bottom:ab.get-size('200');
     }
     img{
         max-width: 600px;
@@ -32,17 +33,17 @@
         width: 100%;
         object-fit: cover;
         filter: brightness(0.5);
-        background-color: get-color(light-dark-blue);
+        background-color:ab.get-color(light-dark-blue);
       }
     
-    @include media-query('sm') {
+    @include ab.media-query('sm') {
         h1{
-            font-size: get-size('900');
+            font-size:ab.get-size('900');
         }
     }
-    @include media-query('xxl') {
+    @include ab.media-query('xxl') {
         h1{
-            font-size: get-size('1000');
+            font-size:ab.get-size('1000');
         }
     }
 }

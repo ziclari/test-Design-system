@@ -1,3 +1,4 @@
+@use '../abstracts' as ab;
 .footer {
     background-color: #000;
     color: #fff;
@@ -8,11 +9,11 @@
         grid-template-columns: 1fr; // Base: 1 columna (mobile-first)
         gap: 16px;
 
-        @include media-query('md') { // Mediana pantalla
+        @include ab.media-query('md') { // Mediana pantalla
             grid-template-columns: 1fr 1fr;
         }
 
-        @include media-query('lg') { // Pantallas grandes
+        @include ab.media-query('lg') { // Pantallas grandes
             grid-template-columns: 1.5fr 1fr 1fr 1fr;
         }
     }
@@ -21,7 +22,7 @@
         max-width: 150px;
         margin-bottom: 10px; // Base: menos espacio en pantallas pequeñas
 
-        @include media-query('lg') { // Pantallas grandes
+        @include ab.media-query('lg') { // Pantallas grandes
             margin-bottom: 20px;
         }
     }
@@ -36,7 +37,7 @@
             width: 100%; // Base: ancho completo para móviles
             max-width: none;
 
-            @include media-query('md') {
+            @include ab.media-query('md') {
                 max-width: 250px;
             }
         }
@@ -45,7 +46,7 @@
     .footer-column h4 {
         margin-bottom: 15px; // Base: espaciado reducido
 
-        @include media-query('lg') {
+        @include ab.media-query('lg') {
             margin-bottom: 20px; // Espaciado mayor en pantallas grandes
         }
     }
@@ -58,7 +59,7 @@
         li {
             margin-bottom: 10px; // Base
 
-            @include media-query('lg') {
+            @include ab.media-query('lg') {
                 margin-bottom: 12px; // Ajuste en pantallas grandes
             }
         }
@@ -80,7 +81,7 @@
         li {
             margin-bottom: 10px; // Base
 
-            @include media-query('lg') {
+            @include ab.media-query('lg') {
                 margin-bottom: 15px; // Espaciado mayor en pantallas grandes
             }
         }
@@ -106,7 +107,7 @@
         flex-direction: column; // Base: apilado para pantallas pequeñas
         gap: 10px;
 
-        @include media-query('md') {
+        @include ab.media-query('md') {
             flex-direction: row; // Distribución horizontal en pantallas medianas
             justify-content: space-between;
         }
@@ -118,19 +119,19 @@
             text-decoration: none;
             margin-left: 0; // Base
 
-            @include media-query('md') {
+            @include ab.media-query('md') {
                 margin-left: 20px; // Márgenes en pantallas medianas
             }
         }
     }
 
     .privacy-notice {
-        font-size: get-size('400'); // Base: tamaño más grande
-
-        @include media-query('lg') {
-            font-size: get-size('300'); // Tamaño más pequeño en pantallas grandes
-        }
+        font-size:ab.get-size('400'); // Base: tamaño más grande
         color: #666;
         margin-top: 10px;
+        @include ab.media-query('lg') {
+            font-size:ab.get-size('300'); // Tamaño más pequeño en pantallas grandes
+        }
+        
     }
 }

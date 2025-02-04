@@ -1,43 +1,44 @@
-@use "../abstracts/colors" as *;
+@use "../abstracts" as ab;
+@use "sass:map";
 
 $themes: (
   "lightblue": (
-    "background-header": $dark-blue,
-    "text-header": $almost-white,
-    "background": $almost-white,
-    "primary": $accent-blue,
-    "secondary": $light-dark-blue,
-    "text": $almost-black,
-    "background-card": $transparent-white,
-    "link": $dark-accent-blue,
-    "highlight": $dark-accent-blue,
-    "red": $red,
-    "yellow": $yellow,
-    "green": $green,
-    "grey": $grey,
-    "light-blue": $light-blue,
+    "background-header": ab.get-color("dark-blue"),
+    "text-header": ab.get-color("almost-white"),
+    "background": ab.get-color("almost-white"),
+    "primary": ab.get-color("accent-blue"),
+    "secondary": ab.get-color("light-dark-blue"),
+    "text": ab.get-color("almost-black"),
+    "background-card": ab.get-color("transparent-white"),
+    "link": ab.get-color("dark-accent-blue"),
+    "highlight": ab.get-color("dark-accent-blue"),
+    "red": ab.get-color("red"),
+    "yellow": ab.get-color("yellow"),
+    "green": ab.get-color("green"),
+    "grey": ab.get-color("grey"),
+    "light-blue": ab.get-color("light-blue"),
   ),
   "darkblue": (
-    "background-header": $dark-blue,
-    "text-header": $almost-white,
-    "background": $light-dark-blue,
-    "primary": $accent-blue,
-    "secondary": $dark-blue,
-    "text": $almost-white,
-    "background-card": $transparent-teal,
-    "link": $accent-blue,
-    "highlight": $accent-blue,
-    "red": $bright-red,
-    "yellow": $bright-yellow,
-    "green": $bright-green,
-    "grey": $grey,
-    "light-blue": $light-blue,
+    "background-header": ab.get-color("dark-blue"),
+    "text-header": ab.get-color("almost-white"),
+    "background": ab.get-color("light-dark-blue"),
+    "primary": ab.get-color("accent-blue"),
+    "secondary": ab.get-color("dark-blue"),
+    "text": ab.get-color("almost-white"),
+    "background-card": ab.get-color("transparent-teal"),
+    "link": ab.get-color("accent-blue"),
+    "highlight": ab.get-color("accent-blue"),
+    "red": ab.get-color("bright-red"),
+    "yellow": ab.get-color("bright-yellow"),
+    "green": ab.get-color("bright-green"),
+    "grey": ab.get-color("grey"),
+    "light-blue": ab.get-color("light-blue"),
   ),
 );
 
 @mixin apply-theme($theme-name) {
-  @each $key, $value in map-get($themes, $theme-name) {
-    --#{color-$key}: #{$value};
+  @each $key, $value in map.get($themes, $theme-name) {
+    --color-#{$key}: #{$value};
   }
 }
 

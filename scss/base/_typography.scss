@@ -1,8 +1,8 @@
+@use '../abstracts' as ab;
 body {
     line-height: 1.5;
-    font-size: get-size('400');
+    font-size:ab.get-size('400');
     color: var(--color-text);
-    @include apply-utility('weight', 'medium');
 }
 
 .dark {
@@ -23,27 +23,27 @@ h4 {
 }
 
 h1 {
-    font-size: get-size('900');
+    font-size:ab.get-size('900');
 }
 
 h2 {
-    font-size: get-size('800');
+    font-size:ab.get-size('800');
 }
 
 h3 {
-    font-size: get-size('700');
+    font-size:ab.get-size('700');
 }
 
 h4 {
-    font-size: get-size('600');
+    font-size:ab.get-size('600');
 }
 
 h5 {
-    font-size: get-size('500');
+    font-size:ab.get-size('500');
 }
 
 h6 {
-    font-size: get-size('400');
+    font-size:ab.get-size('400');
 }
 
 a {

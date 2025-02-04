@@ -1,13 +1,11 @@
+@use '../../abstracts' as ab;
 .questions-section {
-    display: flex;
-    align-items: center;
     gap: 1rem;
-    flex-direction: column;
     text-align: center;
-    justify-content: center;
+    @include ab.flex-column;
     padding: 0 2rem;
     padding-top: 2rem;
-    @include media-query('md') {
+    @include ab.media-query('md') {
         flex-direction: row;
         padding-top: 0;
     }
@@ -19,7 +17,7 @@
       align-items: center;
 
       p{
-        font-size: get-size('500');
+        font-size:ab.get-size('500');
       }
     }
   
@@ -29,7 +27,7 @@
       object-fit: cover;
       max-height: 400px;
   
-      @include media-query('md') {
+      @include ab.media-query('md') {
         max-width: 400px;
       }
     }

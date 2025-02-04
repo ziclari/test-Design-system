@@ -1,7 +1,8 @@
+@use '../abstracts' as ab;
 .wave{
     width: 100%;
     overflow: hidden;
-    @include media-query('md') {
+    @include ab.media-query('md') {
        max-height: 150px;
     }
 }

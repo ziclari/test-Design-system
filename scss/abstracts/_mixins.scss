@@ -1,3 +1,6 @@
+@use 'sass:list';
+@use 'sass:meta';
+@use 'variables' as var;
 /// Genera un contenedor con un ancho y alto específico.
 /// Si no se proporciona un valor para el `height`, se usa el valor de `width` como predeterminado.
 /// @parameter {Length} $width - El ancho del contenedor.
@@ -59,33 +62,33 @@
 /// Mixin para aplicar estilos con un breakpoint específico.
 /// @parameter {String} $breakpoint - El nombre del breakpoint a utilizar.
 /// @group Mixins
-@mixin breakpoint($breakpoint) {
+@mixin media-query($breakpoint) {
     @if $breakpoint == sm {
-      @media #{$breakpoint-sm} {
+      @media #{var.$breakpoint-sm} {
         @content;
       }
     }
   
     @else if $breakpoint == md {
-      @media #{$breakpoint-md} {
+      @media #{var.$breakpoint-md} {
         @content;
       }
     }
   
     @else if $breakpoint == lg {
-      @media #{$breakpoint-lg} {
+      @media #{var.$breakpoint-lg} {
         @content;
       }
     }
   
     @else if $breakpoint == xl {
-      @media #{$breakpoint-xl} {
+      @media #{var.$breakpoint-xl} {
         @content;
       }
     }
   
     @else if $breakpoint == xxl {
-      @media #{$breakpoint-xxl} {
+      @media #{var.$breakpoint-xxl} {
         @content;
       }
     }
@@ -143,7 +146,7 @@
 /// }
 /// @group Mixins
 @mixin font-size($size, $line-height: normal, $letter-spacing: normal) {
-    $calculated-size: map-get($gorko-size-scale, $size) * 1rem;
+    $calculated-size: map-get(var.$base-size, $size) * 1rem;
   
     font-size: $calculated-size;
   
@@ -231,9 +234,9 @@
 /// @group Mixins
 @mixin position($position, $args) {
     @each $o in top right bottom left {
-      $i: index($args, $o);
-      @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number {
-        #{$o}: nth($args, $i + 1);
+      $i: list.index($args, $o);
+      @if $i and $i + 1 <= list.length($args) and meta.type-of(list.nth($args, $i + 1)) == number {
+        #{$o}: list.nth($args, $i + 1);
       }
     }
     position: $position;

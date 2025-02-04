@@ -1,3 +1,4 @@
+@use '../../abstracts' as ab;
 .category-section {
     padding: auto;
     padding-top: 5rem;
@@ -13,7 +14,7 @@
       flex-wrap: wrap;
   
       p {
-        font-size: get-size('500');
+        font-size:ab.get-size('500');
       }
     }
   
@@ -24,11 +25,11 @@
       gap: 16px;
       padding-bottom: 1rem;
   
-      @include media-query('sm') {
+      @include ab.media-query('sm') {
         justify-content: space-around; /* Alinea mejor en pantallas más pequeñas */
       }
   
-      @include media-query('xl') {
+      @include ab.media-query('xl') {
         justify-content: space-between; /* Espaciado en pantallas medianas */
       }
   
@@ -61,19 +62,19 @@
           box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 16px;
         }
 
-        @include media-query('sm') {
+        @include ab.media-query('sm') {
           max-height: none;
         }
       }
     }
   
-    @include media-query('sm') {
+    @include ab.media-query('sm') {
       .categories-container {
         gap: 16px;
       }
     }
   
-    @include media-query('md') {
+    @include ab.media-query('md') {
       .categories-container {
         gap: 24px;
       }
@@ -83,7 +84,7 @@
       }
     }
   
-    @include media-query('lg') {
+    @include ab.media-query('lg') {
       .categories-container {
         gap: 32px;
       }

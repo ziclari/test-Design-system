@@ -1,16 +1,15 @@
+@use '../abstracts' as ab;
 .glide__controls{
-    display: flex;
-    justify-content: center;
-    @include media-query('md'){
+    @include ab.flex-center-vertical;
+    @include ab.media-query('md'){
         justify-content: space-between;
     }
   }
 
   .glide__bullet {
-    width: 8px;
-    height: 8px;
+    @include ab.box(8px);
     border-radius: 50px;
-    background-color: get-color('grey');
+    background-color: ab.get-color('grey');
     border: none;
     margin: 0 5px;
     cursor: pointer;
@@ -18,29 +17,28 @@
   }
   
   .glide__bullet--active {
-    background-color: get-color('accent-blue');
+    background-color: ab.get-color('accent-blue');
   }
   
   .glide__arrows{
     display: none;
     gap: 0.5rem;
-    @include media-query('md'){
+    @include ab.media-query('md'){
         display: flex;
     }
   }
   .glide__arrow {
     background-color: transparent;
-    border: 2px solid get-color('accent-blue');
+    border: 2px solid ab.get-color('accent-blue');
     padding: 8px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 50%;
     transition: background-color 0.3s ease, color 0.3s ease;
-    display: flex;
-    align-items: center;
+    @include ab.flex-center-vertical;
     color: var(--color-text);
   }
   
   .glide__arrow:hover {
-    background-color: get-color('accent-blue');
+    background-color: ab.get-color('accent-blue');
   }

@@ -1,5 +1,5 @@
+@use '../abstracts' as ab;
 .button {
-  @extend .radius;
   font: inherit;
   display: inline-flex;
   line-height: 1;
@@ -14,9 +14,10 @@
   gap: 0.5rem;
   cursor: pointer;
   padding: 0.8rem;
-  font-size: get-size('300');
+  font-size:ab.get-size('300');
   justify-content: center;
-  @include apply-utility('weight', 'bold');
+  font-weight: bold;
+  border-radius: 8px;
 
   &:hover {
     filter: brightness(90%);
@@ -62,18 +63,18 @@
 
 .cta-group{
   display: flex;
-  gap: get-size('200');
+  gap:ab.get-size('200');
   flex-wrap: wrap;
 }
 
-@include media-query('md'){
+@include ab.media-query('md'){
   .button {
     padding: 0.9rem 1.5rem;
     font: inherit;
-    @include apply-utility('weight', 'bold');
+    font-weight: bold;
   }
   .button svg{
-    width: get-size('500');
-    height: get-size('500');
+    width:ab.get-size('500');
+    height:ab.get-size('500');
   }
 }

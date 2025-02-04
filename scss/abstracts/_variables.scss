@@ -1,3 +1,4 @@
+@use 'sass:map';
 /// Tamaño base utilizado para todas las unidades de medida.
 /// Este es el tamaño base utilizado para todas las mediciones en el proyecto. Puede ser útil como referencia para definir tamaños relativos de fuentes, márgenes, padding, etc.
 /// @type Size
@@ -20,105 +21,59 @@ $base-size: 1rem;
       '1000': 5.59
     );
   
-    @if map-has-key($multipliers, $key) {
-      @return $base-size * map-get($multipliers, $key);
+    @if map.has-key($multipliers, $key) {
+      @return $base-size * map.get($multipliers, $key);
     } @else {
       @warn "Tamaño #{$key} no encontrado en la lista de multiplicadores.";
       @return null;
     }
 }
 
-// 📌 Colores
+/// dark-blue - Color de fondo principal, usado en el header y secciones destacadas.
+/// light-dark-blue - Color de fondo alternativo, utilizado en secciones secundarias y contenido comercial.
+/// dark-accent-blue - Color de acento con buen contraste para fondos blancos, ideal para links y palabras resaltadas.
+/// accent-blue - Color de acento general para botones primarios y de acción, con buen contraste sobre el fondo alternativo.
+/// light-blue - Color auxiliar para detallar o contrastar en fondos blancos, usado en iconos o tablas para resaltar ligeramente.
+/// almost-white - Color de fondo principal y fondo de texto en el fondo alternativo.
+/// transparent-teal - Color de fondo para tarjetas en el fondo alternativo.
+/// transparent-white - Color de fondo para tarjetas en el fondo principal.
+/// almost-black - Color de texto en fondo principal.
+/// white - Color blanco.
+/// black - Color negro.
+/// grey - Color gris, utilizado para detalles y fondos sutiles.
+/// yellow - Color amarillo para el fondo principal.
+/// bright-yellow - Color amarillo para el fondo alternativo.
+/// red - Color rojo para el fondo principal.
+/// bright-red - Color rojo para el fondo alternativo.
+/// green - Color verde para el fondo principal.
+/// bright-green - Color verde para el fondo alternativo.
+// Definir los colores en un mapa
+$colors: (
+  "dark-blue": #002669,
+  "light-dark-blue": #183380,
+  "dark-accent-blue": #0088CC,
+  "accent-blue": #40C4FF,
+  "light-blue": #B2E1F9,
+  "almost-white": #E6F2FF,
+  "transparent-teal": rgba(0, 236, 236, 0.05),
+  "transparent-white": rgba(255, 255, 255, 0.7),
+  "almost-black": #333333,
+  "white": #ffffff,
+  "black": #000000,
+  "grey": #D9D9D9,
+  "yellow": #FFC021,
+  "bright-yellow": #e4d725,
+  "red": #ff5151,
+  "bright-red": #d32525,
+  "green": #309b62,
+  "bright-green": #25D366
+);
 
-/// Color de fondo principal (Header, secciones destacadas).
-/// @type Color
-/// @group Colores
-$dark-blue: #002669;
-
-/// Color de fondo alternativo (Secciones secundarias, contenido comercial).
-/// @type Color
-/// @group Colores
-$light-dark-blue: #183380;
-
-/// Color de acento con mejor contraste para fondos blancos, se usa en links y palabras resaltadas.
-/// @type Color
-/// @group Colores
-$dark-accent-blue: #0088CC;
-
-/// Color de acento general, para botones primarios y de acción, tiene un mejor contraste sobre el fondo alternativo.
-/// @type Color
-/// @group Colores
-$accent-blue: #40C4FF;
-
-/// Color auxiliar para detallar o contrastar en fondos blancos, uso de fondo en iconos o tablas para resaltar ligeramente o hacer menos aburrida la información.
-/// @type Color
-/// @group Colores
-$light-blue: #B2E1F9;
-
-/// Color de fondo principal y color de fondo de texto en el fondo alternativo.
-/// @type Color
-/// @group Colores
-$almost-white: #E6F2FF;
-
-/// Color de fondo para tarjetas en el fondo alternativo.
-/// @type Color
-/// @group Colores
-$transparent-teal: rgba(0, 236, 236, 0.05);
-
-/// Color de fondo para tarjetas en el fondo principal.
-/// @type Color
-/// @group Colores
-$transparent-white: rgba(255, 255, 255, 0.7);
-
-/// Color de texto en fondo principal.
-/// @type Color
-/// @group Colores
-$almost-black: #333333;
-
-/// Color blanco.
-/// @type Color
-/// @group Colores
-$white: #ffffff;
-
-/// Color negro.
-/// @type Color
-/// @group Colores
-$black: #000000;
-
-/// Color gris.
-/// @type Color
-/// @group Colores
-$grey: #D9D9D9;
-
-/// Color amarillo para fondo principal.
-/// @type Color
-/// @group Colores
-$yellow: #FFC021;
-
-/// Color amarillo para fondo alternativo.
-/// @type Color
-/// @group Colores
-$bright-yellow: #e4d725;
-
-/// Color rojo para fondo principal.
-/// @type Color
-/// @group Colores
-$red: #ff5151;
-
-/// Color rojo para fondo alternativo.
-/// @type Color
-/// @group Colores
-$bright-red: #d32525;
-
-/// Color verde para fondo principal.
-/// @type Color
-/// @group Colores
-$green: #309b62;
-
-/// Color verde para fondo alternativo.
-/// @type Color
-/// @group Colores
-$bright-green: #25D366;
+/// Función para obtener el color del mapa
+@function get-color($color-name) {
+    @return map.get($colors, $color-name);
+  }
+  
 
 
 // 📌 Breakpoints

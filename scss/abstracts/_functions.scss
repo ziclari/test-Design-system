@@ -1,9 +1,10 @@
+@use 'variables' as var;
 /// Generador de clases utilitarias
 /// @example 
 ///     Genera clases que se pueden usar
 ///     <p class="mt-500 mb-300">Este div tiene margin-top grande y margin-bottom mediano</p>
 ///     <p class="p-700">Este div tiene un padding muy grande</p>
-/// @group funciones
+/// @group funciones generadoras
 $properties: (
   "margin": "m",
   "margin-top": "mt",
@@ -31,7 +32,23 @@ $properties: (
     '1000': 5.59
   ) {
     .#{$short}-#{$key} {
-      #{$prop}: get-size($key);
+      #{$prop}:var.get-size($key);
     }
   }
 }
+/// Generador de clases de color
+/// @example
+///     <div class="bg-red">Fondo rojo</div>
+///     <div class="color-red">texto color rojo</div>
+@each $name, $value in var.$colors {
+    // Generar clase de color de texto
+    .color-#{$name} {
+      color: $value;
+    }
+  
+    // Generar clase de color de fondo
+    .bg-#{$name} {
+      background-color: $value;
+    }
+  }
+  
