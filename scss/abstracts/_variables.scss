@@ -1,0 +1,149 @@
+/// Tamaño base utilizado para todas las unidades de medida.
+/// Este es el tamaño base utilizado para todas las mediciones en el proyecto. Puede ser útil como referencia para definir tamaños relativos de fuentes, márgenes, padding, etc.
+/// @type Size
+/// @group Tamaños
+$base-size: 1rem;
+
+/// Define todos los tamaños
+/// @group Tamaños
+@function get-size($key) {
+    $multipliers: (
+      '100': 0.33,
+      '200': 0.64,
+      '300': 0.8,
+      '400': 1,
+      '500': 1.33,
+      '600': 1.77,
+      '700': 2.37,
+      '800': 3.16,
+      '900': 4.21,
+      '1000': 5.59
+    );
+  
+    @if map-has-key($multipliers, $key) {
+      @return $base-size * map-get($multipliers, $key);
+    } @else {
+      @warn "Tamaño #{$key} no encontrado en la lista de multiplicadores.";
+      @return null;
+    }
+}
+
+// 📌 Colores
+
+/// Color de fondo principal (Header, secciones destacadas).
+/// @type Color
+/// @group Colores
+$dark-blue: #002669;
+
+/// Color de fondo alternativo (Secciones secundarias, contenido comercial).
+/// @type Color
+/// @group Colores
+$light-dark-blue: #183380;
+
+/// Color de acento con mejor contraste para fondos blancos, se usa en links y palabras resaltadas.
+/// @type Color
+/// @group Colores
+$dark-accent-blue: #0088CC;
+
+/// Color de acento general, para botones primarios y de acción, tiene un mejor contraste sobre el fondo alternativo.
+/// @type Color
+/// @group Colores
+$accent-blue: #40C4FF;
+
+/// Color auxiliar para detallar o contrastar en fondos blancos, uso de fondo en iconos o tablas para resaltar ligeramente o hacer menos aburrida la información.
+/// @type Color
+/// @group Colores
+$light-blue: #B2E1F9;
+
+/// Color de fondo principal y color de fondo de texto en el fondo alternativo.
+/// @type Color
+/// @group Colores
+$almost-white: #E6F2FF;
+
+/// Color de fondo para tarjetas en el fondo alternativo.
+/// @type Color
+/// @group Colores
+$transparent-teal: rgba(0, 236, 236, 0.05);
+
+/// Color de fondo para tarjetas en el fondo principal.
+/// @type Color
+/// @group Colores
+$transparent-white: rgba(255, 255, 255, 0.7);
+
+/// Color de texto en fondo principal.
+/// @type Color
+/// @group Colores
+$almost-black: #333333;
+
+/// Color blanco.
+/// @type Color
+/// @group Colores
+$white: #ffffff;
+
+/// Color negro.
+/// @type Color
+/// @group Colores
+$black: #000000;
+
+/// Color gris.
+/// @type Color
+/// @group Colores
+$grey: #D9D9D9;
+
+/// Color amarillo para fondo principal.
+/// @type Color
+/// @group Colores
+$yellow: #FFC021;
+
+/// Color amarillo para fondo alternativo.
+/// @type Color
+/// @group Colores
+$bright-yellow: #e4d725;
+
+/// Color rojo para fondo principal.
+/// @type Color
+/// @group Colores
+$red: #ff5151;
+
+/// Color rojo para fondo alternativo.
+/// @type Color
+/// @group Colores
+$bright-red: #d32525;
+
+/// Color verde para fondo principal.
+/// @type Color
+/// @group Colores
+$green: #309b62;
+
+/// Color verde para fondo alternativo.
+/// @type Color
+/// @group Colores
+$bright-green: #25D366;
+
+
+// 📌 Breakpoints
+
+/// Breakpoint para pantallas pequeñas (por debajo de 40em, dispositivos móviles).
+/// @type Media Query
+/// @group Breakpoints
+$breakpoint-sm: '(min-width: 40em)';
+
+/// Breakpoint para pantallas medianas (por debajo de 48em, tabletas y pantallas pequeñas).
+/// @type Media Query
+/// @group Breakpoints
+$breakpoint-md: '(min-width: 48em)';
+
+/// Breakpoint para pantallas grandes (por debajo de 64em, dispositivos de escritorio pequeños).
+/// @type Media Query
+/// @group Breakpoints
+$breakpoint-lg: '(min-width: 64em)';
+
+/// Breakpoint para pantallas extra grandes (por debajo de 80em, pantallas de escritorio más grandes).
+/// @type Media Query
+/// @group Breakpoints
+$breakpoint-xl: '(min-width: 80em)';
+
+/// Breakpoint para pantallas muy grandes (por debajo de 96em, monitores de alta resolución).
+/// @type Media Query
+/// @group Breakpoints
+$breakpoint-xxl: '(min-width: 96em)';

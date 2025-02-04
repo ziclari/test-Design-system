@@ -1,0 +1,37 @@
+/// Generador de clases utilitarias
+/// @example 
+///     Genera clases que se pueden usar
+///     <p class="mt-500 mb-300">Este div tiene margin-top grande y margin-bottom mediano</p>
+///     <p class="p-700">Este div tiene un padding muy grande</p>
+/// @group funciones
+$properties: (
+  "margin": "m",
+  "margin-top": "mt",
+  "margin-right": "mr",
+  "margin-bottom": "mb",
+  "margin-left": "ml",
+  "padding": "p",
+  "padding-top": "pt",
+  "padding-right": "pr",
+  "padding-bottom": "pb",
+  "padding-left": "pl",
+  "font-size": 'fs'
+);
+@each $prop, $short in $properties {
+  @each $key, $multiplier in (
+    '100': 0.33,
+    '200': 0.64,
+    '300': 0.8,
+    '400': 1,
+    '500': 1.33,
+    '600': 1.77,
+    '700': 2.37,
+    '800': 3.16,
+    '900': 4.21,
+    '1000': 5.59
+  ) {
+    .#{$short}-#{$key} {
+      #{$prop}: get-size($key);
+    }
+  }
+}

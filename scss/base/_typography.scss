@@ -1,0 +1,55 @@
+body {
+    line-height: 1.5;
+    font-size: get-size('400');
+    color: var(--color-text);
+    @include apply-utility('weight', 'medium');
+}
+
+.dark {
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'OpenSansCondensed';
+    text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1;
+}
+
+h1 {
+    font-size: get-size('900');
+}
+
+h2 {
+    font-size: get-size('800');
+}
+
+h3 {
+    font-size: get-size('700');
+}
+
+h4 {
+    font-size: get-size('600');
+}
+
+h5 {
+    font-size: get-size('500');
+}
+
+h6 {
+    font-size: get-size('400');
+}
+
+a {
+    color: var(--color-highlight);
+}
+
+strong {
+    color: var(--color-highlight);
+}

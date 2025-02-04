@@ -1,0 +1,50 @@
+@use "../abstracts/colors" as *;
+
+$themes: (
+  "lightblue": (
+    "background-header": $dark-blue,
+    "text-header": $almost-white,
+    "background": $almost-white,
+    "primary": $accent-blue,
+    "secondary": $light-dark-blue,
+    "text": $almost-black,
+    "background-card": $transparent-white,
+    "link": $dark-accent-blue,
+    "highlight": $dark-accent-blue,
+    "red": $red,
+    "yellow": $yellow,
+    "green": $green,
+    "grey": $grey,
+    "light-blue": $light-blue,
+  ),
+  "darkblue": (
+    "background-header": $dark-blue,
+    "text-header": $almost-white,
+    "background": $light-dark-blue,
+    "primary": $accent-blue,
+    "secondary": $dark-blue,
+    "text": $almost-white,
+    "background-card": $transparent-teal,
+    "link": $accent-blue,
+    "highlight": $accent-blue,
+    "red": $bright-red,
+    "yellow": $bright-yellow,
+    "green": $bright-green,
+    "grey": $grey,
+    "light-blue": $light-blue,
+  ),
+);
+
+@mixin apply-theme($theme-name) {
+  @each $key, $value in map-get($themes, $theme-name) {
+    --#{color-$key}: #{$value};
+  }
+}
+
+.lightblue {
+  @include apply-theme("lightblue");
+}
+
+.darkblue {
+  @include apply-theme("darkblue");
+}

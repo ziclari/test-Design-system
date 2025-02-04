@@ -1,0 +1,323 @@
+/// Genera un contenedor con un ancho y alto específico.
+/// Si no se proporciona un valor para el `height`, se usa el valor de `width` como predeterminado.
+/// @parameter {Length} $width - El ancho del contenedor.
+/// @parameter {Length} $height - La altura del contenedor.
+/// @parameter {Length} [$height=$width] - El alto del contenedor. Si no se especifica, se toma el valor de `$width`.
+/// @example
+/// // Usando ambos parámetros (ancho y alto)
+/// .container {
+///   @include box(200px, 300px);
+/// }
+/// 
+/// // Usando solo el ancho, el alto se ajustará al valor del ancho
+/// .container {
+///   @include box(200px);
+/// }
+/// @group Mixins
+@mixin box($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+/// Mixin para aplicar un contenedor flex con dirección de columna.
+/// @group Mixins
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+/// Mixin para centrar contenido dentro de un contenedor flex tanto vertical como horizontalmente.
+/// @group Mixins
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/// Mixin para centrar contenido en columna dentro de un contenedor flex.
+/// Combina el mixin `flex-center` y agrega la dirección de columna.
+/// @group Mixins
+@mixin flex-center-column {
+@include flex-center;
+    flex-direction: column;
+}
+
+/// Mixin para centrar contenido verticalmente dentro de un contenedor flex.
+/// @group Mixins
+@mixin flex-center-vertical {
+    display: flex;
+    align-items: center;
+}
+
+/// Mixin para centrar contenido horizontalmente dentro de un contenedor flex.
+/// @group Mixins
+@mixin flex-center-horizontal {
+    display: flex;
+    justify-content: center;
+}
+
+/// Mixin para aplicar estilos con un breakpoint específico.
+/// @parameter {String} $breakpoint - El nombre del breakpoint a utilizar.
+/// @group Mixins
+@mixin breakpoint($breakpoint) {
+    @if $breakpoint == sm {
+      @media #{$breakpoint-sm} {
+        @content;
+      }
+    }
+  
+    @else if $breakpoint == md {
+      @media #{$breakpoint-md} {
+        @content;
+      }
+    }
+  
+    @else if $breakpoint == lg {
+      @media #{$breakpoint-lg} {
+        @content;
+      }
+    }
+  
+    @else if $breakpoint == xl {
+      @media #{$breakpoint-xl} {
+        @content;
+      }
+    }
+  
+    @else if $breakpoint == xxl {
+      @media #{$breakpoint-xxl} {
+        @content;
+      }
+    }
+  
+    @else {
+      @warn "El breakpoint '#{$breakpoint}' no es válido.";
+    }
+}
+/// Mixin para aplicar reglas responsivas según breakpoints predefinidos.
+/// @parameter {String} $breakpoint - Punto de interrupción (e.g., $breakpoint-sm, $breakpoint-md).
+/// @parameter {Style} $styles - Estilos a aplicar dentro de la regla.
+/// @example 
+/// // Uso: Para aplicar estilos solo en pantallas pequeñas.
+/// .box {
+///   @include responsive($breakpoint-sm, {
+///     background-color: red;
+///   });
+/// }
+/// @group Mixins
+@mixin responsive($breakpoint, $styles) {
+    @media #{$breakpoint} {
+      @content;
+    }
+  }
+
+
+  
+/// Mixin para configurar una imagen de fondo que cubra todo el contenedor, sin repetirla y centrada.
+/// @example 
+/// // Uso: Para aplicar a un fondo de imagen que debe cubrir el área sin repetirse
+/// div {
+///   background-image: url("cute-doggo.png");
+///   @include cover-background;
+/// }
+/// @group Mixins
+@mixin cover-background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+
+/// Mixin para definir el tamaño de fuente, altura de línea y espaciado de letras, basado en la escala de tamaños definida.
+/// @parameter {Number} $size - Tamaño de fuente de la escala. Ejemplo: 300 para tamaño base.
+/// @parameter {Number} $line-height - Altura de línea (opcional, por defecto es normal).
+/// @parameter {Number} $letter-spacing - Espaciado entre letras (opcional, por defecto es normal).
+/// @example 
+/// // Uso: Para establecer el tamaño de fuente con la escala de tamaños.
+/// p {
+///   @include font-size(300, 1.5, 0.1);
+///   // Devuelve:
+///   // font-size: 0.8rem;
+///   // line-height: 1.5;
+///   // letter-spacing: 0.1em;
+/// }
+/// @group Mixins
+@mixin font-size($size, $line-height: normal, $letter-spacing: normal) {
+    $calculated-size: map-get($gorko-size-scale, $size) * 1rem;
+  
+    font-size: $calculated-size;
+  
+    // Ajuste para la altura de línea
+    @if $line-height == normal {
+      line-height: normal;
+    } @else {
+      line-height: $line-height / $calculated-size;
+    }
+  
+    // Ajuste para el espaciado entre letras
+    @if $letter-spacing == normal {
+      letter-spacing: normal;
+    } @else {
+      letter-spacing: #{$letter-spacing / $calculated-size}em;
+    }
+  }
+
+  
+  
+/// Mixin para aplicar bordes redondeados a un elemento.
+/// @parameter {Number} $radius - Valor de radio para los bordes.
+/// @example 
+/// // Uso: Para aplicar bordes redondeados uniformes.
+/// .box {
+///   @include border-radius(8px);
+/// }
+/// // Uso con diferentes radios para cada esquina.
+/// .box {
+///   @include border-radius(8px, 4px, 16px, 2px); // top-left, top-right, bottom-right, bottom-left
+/// }
+/// @group Mixins
+@mixin border-radius($top-left, $top-right: $top-left, $bottom-right: $top-left, $bottom-left: $top-left) {
+    border-top-left-radius: $top-left;
+    border-top-right-radius: $top-right;
+    border-bottom-right-radius: $bottom-right;
+    border-bottom-left-radius: $bottom-left;
+  }
+
+/// Mixin para aplicar una sombra a un elemento.
+/// @parameter {Number} $x-offset - Desplazamiento horizontal de la sombra.
+/// @parameter {Number} $y-offset - Desplazamiento vertical de la sombra.
+/// @parameter {Number} $blur - Radio de desenfoque de la sombra.
+/// @parameter {Color} $color - Color de la sombra (opcional).
+/// @example 
+/// // Uso: Para agregar una sombra con desplazamientos y desenfoque.
+/// .box {
+///   @include box-shadow(2px, 4px, 8px, rgba(0, 0, 0, 0.15));
+/// }
+/// // Uso con sombra suave.
+/// .box {
+///   @include box-shadow(0, 2px, 6px, rgba(0, 0, 0, 0.1));
+/// }
+/// @group Mixins
+@mixin box-shadow($x-offset: 0, $y-offset: 4px, $blur: 8px, $color: rgba(0, 0, 0, 0.2)) {
+    box-shadow: $x-offset $y-offset $blur $color;
+  }
+
+/// Mixin para aplicar un clearfix a un contenedor que contiene elementos flotantes.
+/// @example 
+/// // Uso: Para limpiar flotados dentro de un contenedor.
+/// .container {
+///   @include clearfix;
+/// }
+/// @group Mixins
+@mixin clearfix {
+    &::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+
+
+/// Mixin para aplicar propiedades de posicionamiento CSS.
+/// Este mixin aplica la propiedad `position` y acepta argumentos para `top`, `right`, `bottom`, y `left` si se proporcionan.
+/// Si no se pasan valores específicos para `top`, `right`, `bottom`, o `left`, no se aplican.
+/// @parameter {String} $position - El tipo de posicionamiento (absolute, fixed, relative).
+/// @parameter {List} $args - Los valores opcionales de `top`, `right`, `bottom`, `left`.
+/// @example
+/// .element {
+///   @include position(absolute, top 10px left 20px);
+///   // Esto aplicará: position: absolute; top: 10px; left: 20px;
+/// }
+/// @group Mixins
+@mixin position($position, $args) {
+    @each $o in top right bottom left {
+      $i: index($args, $o);
+      @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number {
+        #{$o}: nth($args, $i + 1);
+      }
+    }
+    position: $position;
+}
+  
+/// Mixin para posicionamiento absoluto.
+/// Utiliza el mixin `position` para aplicar la propiedad `position: absolute`.
+/// @parameter {List} $args - Los valores opcionales de `top`, `right`, `bottom`, `left`.
+/// @example
+/// .element {
+///   @include absolute(top 10px right 15px);
+///   // Esto aplicará: position: absolute; top: 10px; right: 15px;
+/// }
+/// @group Mixins
+@mixin absolute($args: '') {
+    @include position(absolute, $args);
+}
+
+/// Mixin para posicionamiento fijo.
+/// Utiliza el mixin `position` para aplicar la propiedad `position: fixed`.
+/// @parameter {List} $args - Los valores opcionales de `top`, `right`, `bottom`, `left`.
+/// @example
+/// .sticky-element {
+///   @include fixed(top 0 left 0);
+///   // Esto aplicará: position: fixed; top: 0; left: 0;
+/// }
+/// @group Mixins
+@mixin fixed($args: '') {
+    @include position(fixed, $args);
+}
+
+/// Mixin para posicionamiento relativo.
+/// Utiliza el mixin `position` para aplicar la propiedad `position: relative`.
+/// @parameter {List} $args - Los valores opcionales de `top`, `right`, `bottom`, `left`.
+/// @example
+/// .relative-element {
+///   @include relative(top 20px left 20px);
+///   // Esto aplicará: position: relative; top: 20px; left: 20px;
+/// }
+/// @group Mixins
+@mixin relative($args: '') {
+    @include position(relative, $args);
+}
+
+
+/// Mixin para mantener la relación de aspecto de un elemento (generalmente imágenes o fondos).
+/// Este mixin se utiliza para crear elementos escalables que mantienen una proporción específica.
+/// La proporción se define mediante dos valores: el ancho (`$x`) y el alto (`$y`).
+/// Si `$pseudo` es `true`, se usará un pseudo-elemento `&:before` para mantener la proporción en lugar de aplicarlo directamente al elemento.
+/// @parameter {Number} $x - El valor del ancho (proporción de ancho).
+/// @parameter {Number} $y - El valor del alto (proporción de alto).
+/// @parameter {Boolean} [$pseudo=false] - Si se pasa `true`, se usará un pseudo-elemento `&:before` para aplicar la relación de aspecto.
+/// @example
+/// div {
+///   @include responsive-ratio(16, 9);
+///   // Esto hará que el div tenga una relación de aspecto 16:9.
+/// }
+/// @group Mixins
+@mixin responsive-ratio($x, $y, $pseudo: false) {
+    $padding: unquote(($y / $x) * 100 + '%');
+    @if $pseudo {
+      &:before {
+        @include pseudo($pos: relative);
+        width: 100%;
+        padding-top: $padding;
+      }
+    } @else {
+      padding-top: $padding;
+    }
+  }
+  
+/// Mixin para aplicar un tamaño de fuente responsivo basado en el ancho de la pantalla (viewport).
+/// Usa la función `clamp()` para establecer un rango entre un tamaño de fuente mínimo y máximo,
+/// ajustándose dinámicamente entre los valores dependiendo del ancho del viewport.
+/// @param {String} $min-size - El tamaño mínimo de la fuente (por ejemplo, '12px').
+/// @param {String} $max-size - El tamaño máximo de la fuente (por ejemplo, '24px').
+/// @param {String} $min-vw - El valor mínimo del ancho de la pantalla (en vw, por ejemplo '320px').
+/// @param {String} $max-vw - El valor máximo del ancho de la pantalla (en vw, por ejemplo '1440px').
+/// @group Mixins
+@mixin responsive-font-size($min-size, $max-size, $min-vw, $max-vw) {
+    font-size: clamp(
+      $min-size,
+      calc(#{$min-size} + ($max-size - $min-size) * ((100vw - #{$min-vw}) / ($max-vw - $min-vw))),
+      $max-size
+    );
+  }
+  
