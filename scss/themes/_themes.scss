@@ -42,10 +42,16 @@ $themes: (
   }
 }
 
+body{
+  @include apply-theme("lightblue");
+}
+
 .lightblue {
   @include apply-theme("lightblue");
 }
 
 .darkblue {
   @include apply-theme("darkblue");
+  background-color: var(--color-background);
+  color: var(--color-text);
 }

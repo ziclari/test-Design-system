@@ -1,8 +1,9 @@
 @use '../abstracts' as ab;
 body {
     line-height: 1.5;
-    font-size:ab.get-size('400');
+    font-size: ab.get-size('400');
     color: var(--color-text);
+    font-family: 'OpenSans';
 }
 
 .dark {

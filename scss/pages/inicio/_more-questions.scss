@@ -2,7 +2,7 @@
 .questions-section {
     gap: 1rem;
     text-align: center;
-    @include ab.flex-column;
+    @include ab.flex-center-column;
     padding: 0 2rem;
     padding-top: 2rem;
     @include ab.media-query('md') {

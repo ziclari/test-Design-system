@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+// 6. Themes
+@use 'themes/themes';
 // 1. Vendors
 @use 'vendors/reset';
 
@@ -34,6 +36,3 @@
 @use 'pages/inicio/industry-allies';
 @use 'pages/inicio/more-questions';
 @use 'pages/inicio/solutions';
-
-// 6. Themes
-@use 'themes/themes';
