@@ -1,6 +1,6 @@
 {
   "name": "airontools-design-system",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "$ npx sass src/styles/base.scss dist/styles/base.css\r npm run dev",
   "main": "postcss.config.js",
   "directories": {

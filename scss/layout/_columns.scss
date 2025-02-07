@@ -51,6 +51,11 @@
             min-width: 0; // Asegura que los elementos no desborden.
         }
     }
+    @include ab.media-query('lg') {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); // Dos columnas en pantallas pequeñas
+        grid-template-rows: auto;
+    }
 }
 
 /// Diseño adaptable de cuatro elementos con ajuste de línea.
@@ -76,9 +81,61 @@
         flex-basis: 100%; // Ocupan todo el ancho en pantallas pequeñas
     }
 
-    @include ab.media-query('md') {
+    @include ab.media-query('sm') {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); // Dos columnas en pantallas medianas y grandes
+        grid-template-columns: repeat(2, 1fr); // Dos columnas en pantallas pequeñas
         grid-template-rows: auto;
+    }
+
+    @include ab.media-query('md') {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.five-column {
+    display: flex;
+    flex-wrap: wrap;
+    gap:ab.get-size('300');
+
+    > * {
+        flex-basis: 100%; // Ocupan todo el ancho en pantallas pequeñas
+    }
+
+    @include ab.media-query('sm') {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); // Dos columnas en pantallas pequeñas
+        grid-template-rows: auto;
+    }
+
+    @include ab.media-query('md') {
+        grid-template-columns: repeat(4, 1fr); // Tres columnas en pantallas medianas
+    }
+
+    @include ab.media-query('lg') {
+        grid-template-columns: repeat(5, 1fr); // Cuatro columnas en pantallas grandes
+    }
+}
+
+.six-column {
+    display: flex;
+    flex-wrap: wrap;
+    gap:ab.get-size('300');
+
+    > * {
+        flex-basis: 100%; // Ocupan todo el ancho en pantallas pequeñas
+    }
+
+    @include ab.media-query('sm') {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); // Dos columnas en pantallas pequeñas
+        grid-template-rows: auto;
+    }
+
+    @include ab.media-query('md') {
+        grid-template-columns: repeat(4, 1fr); // Tres columnas en pantallas medianas
+    }
+
+    @include ab.media-query('lg') {
+        grid-template-columns: repeat(6, 1fr); // Cuatro columnas en pantallas grandes
     }
 }

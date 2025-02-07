@@ -69,7 +69,7 @@
     &.large {
       @include ab.media-query('lg') {
         flex-direction: row;
-        max-height: 250px;
+        max-height: 270px;
         > * {
           flex: 1 1 50%; // Por defecto, cada hijo ocupa el 50%
         }

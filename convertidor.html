@@ -1,0 +1,442 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor de unidades</title>
+    <link rel="stylesheet" media="all" href="/css/global.css" />
+    <link rel="stylesheet" media="print" href="/fonts/fonts.css" onload="this.media='all'" />
+    <link rel="icon" type="image/x-icon" href="/images/icon.ico">
+    <style>
+        .active{
+            background-color: var(--color-light-blue);
+        }
+        #categories button{
+          padding: 10px;
+          border: none;
+          background-color: #bec0d673;
+          cursor: pointer;
+          border-radius: 5px;   
+        }
+        #categories button.active{
+            background-color: var(--color-light-blue);
+        }
+
+        .convertidor{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 5rem;
+        }
+        .convertidor > div {
+            flex: 1;
+        }
+        .convertidor textarea:disabled{
+            background-color: #ddd;
+        }
+        @media (max-width: 600px) {
+            .convertidor {
+                flex-direction: column;
+                align-items: center; /* Centra los elementos */
+            }
+
+            .convertidor > div,
+            .convertidor > button {
+                width: 100%; /* Hace que ocupen todo el ancho */
+                max-width: 300px; /* Opcional, para evitar que sean demasiado anchos en pantallas grandes */
+            }
+        }
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 1rem;
+            max-height: 400px;
+            max-width: 450px;
+        }
+
+        @media (max-width: 800px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Cuando el ancho sea menor a 400px, se usan 2 columnas */
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+    <div class="wrapper header__inner">
+        
+            <img src="/images/logo_pq.png" class="logo" alt="Logo" >  
+            <ul class="horizontal-list">
+            <li>Inicio
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6z"/></svg>
+            </li>
+            <li>Productos Destacados
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6z"/></svg>
+            </li>
+            <li>Soluciones
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6z"/></svg>
+            </li>
+            </ul>
+        <div class="cta-group" style="font-size: 16px;">
+            <button class="button ghost">Inicia Sesión</button>
+            <button class="button">Contáctanos</button>
+        </div>
+    </div>
+    </header>
+    
+    <article class="darkblue pt-500">
+        
+        <div class="wrapper flow">
+            <h1 class="fs-700">Conversor de Unidades</h1>
+            <p class="fs-500">Selecciona una categoría y convierte entre diferentes unidades</p>
+          </div>        
+    </article>
+    <svg preserveAspectRatio="none" class="wave" width="1440" height="100" viewBox="0 0 1440 134" fill="none" xmlns="http://www.w3.org/2000/svg"
+    ><rect width="1440" height="100" transform="matrix(-1 0 0 -1 1440 134)" fill="#E6F2FF"></rect>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M1440 134L1359.49 114.333C1280.18 94.6667 1119.15 55.3333 959.333 59.2667C799.512 63.2 638.488 110.4 478.667 114.333C318.845 118.267 157.822 78.9333 78.5116 59.2667L-2.00006 39.6V16H78.5116C157.822 16 318.845 16 478.667 16C638.488 16 799.512 16 959.333 16C1119.15 16 1280.18 16 1359.49 16H1440V134Z" fill="url(#_3_102__paint0_linear_3_102)"></path>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M1440 82L1359.49 68.3333C1280.18 54.6667 1119.16 27.3333 959.333 30.0667C799.512 32.8 638.488 65.6 478.667 68.3333C318.845 71.0667 157.822 43.7333 78.5116 30.0667L-1.99994 16.4V0H78.5116C157.822 0 318.845 0 478.667 0C638.488 0 799.512 0 959.333 0C1119.16 0 1280.18 0 1359.49 0H1440V82Z" fill="#183380"></path>
+    <defs><linearGradient id="_3_102__paint0_linear_3_102" x1="-2" y1="75" x2="1440" y2="75" gradientUnits="userSpaceOnUse"><stop offset="0.4" stop-color="#55C4EF"></stop><stop offset="1" stop-color="#E6F2FF"></stop></linearGradient></defs></svg>
+    
+      
+
+
+
+    <div class="wrapper flow mt-900 two-column">
+        <div id="categories" class="grid"> 
+            <button class="active">Área</button>
+            <button>Volumen</button>
+            <button>Longitud</button>
+            <button>Potencia</button>
+            <button>Energía</button>
+            <button>Fuerza</button>
+            <button>Momento de Fuerza (Torque)</button>
+            <button>Presión</button>
+        </div>
+        <div>
+            <!-- Convertidor -->
+            <div class="convertidor">
+                <div>
+                    <textarea type="text" id="inputValue" placeholder="Ingresa un valor">0</textarea>
+                    <select id="fromUnit"></select>
+                </div>
+
+                <button id="swapUnits" class="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m21 9l-4-4v3h-7v2h7v3M7 11l-4 4l4 4v-3h7v-2H7z"/></svg>
+                </button>
+                
+                <div>
+                    <textarea type="text" id="outputValue" disabled>0</textarea>
+                    <select id="toUnit"></select>
+                </div>
+            </div>
+            <!-- Nuevos botones y campo de separador -->
+            <div class="mt-600 flow">
+                <input type="text" id="separatorInput" placeholder="Separador (ejemplo: ,)">
+                <select id="decimalPlaces">
+                    <option value="0">0 decimales</option>
+                    <option value="1">1 decimal</option>
+                    <option value="2">2 decimales</option>
+                    <option value="3">3 decimales</option>
+                    <option value="4" selected>4 decimales</option>
+                    <option value="5">5 decimales</option>
+                    <option value="6">6 decimales</option>
+                    <option value="7">7 decimales</option>
+                    <option value="8">8 decimales</option>
+                    <option value="9">9 decimales</option>
+                    <option value="10">10 decimales</option>
+                </select>
+            </div>
+            
+            <!-- Tabla con información -->
+            <div class="mt-600 flow">
+                <h2 id="categoryTitle" class="fs-600 mb-500">Unidades de referencia - Dimensión</h2>
+                <table id="unitsTable">
+                    <thead>
+                        <tr>
+                            <th>Unidad</th>
+                            <th>Nombre</th>
+                            <th>Factor de conversión</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <!-- Filas de la tabla se llenan dinámicamente -->
+                    </tbody>
+                </table>
+                <p> <!--Otro color de fondo-->
+                    * Los factores de conversión están en relación a la unidad base de cada categoría:
+                    <br>- Dimensión: metros (m)
+                    <br>- Potencia: watts (w)
+                    <br>- Mecánica: joules (j)
+                    <br>- Fuerza: newtons (n)
+                    <br>- Momento de fuerza: newton-metro (nm)
+                    <br>- Presión: pascal (pa)
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       const unitFactors = {
+           "Área": {
+                m2: { name: "Metro cuadrado", toBase: 1 }, // Unidad base para área
+                cm2: { name: "Centímetro cuadrado", toBase: 0.0001 },
+                mm2: { name: "Milímetro cuadrado", toBase: 0.000001 },
+                km2: { name: "Kilómetro cuadrado", toBase: 1000000 },
+                ha: { name: "Hectárea", toBase: 10000 },
+                acre: { name: "Acre", toBase: 4046.86 },
+                ft2: { name: "Pie cuadrado", toBase: 0.092903 },
+                in2: { name: "Pulgada cuadrada", toBase: 0.00064516 },
+                mi2: { name: "Milla cuadrada", toBase: 2589988.11 }
+            },
+            "Longitud": {
+                m: { name: "Metro", toBase: 1 }, //Unidad base para longitud
+                cm: { name: "Centímetro", toBase: 0.01 },
+                mm: { name: "Milímetro", toBase: 0.001 },
+                km: { name: "Kilómetro", toBase: 1000 },
+                in: { name: "Pulgada", toBase: 0.0254 },
+                ft: { name: "Pies", toBase: 0.3048 },
+                yd: { name: "Yarda", toBase: 0.9144 },
+                mi: { name: "Milla", toBase: 1609.34 },
+                NM: { name: "Milla Náutica", toBase: 1852 },
+                µm: { name: "Micrómetro", toBase: 0.000001 },
+                nm: { name: "Nanómetro", toBase: 0.000000001 },
+                Å: { name: "Ångström", toBase: 0.0000000001 }
+            },
+            "Volumen": {
+                m3: { name: "Metro cúbico", toBase: 1 }, // Unidad base para volumen
+                cm3: { name: "Centímetro cúbico", toBase: 0.000001 },
+                L: { name: "Litro", toBase: 0.001 },
+                mL: { name: "Mililitro", toBase: 0.000001 },
+                ft3: { name: "Pie cúbico", toBase: 0.0283168 },
+                in3: { name: "Pulgada cúbica", toBase: 0.0000163871 },
+                gal: { name: "Galón", toBase: 0.00378541 },
+                bbl: { name: "Barril", toBase: 0.158987 }
+            },
+            "Potencia": {
+                W: { name: "Vatio", toBase: 1 }, // Unidad base para potencia
+                kW: { name: "Kilovatio", toBase: 1000 },
+                MW: { name: "Megavatio", toBase: 1000000 },
+                HP: { name: "Caballo de fuerza", toBase: 745.7 },
+                BTU_h: { name: "BTU por hora", toBase: 0.29307107018 },
+                erg_s: { name: "Ergio por segundo", toBase: 0.0000001 }
+            },
+            "Energía": {
+                J: { name: "Julio", toBase: 1 }, // Unidad base para energía
+                kJ: { name: "Kilojulio", toBase: 1000 },
+                MJ: { name: "Megajulio", toBase: 1000000 },
+                kcal: { name: "Kilocaloría", toBase: 4184 },
+                cal: { name: "Caloría", toBase: 4.184 },
+                kWh: { name: "Kilovatio-hora", toBase: 3600000 },
+                BTU: { name: "BTU", toBase: 1055.06 },
+                erg: { name: "Ergio", toBase: 0.0000001 },
+                eV: { name: "Electronvoltio", toBase: 1.60218e-19 }
+            },
+            "Fuerza": {
+                N: { name: "Newton", toBase: 1 }, // Unidad base para fuerza
+                dyn: { name: "Dina", toBase: 0.00001 },
+                pdl: { name: "Poundal", toBase: 0.138255 },
+                J_m: { name: "Julio por metro", toBase: 1 },
+                Pa_m2: { name: "Pascal por metro cuadrado", toBase: 1 },
+                lbf: { name: "Libra fuerza", toBase: 4.44822 },
+                kgf: { name: "Kilogramo fuerza", toBase: 9.80665 }
+            },
+            "Momento de Fuerza (Torque)": {
+                Nm: { name: "Newton-metro", toBase: 1 }, // Unidad base para momento de fuerza
+                dyn_cm: { name: "Dina-centímetro", toBase: 0.0000001 },
+                lb_ft: { name: "Libra-pie", toBase: 1.35582 }
+            },
+            "Presión": {
+                Pa: { name: "Pascal", toBase: 1 }, // Unidad base para presión
+                kPa: { name: "Kilopascal", toBase: 1000 },
+                MPa: { name: "Megapascal", toBase: 1000000 },
+                bar: { name: "Bar", toBase: 100000 },
+                atm: { name: "Atmósfera", toBase: 101325 },
+                Torr: { name: "Torr", toBase: 133.322 },
+                psi: { name: "Libra por pulgada cuadrada", toBase: 6894.76 },
+                mmHg: { name: "Milímetro de mercurio", toBase: 133.322 },
+                inH2O: { name: "Pulgada de agua", toBase: 249.082 }
+            }
+        };
+
+        const categories = document.querySelectorAll("#categories button");
+        let inputValue = document.getElementById("inputValue");
+        let outputValue = document.getElementById("outputValue");
+        const fromUnitSelect = document.getElementById("fromUnit");
+        const toUnitSelect = document.getElementById("toUnit");
+        const swapUnitsBtn = document.getElementById("swapUnits");
+        const decimalPlaces = document.getElementById("decimalPlaces");
+
+        const separatorInput = document.getElementById("separatorInput");
+
+        let selectedCategory = "Área";
+
+        function populateUnits() {
+            fromUnitSelect.innerHTML = "";
+            toUnitSelect.innerHTML = "";
+            
+            for (let unit in unitFactors[selectedCategory]) {
+                fromUnitSelect.innerHTML += `<option value="${unit}">${unitFactors[selectedCategory][unit].name}</option>`;
+                toUnitSelect.innerHTML += `<option value="${unit}">${unitFactors[selectedCategory][unit].name}</option>`;
+            }
+            calculateConversion();
+        }
+
+        function updateUnitsTable() {
+            document.getElementById("categoryTitle").textContent = `Unidades de referencia - ${selectedCategory}`;
+            const tableBody = document.getElementById("unitsTable").querySelector("tbody");
+            tableBody.innerHTML = "";
+            for (let unit in unitFactors[selectedCategory]) {
+                tableBody.innerHTML += `<tr><td>${unit}</td><td>${unitFactors[selectedCategory][unit].name}</td><td>${unitFactors[selectedCategory][unit].toBase}</td></tr>`;
+            }
+        }
+
+        /*function calculateConversion() {
+            // Buscar unidad seleccionada en la tabla
+            const fromUnit = fromUnitSelect.value;
+            const toUnit = toUnitSelect.value;
+            // Extraer .toBase de la unidad seleccionada de entrada
+            const fromUnitFactor = unitFactors[selectedCategory][fromUnit].toBase;
+            // Extraer valor de input (inputValue)
+            const inputVal = parseFloat(inputValue.value);
+            // Extraer .toBase de la unidad seleccionada de salida
+            const toUnitFactor = unitFactors[selectedCategory][toUnit].toBase;
+            // Realizar la siguiente fórmula:
+            // inputValue.value * valor .toBase de la unidad seleccionada de entrada / valor .toBase de la unidad seleccionada de salida
+            const result = (inputVal * fromUnitFactor) / toUnitFactor;
+            // Poner el valor en outputValue
+            outputValue.value = result;
+        }*/
+
+        function calculateConversion() {
+            const fromUnit = fromUnitSelect.value;
+            const toUnit = toUnitSelect.value;
+            const fromUnitFactor = unitFactors[selectedCategory][fromUnit].toBase;
+            const toUnitFactor = unitFactors[selectedCategory][toUnit].toBase;
+            const decimalPlacesValue = parseInt(decimalPlaces.value);
+            // Modo masa: convertir múltiples valores
+            const separator = separatorInput.value.trim() || ", "; // Separador por defecto: coma
+            const inputValues = inputValue.value
+                .split(separator) // Dividir por el separador
+                .map(val => val.trim()) // Eliminar espacios en blanco
+                .filter(val => val !== "") // Eliminar valores vacíos
+                .map(val => parseFloat(val)); // Convertir a números
+            // Convertir cada valor
+            const results = inputValues.map(val => {
+                return ((val * fromUnitFactor) / toUnitFactor).toFixed(decimalPlacesValue);
+            });
+            // Unir los resultados con el mismo separador
+            outputValue.value = results.join(separator);
+        }
+
+        categories.forEach(button => {
+            button.addEventListener("click", () => {
+                categories.forEach(btn => btn.classList.remove("active"));
+                button.classList.add("active");
+                selectedCategory = button.textContent;
+                populateUnits();
+                updateUnitsTable();
+            });
+        });
+
+        inputValue.addEventListener("input", ()=> {
+            calculateConversion()
+        });
+        fromUnitSelect.addEventListener("change", () => {
+            calculateConversion();
+        });
+
+        toUnitSelect.addEventListener("change", () => {
+            calculateConversion();
+        });
+        swapUnitsBtn.addEventListener("click", () => {
+            let temp = fromUnitSelect.value;
+            fromUnitSelect.value = toUnitSelect.value;
+            toUnitSelect.value = temp;
+            calculateConversion(); // Recalcular después de intercambiar
+        });
+        separatorInput.addEventListener("input", () => {
+            calculateConversion();
+        });
+        decimalPlaces.addEventListener("change", () => {
+            calculateConversion();
+        });
+        populateUnits();
+        updateUnitsTable();
+    </script>
+    
+<section class="darkblue mt-900" style="border-bottom: 8px solid var(--color-primary);">
+<svg preserveAspectRatio="none" class="wave" width="1440" height="100" viewBox="0 0 1440 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1440" height="100" fill="#E6F2FF"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.399904L80.5117 20.0666C159.822 39.7332 320.845 79.0666 480.667 75.1332C640.488 71.1999 801.512 23.9999 961.333 20.0666C1121.16 16.1332 1282.18 55.4666 1361.49 75.1332L1442 94.7999V118.4H1361.49C1282.18 118.4 1121.16 118.4 961.333 118.4C801.512 118.4 640.488 118.4 480.667 118.4C320.845 118.4 159.822 118.4 80.5117 118.4H0V0.399904Z" fill="url(#_3_284__paint0_linear_3_284)"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M0 52.3999L80.5117 66.0666C159.822 79.7332 320.845 107.067 480.667 104.333C640.488 101.6 801.512 68.7999 961.333 66.0666C1121.15 63.3332 1282.18 90.6666 1361.49 104.333L1442 118V134.4H1361.49C1282.18 134.4 1121.15 134.4 961.333 134.4C801.512 134.4 640.488 134.4 480.667 134.4C320.845 134.4 159.822 134.4 80.5117 134.4H0V52.3999Z" fill="#183380"></path><defs><linearGradient id="_3_284__paint0_linear_3_284" x1="1442" y1="59.3999" x2="0" y2="59.3999" gradientUnits="userSpaceOnUse"><stop offset="0.4" stop-color="#55C4EF"></stop><stop offset="1" stop-color="#E6F2FF"></stop></linearGradient></defs></svg>
+</section>
+
+  
+  <footer class="footer">
+    <div class="footer-container wrapper">
+        <div class="footer-column">
+            <img src="/images/logo_pq.png" alt="Iron Tools Logo" class="footer-logo">
+            <p>Únete a nuestro boletín para recibir novedades y lanzamientos.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Ingresa tu correo">
+                <button type="submit" class="button">Suscribirse
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 11v2h12l-5.5 5.5l1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5L16 11z"/></svg>
+                </button>
+            </form>
+            <p class="privacy-notice">Al suscribirte, aceptas nuestra Política de Privacidad y consientes recibir actualizaciones.</p>
+        </div>
+  
+        <div class="footer-column">
+            <h4>Columna Uno</h4>
+            <ul class="footer-links">
+                <li><a href="#">Productos Pneumáticos</a></li>
+                <li><a href="#">Herramientas de Torque</a></li>
+                <li><a href="#">Soluciones Hidráulicas</a></li>
+                <li><a href="#">Servicios de Reparación</a></li>
+                <li><a href="#">Atención al Cliente</a></li>
+            </ul>
+        </div>
+  
+        <div class="footer-column">
+            <h4>Columna Dos</h4>
+            <ul class="footer-links">
+                <li><a href="#">Nuestras Marcas</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
+                <li><a href="#">Blog Industrial</a></li>
+                <li><a href="#">Testimonios Clientes</a></li>
+                <li><a href="#">Política de Privacidad</a></li>
+            </ul>
+        </div>
+  
+        <div class="footer-column">
+            <h4>Síguenos</h4>
+            <ul class="social-links">
+                <li><a href="#"><span>Facebook</span></a></li>
+                <li><a href="#"><span>Instagram</span></a></li>
+                <li><a href="#"><span>X</span></a></li>
+                <li><a href="#"><span>LinkedIn</span></a></li>
+                <li><a href="#"><span>Youtube</span></a></li>
+            </ul>
+        </div>
+    </div>
+  
+    <div class="footer-bottom wrapper">
+        <p>© 2024 Airontools. Todos los derechos reservados.</p>
+        <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookies Settings</a>
+        </div>
+    </div>
+  </footer>
+
+</body>
+</html>

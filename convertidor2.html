@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Unidades</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .wrapper {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        #categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        #categories button {
+            padding: 10px;
+            border: none;
+            background: #ddd;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #categories button.active {
+            background-color: lightblue;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            width: 500px;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-height: 150px;
+            overflow-y: auto;
+            width: 100%;
+            z-index: 1;
+        }
+        .dropdown-content input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 1px solid #ccc;
+        }
+        .dropdown-content div {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .dropdown-content div div:hover {
+            background-color: #ddd;
+        }
+        div input, div button {
+            margin: 5px;
+            padding: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Conversor de Unidades</h1>
+        <p>Selecciona una categoría y convierte entre diferentes unidades</p>
+        <div id="categories"> 
+            <button class="active">Dimensión</button>
+            <button>Potencia</button>
+            <button>Mecánica</button>
+            <button>Fuerza</button>
+            <button>Momento de fuerza</button>
+            <button>Presión</button>
+        </div>
+        <div> 
+            <input type="number" id="inputValue" placeholder="Ingresa un valor" value="0">
+            
+            <div class="dropdown">
+                <button id="fromUnitBtn">Metros</button>
+                <div class="dropdown-content" id="fromUnitDropdown">
+                    <input type="text" placeholder="Buscar unidad...">
+                    <div></div>
+                </div>
+            </div>
+            
+            <button id="swapUnits">⇄</button>
+            <input type="text" id="outputValue" value="0" disabled>
+            
+            <div class="dropdown">
+                <button id="toUnitBtn">Kilómetros</button>
+                <div class="dropdown-content" id="toUnitDropdown">
+                    <input type="text" placeholder="Buscar unidad...">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2 id="categoryTitle">Unidades de referencia - Dimensión</h2>
+            <table id="unitsTable">
+                <thead>
+                    <tr><th>Unidad</th><th>Nombre</th><th>Factor de conversión</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const unitFactors = {
+            "Dimensión": { m: "Metros", km: "Kilómetros", cm: "Centímetros", mm: "Milímetros", in: "Pulgadas", ft: "Pies" },
+            "Potencia": { w: "Watts", kw: "Kilowatts", hp: "Caballos de fuerza" },
+            "Mecánica": { j: "Joules", kj: "Kilojoules", cal: "Calorías" },
+            "Fuerza": { n: "Newtons", kn: "Kilonewtons", lb: "Libras" },
+            "Momento de fuerza": { nm: "Newton-metro", knm: "Kilonewton-metro" },
+            "Presión": { pa: "Pascal", kpa: "Kilopascal", bar: "Bar" }
+        };
+
+        function populateDropdown(dropdown, category) {
+            const content = dropdown.querySelector("div");
+            content.innerHTML = "";
+            for (let unit in unitFactors[category]) {
+                let div = document.createElement("div");
+                div.textContent = unitFactors[category][unit];
+                div.dataset.value = unit;
+                div.addEventListener("click", () => {
+                    dropdown.previousElementSibling.textContent = div.textContent;
+                    dropdown.style.display = "none";
+                });
+                content.appendChild(div);
+            }
+        }
+
+        document.querySelectorAll(".dropdown button").forEach(button => {
+            button.addEventListener("click", () => {
+                let dropdown = button.nextElementSibling;
+                dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+            });
+        });
+
+        document.querySelectorAll(".dropdown-content input").forEach(input => {
+            input.addEventListener("input", function() {
+                let filter = this.value.toLowerCase();
+                let items = this.parentElement.querySelectorAll("div div");
+                items.forEach(item => {
+                    item.style.display = item.textContent.toLowerCase().includes(filter) ? "block" : "none";
+                });
+            });
+        });
+
+        populateDropdown(document.getElementById("fromUnitDropdown"), "Dimensión");
+        populateDropdown(document.getElementById("toUnitDropdown"), "Dimensión");
+    </script>
+</body>
+</html>
