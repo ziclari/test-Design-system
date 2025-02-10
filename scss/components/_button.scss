@@ -4,16 +4,15 @@
   display: inline-flex;
   line-height: 1;
   text-decoration: none;
-  border: 2px solid var(--color-primary); // Azul por defecto
-  background: var(--color-primary);      // Azul por defecto
-  color: black;
-  padding: 0.9rem 1.5rem;
+  border: 2px solid var(--color-primary);
+  background: var(--color-primary);
+  color: ab.get-color('black');
+  padding: 0.6rem 1.2rem;
   position: relative;
   transition: 0.3s;
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
-  padding: 0.8rem;
   font-size:ab.get-size('300');
   justify-content: center;
   font-weight: bold;
@@ -67,14 +66,20 @@
   flex-wrap: wrap;
 }
 
+.cta-group-vertical{
+  display: flex;
+  gap:ab.get-size('200');
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
 @include ab.media-query('md'){
   .button {
-    padding: 0.9rem 1.5rem;
+    padding: 0.6rem 1.5rem;
     font: inherit;
     font-weight: bold;
   }
   .button svg{
-    width:ab.get-size('500');
-    height:ab.get-size('500');
+    @include ab.box(ab.get-size('500'));
   }
 }

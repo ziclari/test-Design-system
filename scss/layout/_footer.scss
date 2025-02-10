@@ -1,7 +1,7 @@
 @use '../abstracts' as ab;
 .footer {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--color-background-footer);
+    color: var(--color-text-footer);
     padding: 40px 20px;
 
     .footer-container {
@@ -65,7 +65,7 @@
         }
 
         a {
-            color: #fff;
+            color: var(--color-text-footer);
             text-decoration: none;
 
             &:hover {
@@ -87,7 +87,7 @@
         }
 
         a {
-            color: #fff;
+            color: var(--color-text-footer);
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -115,7 +115,7 @@
 
     .footer-bottom-links {
         a {
-            color: #fff;
+            color: var(--color-text-footer);
             text-decoration: none;
             margin-left: 0; // Base
 
@@ -127,7 +127,7 @@
 
     .privacy-notice {
         font-size:ab.get-size('400'); // Base: tamaño más grande
-        color: #666;
+        color: var(--color-text-muted);
         margin-top: 10px;
         @include ab.media-query('lg') {
             font-size:ab.get-size('300'); // Tamaño más pequeño en pantallas grandes
