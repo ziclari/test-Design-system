@@ -8,8 +8,43 @@
 ///   <div>Elemento 3</div>
 /// </div>
 /// @group helpers
-.flow > * + * {
-    margin-top: var(--flow-space, 1rem);
+.flow {
+    --flow-space: 1rem;
+    
+    > * + * {
+        margin-top: var(--flow-space);
+    }
+
+    @each $size in ('100', '200', '300', '400', '500') {
+        &-#{$size} {
+        --flow-space: #{ab.get-size($size)};
+        }
+    }
+}
+
+/// Ancho completo para hijos directos
+/// @example
+/// <div class="full-width">
+///    <button>Botón 1</button>
+///    <button>Botón 2</button>
+/// </div>
+/// @group helpers
+.full-width {
+> * {
+    width: 100%;
+}
+}
+
+/// Centro absoluto (útil para modales o overlays)
+/// <div class="center-absolute">
+///    <div class="modal">
+///        <p>Este es un modal centrado</p>
+///    </div>
+/// </div>
+/// @group helpers
+.center-absolute {
+    @include ab.absolute(top 50% left 50%);
+    transform: translate(-50%, -50%);
 }
 
 /// Estilos para una lista horizontal.
