@@ -66,6 +66,70 @@ $themes: (
     "disabled": ab.get-color("blue-grey"),
     "text-muted": ab.get-color("dark-grey")
   ),
+  "lightred": (
+    "background-header": ab.get-color("dark-red"),
+    "text-header": ab.get-color("almost-white"),
+    "background": ab.get-color("almost-white"),
+    "primary": ab.get-color("red"),
+    "secondary": ab.get-color("dark-blue"),
+    "text": ab.get-color("almost-black"),
+    "background-card": ab.get-color("transparent-white"),
+    "link": ab.get-color("dark-red"),
+    "highlight": ab.get-color("red"),
+    "red": ab.get-color("red"),
+    "yellow": ab.get-color("yellow"),
+    "green": ab.get-color("green"),
+    "grey": ab.get-color("grey"),
+    "light-blue": ab.get-color("light-blue"),
+    "background-footer": ab.get-color("dark-red"),
+    "text-footer": ab.get-color("white"),
+    "background-input": ab.get-color("white"),
+    "text-input": ab.get-color("almost-black"),
+    "border": ab.get-color("grey"),
+    "button-primary": ab.get-color("red"),
+    "button-secondary": ab.get-color("dark-blue"),
+    "button-text": ab.get-color("white"),
+    "background-table-header": ab.get-color("dark-red"),
+    "background-table-body": ab.get-color("transparent-light-red"),
+    "success": ab.get-color("green"),
+    "warning": ab.get-color("yellow"),
+    "error": ab.get-color("red"),
+    "info": ab.get-color("dark-blue"),
+    "disabled": ab.get-color("light-grey"),
+    "text-muted": ab.get-color("dark-grey")
+  ),
+  "darkred": (
+    "background-header": ab.get-color("very-dark-blue"),
+    "text-header": ab.get-color("almost-white"),
+    "background": ab.get-color("dark-blue-grey"),
+    "primary": ab.get-color("bright-red"),
+    "secondary": ab.get-color("dark-blue"),
+    "text": ab.get-color("almost-white"),
+    "background-card": ab.get-color("transparent-dark-blue"),
+    "link": ab.get-color("light-red"),
+    "highlight": ab.get-color("bright-red"),
+    "red": ab.get-color("bright-red"),
+    "yellow": ab.get-color("bright-yellow"),
+    "green": ab.get-color("bright-green"),
+    "grey": ab.get-color("medium-grey"),
+    "light-blue": ab.get-color("accent-blue"),
+    "background-footer": ab.get-color("very-dark-blue"),
+    "text-footer": ab.get-color("almost-white"),
+    "background-input": ab.get-color("dark-blue"),
+    "text-input": ab.get-color("almost-white"),
+    "border": ab.get-color("medium-grey"),
+    "button-primary": ab.get-color("bright-red"),
+    "button-secondary": ab.get-color("dark-blue"),
+    "button-text": ab.get-color("almost-white"),
+    "background-table-header": ab.get-color("very-dark-blue"),
+    "background-table-body": ab.get-color("transparent-dark-blue"),
+    "success": ab.get-color("bright-green"),
+    "warning": ab.get-color("bright-yellow"),
+    "error": ab.get-color("bright-red"),
+    "info": ab.get-color("accent-blue"),
+    "disabled": ab.get-color("dark-grey"),
+    "text-muted": ab.get-color("medium-grey")
+  ),
 );
 
 @mixin apply-theme($theme-name) {
@@ -84,6 +148,16 @@ body{
 
 .darkblue {
   @include apply-theme("darkblue");
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+.lightred {
+  @include apply-theme("lightred");
+}
+
+.darkred {
+  @include apply-theme("darkred");
   background-color: var(--color-background);
   color: var(--color-text);
 }
