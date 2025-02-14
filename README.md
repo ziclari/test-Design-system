@@ -1,3 +1,8 @@
-# test-Design-system
-$ npx sass src/styles/base.scss dist/styles/base.css
-npm run dev
+# airontools-Design-system
+$ npx sass scss/main.scss css/global.css
+$ npm build
+
+# Este proyecto puede instalarse con npm o pnpm
+
+$ pnpm i airontools-design-system
+$ npm i airontools-design-system

@@ -1,0 +1,49 @@
+@use '../abstracts' as ab;
+.hero{
+    min-height: 84vh;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background: linear-gradient( transparent 80%,ab.get-color(light-dark-blue) 100%);
+    padding: 0px;
+    position: relative;
+    color:ab.get-color(almost-white);
+    h1 {
+        font-size:ab.get-size('800');
+        margin-bottom:ab.get-size('700');
+    }
+
+    strong {
+        color:ab.get-color(accent-blue);
+    }
+    p {
+        max-width: 800px;
+        font-size:ab.get-size('500');
+        margin-bottom:ab.get-size('200');
+    }
+    img{
+        max-width: 600px;
+    }
+    video {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        z-index: -1;
+        width: 100%;
+        object-fit: cover;
+        filter: brightness(0.5);
+        background-color:ab.get-color(light-dark-blue);
+      }
+    
+    @include ab.media-query('sm') {
+        h1{
+            font-size:ab.get-size('900');
+        }
+    }
+    @include ab.media-query('xxl') {
+        h1{
+            font-size:ab.get-size('1000');
+        }
+    }
+}

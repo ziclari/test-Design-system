@@ -1,0 +1,15 @@
+contacto.html
+faq.html
+herramienta.html
+index.html
+nosotros.html
+pagina-previa.html
+servicios.html
+vite.config.js
+images/*
+dist/*
+node_modules/*
+images/
+dist/
+node_modules/
+fonts/fonts.css

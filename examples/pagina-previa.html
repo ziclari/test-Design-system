@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" >
+    <title>CUBE CSS - Banking dashboard</title>
+    <link rel="stylesheet" media="all" href="../css/global.css" >
+    <link rel="stylesheet" media="print" href="/fonts/fonts.css" onload="this.media='all'">
+  
+    <style>
+    .hover-link{
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;  
+    }
+    .hover-link:hover{
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
+
+
+    /*Las soluciones estan en airontools*/
+    .parent-solutions .image-container {
+      background-size: cover;
+      background-position: center;
+      border-radius: 8px;
+      box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+      transition: background-image 0.5s ease-in-out;
+      background-image: url('https://images.unsplash.com/photo-1516216628859-9bccecab13ca?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    }
+    .hover-link:nth-child(2):hover ~ .image-container {
+      background-image: url('https://images.unsplash.com/photo-1507099985932-87a4520ed1d5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    }
+
+    .hover-link:nth-child(3):hover ~ .image-container {
+      background-image: url('https://images.unsplash.com/photo-1544725121-be3bf52e2dc8?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    }
+
+    .hover-link:nth-child(4):hover ~ .image-container {
+      background-image: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    }
+
+    .hover-link:nth-child(5):hover ~ .image-container {
+      background-image: url('https://images.unsplash.com/photo-1595856898575-9d187bd32fd6?q=80&w=1997&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    }
+
+
+    .parent-solutions {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 16px;
+        padding: 5rem 0;
+    }
+        
+    .parent-solutions .div1 {
+        grid-column: span 2 / span 2;
+    }
+
+    .parent-solutions .div2 {
+        grid-column-start: 1;
+        grid-row-start: 2;
+    }
+
+    .parent-solutions .div3 {
+        grid-column-start: 2;
+        grid-row-start: 2;
+    }
+
+    .parent-solutions .div4 {
+        grid-column-start: 1;
+        grid-row-start: 3;
+    }
+
+    .parent-solutions .div5 {
+        grid-column-start: 2;
+        grid-row-start: 3;
+    }
+
+    .parent-solutions .div6 {
+        grid-column: span 2 / span 2;
+        grid-row: span 3 / span 3;
+        grid-column-start: 3;
+        grid-row-start: 1;
+    }
+    /*No solo somos herramientas*/
+        
+    
+    .parent-other-solutions {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 16px;
+        padding-bottom: 5rem;
+    }
+        
+    .parent-other-solutions .div1 {
+        grid-column: span 4 / span 4;
+    }
+
+    .parent-other-solutions .div2 {
+        grid-column: span 2 / span 2;
+        grid-row: span 2 / span 2;
+        grid-row-start: 2;
+    }
+
+    .parent-other-solutions .div3 {
+      grid-column: span 2 / span 2;
+      grid-row: span 2 / span 2;
+      grid-column-start: 3;
+      grid-row-start: 2;
+    }
+        
+    </style>
+  </head>
+  
+<body class="font-base">
+
+<header class="site-head">
+  <div class="wrapper site-head__inner">
+      <div class="vertical-align">
+        <img src="/images/logo_pq.png" class="logo" alt="Logo" >  
+        <ul class="horizontal-list">
+          <li>Inicio
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6z"/></svg>
+          </li>
+          <li>Productos Destacados
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6z"/></svg>
+          </li>
+          <li>Soporte Técnico
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6z"/></svg>
+          </li>
+          <li>Más opciones
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6z"/></svg>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="cta-group">
+        <button class="button ghost">Inicia Sesión</button>
+        <button class="button">Contáctanos</button>
+      </div>
+  </div>
+</header>
+
+
+<main>
+
+  <section class="hero dark">
+    <div class="wrapper splitter">
+      <div class="flow">
+        <h1>
+        <strong>Herramientas</strong>  de <br>
+        Alto  <strong>Rendimiento</strong>
+        </h1>
+        <p>
+          Profesionales dedicados a la fabricación especializada
+          de herramientas neumáticas industriales y equipos de torque.
+        </p>
+        <div class="cta-group ">
+          <button class="button light-blue gap-top-400">¡Descubre Más!
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 11v2h12l-5.5 5.5l1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5L16 11z"/></svg>
+          </button>
+          <button class="button ghost gap-top-400">Contáctanos</button>
+        </div>
+      </div>
+      <img src="/images/taladro.png" alt="imagen de taladro" >  
+    </div>
+  </section>
+  <svg preserveAspectRatio="none" class="wave" width="1440" height="134" viewBox="0 0 1440 134" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="1440" height="134" transform="matrix(-1 0 0 -1 1440 134)" fill="#E6F2FF"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M1440 134L1359.49 114.333C1280.18 94.6667 1119.15 55.3333 959.333 59.2667C799.512 63.2 638.488 110.4 478.667 114.333C318.845 118.267 157.822 78.9333 78.5116 59.2667L-2 39.6V16H78.5116C157.822 16 318.845 16 478.667 16C638.488 16 799.512 16 959.333 16C1119.15 16 1280.18 16 1359.49 16H1440V134Z" fill="url(#_24_226__paint0_linear_24_226)"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M1440 82L1359.49 68.3333C1280.18 54.6667 1119.15 27.3333 959.333 30.0667C799.512 32.8 638.488 65.6 478.667 68.3333C318.845 71.0667 157.822 43.7333 78.5116 30.0667L-2 16.4V0H78.5116C157.822 0 318.845 0 478.667 0C638.488 0 799.512 0 959.333 0C1119.15 0 1280.18 0 1359.49 0H1440V82Z" fill="url(#_24_226__paint1_linear_24_226)"></path><defs><linearGradient id="_24_226__paint0_linear_24_226" x1="347" y1="75" x2="352.5" y2="240" gradientUnits="userSpaceOnUse"><stop offset="0.147733" stop-color="#A2DFF6"></stop><stop offset="0.989445" stop-color="#E6F2FF"></stop></linearGradient><linearGradient id="_24_226__paint1_linear_24_226" x1="316" y1="2.13083e-07" x2="316" y2="41" gradientUnits="userSpaceOnUse"><stop offset="0.005" stop-color="#55C4EF"></stop><stop offset="1" stop-color="#A2DFF6"></stop></linearGradient></defs></svg>
+    
+
+  <section class=" wrapper clients-section">
+    <h2 class="clients-section__title">Nuestros clientes</h2>
+    
+    <div class="clients-slider">
+      <div class="clients-slider__track">
+        <!-- Duplica los elementos originales para el efecto infinito -->
+        <div class="clients-slider__slide">
+          <img src="/images/logo_pq.png" alt="Cliente">
+        </div>
+        <div class="clients-slider__slide">
+          <img src="/images/logo_pq.png" alt="Cliente">
+        </div>
+        <div class="clients-slider__slide">
+          <img src="/images/logo_pq.png" alt="Cliente">
+        </div>
+        <div class="clients-slider__slide">
+          <img src="/images/logo_pq.png" alt="Cliente">
+        </div>
+        <div class="clients-slider__slide">
+          <img src="/images/logo_pq.png" alt="Cliente">
+        </div>
+        <div class="clients-slider__slide">
+          <img src="/images/logo_pq.png" alt="Cliente">
+        </div>
+        <div class="clients-slider__slide">
+          <img src="/images/logo_pq.png" alt="Cliente">
+        </div>
+        
+        <!-- Duplicados -->
+        <div class="clients-slider__slide">
+          <img src="/images/logo_pq.png" alt="Cliente">
+        </div>
+        <div class="clients-slider__slide">
+          <img src="/images/logo_pq.png" alt="Cliente">
+        </div>
+        <div class="clients-slider__slide">
+          <img src="/images/logo_pq.png" alt="Cliente">
+        </div>
+        <div class="clients-slider__slide">
+          <img src="/images/logo_pq.png" alt="Cliente">
+        </div>
+        <div class="clients-slider__slide">
+          <img src="/images/logo_pq.png" alt="Cliente">
+        </div>
+        <div class="clients-slider__slide">
+          <img src="/images/logo_pq.png" alt="Cliente">
+        </div>
+        <div class="clients-slider__slide">
+          <img src="/images/logo_pq.png" alt="Cliente">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrapper flow">
+    <h2>Categorías</h2>
+    <div style="display: flex; justify-content: space-between;">
+      <p class="text-500">Para Profesionales como tú</p>
+      <div class="cta-group">
+        <button class="button">
+          Descarga nuestro catálogo
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M2 12h2v5h16v-5h2v5c0 1.11-.89 2-2 2H4a2 2 0 0 1-2-2zm10 3l5.55-5.46l-1.42-1.41L13 11.25V2h-2v9.25L7.88 8.13L6.46 9.55z"/></svg>
+        </button>
+        <button class="button ghost">
+          Ver más
+        </button>
+      </div>
+    </div>
+
+    <div style="display: flex;">
+      <div class="card-product">
+        <img src="https://productos.airontool.com/images/engrapadora-aten-6.jpg" alt="">
+        <p>
+          <strong>
+            ENGRAPADORA 
+          </strong>
+          <br>
+          ATEN-6</p>
+      </div>
+      <div class="card-product">
+        <img src="https://productos.airontool.com/images/atornillador-ajuste-externo-atar-9.jpg" alt="">
+        <p>
+          <strong>
+            ATORNILLADOR AJUSTE EXTERNO
+          </strong> <br>
+          ATAR-9</p>
+      </div>
+      <div class="card-product">
+        <img src="https://productos.airontool.com/storage/productos/February2019/WKi0dMOlFcC86WBmliBh.jpg" alt="">
+        <p>
+          <strong>
+            BALANCÍN DE CARGA RETRÁCTIL
+          </strong> <br>
+          ATBA-22-30</p>
+      </div>
+      <div class="card-product">
+        <img src="https://productos.airontool.com/images/multiplicador-hasta-20000-nm-atmu-200.jpg" alt="">
+        <p> 
+        <strong>
+          MULTIPLICADOR HASTA 20,000 NM 
+        </strong> <br>
+        ATMU-200</p>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between;">
+      <div style="border-radius: 50%; border: 2px solid ;"></div>
+    </div>
+  </section>
+
+  <!--Soluciones de Airontools-->
+  <section class="dark">
+    <svg preserveAspectRatio="none" class="wave" width="1440" height="100" viewBox="0 0 1440 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1440" height="100" fill="#E6F2FF"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.399904L80.5117 20.0666C159.822 39.7332 320.845 79.0666 480.667 75.1332C640.488 71.1999 801.512 23.9999 961.333 20.0666C1121.16 16.1332 1282.18 55.4666 1361.49 75.1332L1442 94.7999V118.4H1361.49C1282.18 118.4 1121.16 118.4 961.333 118.4C801.512 118.4 640.488 118.4 480.667 118.4C320.845 118.4 159.822 118.4 80.5117 118.4H0V0.399904Z" fill="url(#_3_284__paint0_linear_3_284)"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M0 52.3999L80.5117 66.0666C159.822 79.7332 320.845 107.067 480.667 104.333C640.488 101.6 801.512 68.7999 961.333 66.0666C1121.15 63.3332 1282.18 90.6666 1361.49 104.333L1442 118V134.4H1361.49C1282.18 134.4 1121.15 134.4 961.333 134.4C801.512 134.4 640.488 134.4 480.667 134.4C320.845 134.4 159.822 134.4 80.5117 134.4H0V52.3999Z" fill="#183380"></path><defs><linearGradient id="_3_284__paint0_linear_3_284" x1="1442" y1="59.3999" x2="0" y2="59.3999" gradientUnits="userSpaceOnUse"><stop offset="0.4" stop-color="#55C4EF"></stop><stop offset="1" stop-color="#E6F2FF"></stop></linearGradient></defs></svg>
+      <div class="wrapper parent-solutions">
+        <div class="flow div1">
+          <h1>
+            Las <strong>soluciones</strong>
+            <br> están en Airon Tools
+          </h1>
+          <p class="text-500"> 
+            Al elegir Airontools, reduces significativamente el tiempo de inactividad de tus operaciones.
+          </p>
+        </div>
+        <a class="div2 card hover-link" href="#">
+          <div class="content flow">
+            <h4>Eficiencia garantizada</h4>
+            <p>
+              Herramientas industriales de alto rendimiento, diseñadas para optimizar procesos productivos y mejorar la eficiencia operativa
+            </p>
+          </div>
+        </a>
+      
+        <a class="div3 card hover-link" href="#">
+          <div class="content flow">
+            <h4>Soporte Personalizado</h4>
+            <p>
+              Enfocados en la eficiencia industrial, ofrecemos un servicio flexible y adaptado a las necesidades específicas de cada cliente
+            </p>
+          </div>
+        </a>
+        
+        <a class="div4 card hover-link" href="#">
+          <div class="content flow">
+          <h4>Asesoría Técnica</h4>
+          <p>
+            Nuestros expertos te brindan asesoría técnica personalizada, garantizando el uso eficiente de herramientas y la optimización de tus procesos productivos.
+          </p>
+        </div>
+        </a>
+        <a class="div5 card hover-link" href="#">
+          <div class="content flow">
+            <h4>Mantenimiento y reparación</h4>
+            <p>
+              Nuestro compromiso es ofrecerte un servicio flexible y adaptado a tus requerimientos.
+            </p>
+          </div>
+        </a>
+      
+        <div class="div6 image-container"></div>
+      </div>
+  </section>
+
+  
+  <svg preserveAspectRatio="none" class="wave" width="1440" height="100" viewBox="0 0 1440 134" fill="none" xmlns="http://www.w3.org/2000/svg"
+  ><rect width="1440" height="100" transform="matrix(-1 0 0 -1 1440 134)" fill="#E6F2FF"></rect>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M1440 134L1359.49 114.333C1280.18 94.6667 1119.15 55.3333 959.333 59.2667C799.512 63.2 638.488 110.4 478.667 114.333C318.845 118.267 157.822 78.9333 78.5116 59.2667L-2.00006 39.6V16H78.5116C157.822 16 318.845 16 478.667 16C638.488 16 799.512 16 959.333 16C1119.15 16 1280.18 16 1359.49 16H1440V134Z" fill="url(#_3_102__paint0_linear_3_102)"></path>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M1440 82L1359.49 68.3333C1280.18 54.6667 1119.16 27.3333 959.333 30.0667C799.512 32.8 638.488 65.6 478.667 68.3333C318.845 71.0667 157.822 43.7333 78.5116 30.0667L-1.99994 16.4V0H78.5116C157.822 0 318.845 0 478.667 0C638.488 0 799.512 0 959.333 0C1119.16 0 1280.18 0 1359.49 0H1440V82Z" fill="#183380"></path>
+  <defs><linearGradient id="_3_102__paint0_linear_3_102" x1="-2" y1="75" x2="1440" y2="75" gradientUnits="userSpaceOnUse"><stop offset="0.4" stop-color="#55C4EF"></stop><stop offset="1" stop-color="#E6F2FF"></stop></linearGradient></defs></svg>
+
+
+  <!--Otras Soluciones de Airontools-->
+<section class="parent-other-solutions wrapper flow">
+  <h1  class="div1" style="text-align: center; padding-top: 5rem;">No solo somos herramientas,
+    <br> ¡Somos <strong>aliados</strong> para tu industria! </h1>
+  
+  <img class="div2" src="https://images.unsplash.com/photo-1612171709946-7fc1298a5a53?q=80&w=2126&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  alt=""
+  style="border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+  max-height: 400px;
+  object-fit: cover;
+  width: 100%;
+  ">
+  <div class="flow div3" style="padding: 5rem 0;">
+    <h3>¡Conoce nuestro conversor de unidades!</h3>
+    <p class="text-500">Nos aseguramos de que tus herramientas estén siempre en óptimas condiciones para trabajar.</p>
+    <button class="button">
+      Conversor de unidades
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 11v2h12l-5.5 5.5l1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5L16 11z"/></svg>
+    </button>    
+</div>
+</section>
+  
+
+<section class="dark pad-bottom-600">
+  <svg preserveAspectRatio="none" class="wave" width="1440" height="100" viewBox="0 0 1440 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1440" height="100" fill="#E6F2FF"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.399904L80.5117 20.0666C159.822 39.7332 320.845 79.0666 480.667 75.1332C640.488 71.1999 801.512 23.9999 961.333 20.0666C1121.16 16.1332 1282.18 55.4666 1361.49 75.1332L1442 94.7999V118.4H1361.49C1282.18 118.4 1121.16 118.4 961.333 118.4C801.512 118.4 640.488 118.4 480.667 118.4C320.845 118.4 159.822 118.4 80.5117 118.4H0V0.399904Z" fill="url(#_3_284__paint0_linear_3_284)"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M0 52.3999L80.5117 66.0666C159.822 79.7332 320.845 107.067 480.667 104.333C640.488 101.6 801.512 68.7999 961.333 66.0666C1121.15 63.3332 1282.18 90.6666 1361.49 104.333L1442 118V134.4H1361.49C1282.18 134.4 1121.15 134.4 961.333 134.4C801.512 134.4 640.488 134.4 480.667 134.4C320.845 134.4 159.822 134.4 80.5117 134.4H0V52.3999Z" fill="#183380"></path><defs><linearGradient id="_3_284__paint0_linear_3_284" x1="1442" y1="59.3999" x2="0" y2="59.3999" gradientUnits="userSpaceOnUse"><stop offset="0.4" stop-color="#55C4EF"></stop><stop offset="1" stop-color="#E6F2FF"></stop></linearGradient></defs></svg>
+    <div class="wrapper vertical-align column flow">
+      <h2>¿Aún tienes dudas?</h2>
+      <p class="text-500">Estamos aquí para ayudarte con cualquier consulta</p>
+      <button class="button">Contactar</button>
+    </div>
+</section>
+  
+</main>
+
+
+</body>
+</html>

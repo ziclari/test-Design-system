@@ -1,0 +1,35 @@
+@use '../../abstracts' as ab;
+.questions-section {
+    gap: 1rem;
+    text-align: center;
+    @include ab.flex-center-column;
+    padding: 0 2rem;
+    padding-top: 2rem;
+    @include ab.media-query('md') {
+        flex-direction: row;
+        padding-top: 0;
+    }
+  
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+
+      p{
+        font-size:ab.get-size('500');
+      }
+    }
+  
+    .image {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+      max-height: 400px;
+  
+      @include ab.media-query('md') {
+        max-width: 400px;
+      }
+    }
+}
+  

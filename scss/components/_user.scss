@@ -1,0 +1,13 @@
+@use '../abstracts' as ab;
+.user {
+    display: inline-grid;
+    align-items: center;
+    grid-template-columns: max-content 50px;
+    grid-gap:ab.get-size('300');
+  
+    img {
+      border-radius: 100%;
+    }
+  }
+  
+  

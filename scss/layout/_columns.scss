@@ -1,0 +1,135 @@
+@use '../abstracts' as ab;
+/// Espaciado y distribución de elementos en un diseño de dos columnas.
+///
+/// Este crea un diseño de dos columnas con un margen superior en dispositivos pequeños
+/// y un diseño flexible con márgenes laterales en dispositivos medianos y grandes.
+///
+/// @example
+/// <div class="two-column">
+///   <div>Columna 1</div>
+///   <div>Columna 2</div>
+/// </div>
+/// @group layout
+.two-column {
+    > :last-child {
+        margin-top:ab.get-size('500'); // Margen superior por defecto (para pantallas pequeñas)
+    }
+
+    @include ab.media-query('md') {
+        display: flex;
+        > * {
+            flex-grow: 1;
+            flex-basis: 48%; // 48% en pantallas medianas
+        }
+
+        > :last-child {
+            margin-top: 0; // Eliminar margen superior
+            margin-left:ab.get-size('500'); // Agregar margen izquierdo
+        }
+    }
+}
+
+/// Diseño flexible de tres columnas con espaciado uniforme.
+///
+/// Este crea un diseño de tres columnas con espaciado uniforme entre los elementos
+/// en dispositivos medianos y grandes.
+///
+/// @example
+/// <div class="three-column">
+///   <div>Columna 1</div>
+///   <div>Columna 2</div>
+///   <div>Columna 3</div>
+/// </div>
+/// @group layout
+.three-column {
+    display: flex;
+    gap: ab.get-size('500'); // Espaciado uniforme entre todos los elementos.
+    flex-wrap: wrap;
+    @include ab.media-query('md') {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); // Dos columnas en pantallas pequeñas
+        grid-template-rows: auto;
+    }
+}
+
+/// Diseño adaptable de cuatro elementos con ajuste de línea.
+///
+/// Este crea un diseño de cuatro elementos que se ajusta a diferentes tamaños de pantalla.
+/// En pantallas pequeñas, los elementos se apilan verticalmente.
+/// En pantallas medianas y grandes, se muestran en un diseño de cuadrícula de dos columnas.
+///
+/// @example
+/// <div class="four-column">
+///   <div>Elemento 1</div>
+///   <div>Elemento 2</div>
+///   <div>Elemento 3</div>
+///   <div>Elemento 4</div>
+/// </div>
+/// @group layout
+.four-column {
+    display: flex;
+    flex-wrap: wrap;
+    gap:ab.get-size('300');
+
+    > * {
+        flex-basis: 100%; // Ocupan todo el ancho en pantallas pequeñas
+    }
+
+    @include ab.media-query('sm') {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); // Dos columnas en pantallas pequeñas
+        grid-template-rows: auto;
+    }
+
+    @include ab.media-query('md') {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.five-column {
+    display: flex;
+    flex-wrap: wrap;
+    gap:ab.get-size('300');
+
+    > * {
+        flex-basis: 100%; // Ocupan todo el ancho en pantallas pequeñas
+    }
+
+    @include ab.media-query('sm') {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); // Dos columnas en pantallas pequeñas
+        grid-template-rows: auto;
+    }
+
+    @include ab.media-query('md') {
+        grid-template-columns: repeat(4, 1fr); // Tres columnas en pantallas medianas
+    }
+
+    @include ab.media-query('lg') {
+        grid-template-columns: repeat(5, 1fr); // Cuatro columnas en pantallas grandes
+    }
+}
+
+.six-column {
+    display: flex;
+    flex-wrap: wrap;
+    gap:ab.get-size('300');
+
+    > * {
+        flex-basis: 100%; // Ocupan todo el ancho en pantallas pequeñas
+    }
+
+    @include ab.media-query('sm') {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); // Dos columnas en pantallas pequeñas
+        grid-template-rows: auto;
+    }
+
+    @include ab.media-query('md') {
+        grid-template-columns: repeat(4, 1fr); // Tres columnas en pantallas medianas
+    }
+
+    @include ab.media-query('lg') {
+        grid-template-columns: repeat(6, 1fr); // Cuatro columnas en pantallas grandes
+    }
+}

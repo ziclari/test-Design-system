@@ -1,0 +1,17 @@
+body {
+  overflow-x: hidden;
+  background-color: var(--color-background);
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+}
+
+:focus {
+  outline: 2px dotted;
+  outline-offset: 0.25rem;
+}

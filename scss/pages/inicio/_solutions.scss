@@ -1,0 +1,35 @@
+@use '../../abstracts' as ab;
+.solutions-header{
+  padding-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 16px;
+  p{
+    font-size:ab.get-size('500');
+    max-width: 800px;
+  }
+  @include ab.media-query('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.solutions {
+  display: grid;
+  grid-template-columns: 1fr; /* Apilado en pantallas pequeñas */
+  grid-template-rows: auto;
+  gap: 16px;
+  padding-top: 3rem;
+
+  @include ab.media-query('md') {
+      grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+      grid-template-rows: repeat(2, 1fr); /* Fila superior de 350px máx., fila inferior de 250px máx. */
+  }
+
+  .last {
+      grid-column: 1 / -1; 
+
+      @include ab.media-query('lg') {
+          grid-column: span 2 / span 2; 
+      }
+  }
+}

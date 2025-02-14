@@ -1,0 +1,238 @@
+@use '../abstracts' as ab;
+.button {
+  font: inherit;
+  display: inline-flex;
+  line-height: 1;
+  text-decoration: none;
+  border: 2px solid var(--color-primary);
+  background: var(--color-primary);
+  color: ab.get-color('black');
+  padding: 0.6rem 1.2rem;
+  position: relative;
+  transition: 0.3s;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size:ab.get-size('300');
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 8px;
+
+  &:hover {
+    filter: brightness(90%);
+  }
+
+  &:focus {
+    outline-offset: -0.4rem;
+    outline: 1px solid;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &.ghost {
+    border-color: var(--color-primary);
+    background: transparent;
+    color:  currentColor;
+  }
+  
+  &.dropdown{
+    padding-right: 2rem;
+    position: relative;
+  
+    &::after{
+      content: '▼';
+        position: absolute;
+        right: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.8em;
+    }
+  }
+
+  &.icon-only {
+    padding: 0.6rem;
+    aspect-ratio: 1 / 1;
+  }
+
+  // Botón de texto (sin borde ni fondo)
+  &.text {
+    background: transparent;
+    border: none;
+    color: var(--color-primary);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // Botón de acción flotante (FAB)
+  &.fab {
+    border-radius: 50%;
+    @include ab.box(3.5rem);
+    @include ab.flex-center();
+    padding: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  // Botón de alternancia (toggle)
+  &.toggle {
+    background: var(--color-background);
+    color: var(--color-text);
+    border-color: var(--color-border);
+
+    &.active {
+      background: var(--color-primary);
+      color: var(--color-button-text);
+      border-color: var(--color-primary);
+    }
+  }
+
+  // Botón de tamaño pequeño
+  &.small {
+    font-size: ab.get-size('300');
+    padding: 0.2rem 0.8rem;
+  }
+
+  // Botón de tamaño grande
+  &.large {
+    font-size: ab.get-size('400');
+    padding: 0.8rem 1.6rem;
+  }
+
+  // Estado de carga
+  &.loading {
+    opacity: 0.7;
+    cursor: wait;
+
+    &::after {
+      content: '';
+      width: 1em;
+      height: 1em;
+      border: 2px solid currentColor;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-left: 0.5em;
+    }
+  }
+
+  // Estado deshabilitado mejorado
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  // Transición mejorada
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  @each $name, $value in ab.$colors {
+    &.#{$name} {
+      background-color: ab.get-color(#{$name});
+      border-color: ab.get-color(#{$name});
+
+      &:hover {
+        filter: brightness(90%);
+      }
+    }
+
+    &.ghost.#{$name} {
+      background-color: transparent;
+      color: ab.get-color(#{$name});
+    }
+  }
+
+}
+
+
+.cta-group{
+  display: flex;
+  gap:ab.get-size('200');
+  flex-wrap: wrap;
+}
+
+.cta-group-vertical{
+  display: flex;
+  gap:ab.get-size('200');
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+@include ab.media-query('md'){
+  .button {
+    padding: 0.6rem 1.5rem;
+    font: inherit;
+    font-weight: bold;
+  }
+  .button svg{
+    @include ab.box(ab.get-size('500'));
+  }
+}
+
+// Grupo de botones en línea (sin espacio entre ellos)
+.button-group {
+  display: inline-flex;
+
+  .button {
+    border-radius: 0;
+
+    &:first-child {
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+
+    &:not(:last-child) {
+      border-right: none;
+    }
+  }
+}
+
+// Grupo de botones con disposición en cuadrícula
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: ab.get-size('200');
+}
+
+// Grupo de botones con disposición flexible y alineación personalizable
+.button-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: ab.get-size('200');
+
+  &.justify-start { justify-content: flex-start; }
+  &.justify-end { justify-content: flex-end; }
+  &.justify-center { justify-content: center; }
+  &.justify-between { justify-content: space-between; }
+  &.justify-around { justify-content: space-around; }
+}
+
+// Grupo de botones para barra de herramientas
+.button-toolbar {
+  display: flex;
+  gap: ab.get-size('200');
+  padding: ab.get-size('200');
+  background: var(--color-background-card);
+  border-radius: 8px;
+}

@@ -1,0 +1,118 @@
+@use 'sass:map';
+/// Tamaño base utilizado para todas las unidades de medida.
+/// Este es el tamaño base utilizado para todas las mediciones en el proyecto. Puede ser útil como referencia para definir tamaños relativos de fuentes, márgenes, padding, etc.
+/// @type Size
+/// @group Tamaños
+$base-size: 1rem;
+
+/// Define todos los tamaños
+/// @group Tamaños
+@function get-size($key) {
+    $multipliers: (
+      '100': 0.33,
+      '200': 0.64,
+      '300': 0.8,
+      '400': 1,
+      '500': 1.33,
+      '600': 1.77,
+      '700': 2.37,
+      '800': 3.16,
+      '900': 4.21,
+      '1000': 5.59
+    );
+  
+    @if map.has-key($multipliers, $key) {
+      @return $base-size * map.get($multipliers, $key);
+    } @else {
+      @warn "Tamaño #{$key} no encontrado en la lista de multiplicadores.";
+      @return null;
+    }
+}
+
+/// dark-blue - Color de fondo principal, usado en el header y secciones destacadas.
+/// light-dark-blue - Color de fondo alternativo, utilizado en secciones secundarias y contenido comercial.
+/// dark-accent-blue - Color de acento con buen contraste para fondos blancos, ideal para links y palabras resaltadas.
+/// accent-blue - Color de acento general para botones primarios y de acción, con buen contraste sobre el fondo alternativo.
+/// light-blue - Color auxiliar para detallar o contrastar en fondos blancos, usado en iconos o tablas para resaltar ligeramente.
+/// almost-white - Color de fondo principal y fondo de texto en el fondo alternativo.
+/// transparent-teal - Color de fondo para tarjetas en el fondo alternativo.
+/// transparent-white - Color de fondo para tarjetas en el fondo principal.
+/// almost-black - Color de texto en fondo principal.
+/// white - Color blanco.
+/// black - Color negro.
+/// grey - Color gris, utilizado para detalles y fondos sutiles.
+/// yellow - Color amarillo para el fondo principal.
+/// bright-yellow - Color amarillo para el fondo alternativo.
+/// red - Color rojo para el fondo principal.
+/// bright-red - Color rojo para el fondo alternativo.
+/// green - Color verde para el fondo principal.
+/// bright-green - Color verde para el fondo alternativo.
+// Definir los colores en un mapa
+$colors: (
+  "dark-blue": #002669,
+  "light-dark-blue": #183380,
+  "dark-accent-blue": #0088CC,
+  "accent-blue": #40C4FF,
+  "light-blue": #B2E1F9,
+  "almost-white": #E6F2FF,
+  "transparent-teal": rgba(0, 236, 236, 0.05),
+  "transparent-white": rgba(255, 255, 255, 0.7),
+  "almost-black": #333333,
+  "white": #ffffff,
+  "black": #000000,
+  "grey": #D9D9D9,
+  "blue-grey": #D4DCED,
+  "dark-grey": #666,
+  "yellow": #FFC021,
+  "bright-yellow": #e4d725,
+  "red": #ff5151,
+  "bright-red": #d32525,
+  "dark-red": #A31A1F,
+  "green": #309b62,
+  "bright-green": #25D366,
+  "light-grey": #f0f0f0,
+  "transparent-light-red": rgba(255, 200, 200, 0.1),
+  "transparent-dark-red": rgba(100, 0, 0, 0.1),
+  "very-dark-blue": #001133,
+  "dark-blue-grey": #0A1A2A,
+  "medium-grey": #999999,
+  "light-red": #FF8080,
+  "transparent-dark-blue": rgba(0, 17, 51, 0.2),
+);
+
+/// Función para obtener el color del mapa
+@function get-color($color-name) {
+    @return map.get($colors, $color-name);
+  }
+
+$border-radius-buttons: 8px;
+$border-radius-images: 8px;
+$border-radius-forms: 8px;
+$padding: 1rem;
+
+// 📌 Breakpoints
+
+/// Breakpoint para pantallas pequeñas (por debajo de 40em, dispositivos móviles).
+/// @type Media Query
+/// @group Breakpoints
+$breakpoint-sm: '(min-width: 40em)';
+
+/// Breakpoint para pantallas medianas (por debajo de 48em, tabletas y pantallas pequeñas).
+/// @type Media Query
+/// @group Breakpoints
+$breakpoint-md: '(min-width: 48em)';
+
+/// Breakpoint para pantallas grandes (por debajo de 64em, dispositivos de escritorio pequeños).
+/// @type Media Query
+/// @group Breakpoints
+$breakpoint-lg: '(min-width: 64em)';
+
+/// Breakpoint para pantallas extra grandes (por debajo de 80em, pantallas de escritorio más grandes).
+/// @type Media Query
+/// @group Breakpoints
+$breakpoint-xl: '(min-width: 80em)';
+
+/// Breakpoint para pantallas muy grandes (por debajo de 96em, monitores de alta resolución).
+/// @type Media Query
+/// @group Breakpoints
+$breakpoint-xxl: '(min-width: 96em)';

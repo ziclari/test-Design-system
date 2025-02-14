@@ -1,0 +1,56 @@
+@use '../abstracts' as ab;
+body {
+    line-height: 1.5;
+    font-size: ab.get-size('400');
+    color: var(--color-text);
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.dark {
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'OpenSansCondensed', "Roboto Condensed", 'Open Sans', Arial, sans-serif; 
+    text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1;
+}
+
+h1 {
+    font-size:ab.get-size('900');
+}
+
+h2 {
+    font-size:ab.get-size('800');
+}
+
+h3 {
+    font-size:ab.get-size('700');
+}
+
+h4 {
+    font-size:ab.get-size('600');
+}
+
+h5 {
+    font-size:ab.get-size('500');
+}
+
+h6 {
+    font-size:ab.get-size('400');
+}
+
+a {
+    color: var(--color-highlight);
+}
+
+strong {
+    color: var(--color-highlight);
+}
