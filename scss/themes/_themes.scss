@@ -161,3 +161,22 @@ body{
   background-color: var(--color-background);
   color: var(--color-text);
 }
+
+.text-muted{
+  color: var(--color-text-muted);
+}
+.disabled{
+  color: var(--color-disabled);
+}
+.info{
+  color: var(--color-info);
+}
+.error{
+  color: var(--color-error);
+}
+.warning{
+  color: var(--color-warning);
+}
+.success{
+  color: var(--color-success);
+}

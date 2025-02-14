@@ -42,16 +42,10 @@
 /// </div>
 /// @group layout
 .three-column {
+    display: flex;
+    gap: ab.get-size('500'); // Espaciado uniforme entre todos los elementos.
+    flex-wrap: wrap;
     @include ab.media-query('md') {
-        display: flex;
-        gap:ab.get-size('500'); // Espaciado uniforme entre todos los elementos.
-
-        > * {
-            flex: 1; // Todos los elementos tendrán el mismo tamaño.
-            min-width: 0; // Asegura que los elementos no desborden.
-        }
-    }
-    @include ab.media-query('lg') {
         display: grid;
         grid-template-columns: repeat(3, 1fr); // Dos columnas en pantallas pequeñas
         grid-template-rows: auto;

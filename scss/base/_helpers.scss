@@ -299,7 +299,6 @@
 /// @group helpers
     .flex {
     display: flex;
-    gap: ab.get-size('200');
 
     &-wrap { flex-wrap: wrap; }
     &-nowrap { flex-wrap: nowrap; }
@@ -336,6 +335,10 @@
         &-stretch { align-content: stretch; }
     }
 
+    &grow-1{
+      flex-grow: 1;
+    }
+
     @each $breakpoint in ('sm', 'md', 'lg', 'xl') {
         @include ab.media-query(#{$breakpoint}) {
         &-#{$breakpoint} {
@@ -367,4 +370,140 @@
     .hide-#{$breakpoint} { display: none; }
     .show-#{$breakpoint} { display: block; }
 }
+}
+
+/// Contenedores
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding, 1rem);
+    padding-right: var(--container-padding, 1rem);
+  
+    // Tamaños predefinidos
+    &-xs {
+      max-width: var(--container-xs, 480px);
+    }
+  
+    &-sm {
+      max-width: var(--container-sm, 640px);
+    }
+  
+    &-md {
+      max-width: var(--container-md, 768px);
+    }
+  
+    &-lg {
+      max-width: var(--container-lg, 1024px);
+    }
+  
+    &-xl {
+      max-width: var(--container-xl, 1280px);
+    }
+  
+    &-2xl {
+      max-width: var(--container-2xl, 1536px);
+    }
+  
+    // Contenedor fluido
+    &-fluid {
+      max-width: none;
+    }
+  
+    // Contenedor con padding responsive
+    &-responsive-padding {
+
+      padding-left: var(--padding-sm);
+      padding-right: var(--padding-sm);
+  
+      @include ab.media-query('md') {
+        padding-left: var(--padding-md);
+        padding-right: var(--padding-md);
+      }
+  
+      @include ab.media-query('lg') {
+        padding-left: var(--padding-lg);
+        padding-right: var(--padding-lg);
+      }
+    }
+  }
+
+/// Alturas fijas (usar con cuidado por el desbordamiento)
+.h {
+// Alturas fijas
+&-1 { height: 0.25rem; }
+&-2 { height: 0.5rem; }
+&-3 { height: 0.75rem; }
+&-4 { height: 1rem; }
+&-5 { height: 1.25rem; }
+&-6 { height: 1.5rem; }
+&-6 { height: 1.75rem; }
+&-7 { height: 2rem; }
+&-8 { height: 2.5rem; }
+&-9 { height: 2.75rem; }
+&-10 { height: 3rem; }
+// ... más tamaños según sea necesario
+
+// Alturas relativas al viewport
+&-10vh { height: 10vh; }
+&-25vh { height: 25vh; }
+&-50vh { height: 50vh; }
+&-75vh { height: 75vh; }
+&-100vh { height: 100vh; }
+
+// Altura completa
+&-full { height: 100%; }
+
+// Altura automática
+&-auto { height: auto; }
+
+// Altura mínima
+&-min {
+    &-screen { min-height: 100vh; }
+    &-full { min-height: 100%; }
+}
+
+// Altura máxima
+&-max {
+    &-screen { max-height: 100vh; }
+    &-full { max-height: 100%; }
+}
+}
+
+.scroll-y-auto{
+  overflow-y: auto;
+}
+
+.scroll-x-hidden {
+  overflow-x: hidden;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+  &::-webkit-scrollbar {
+      display: none;  /* Chrome, Safari, and Opera */
+  }
+}
+
+.position-sticky {
+  position: sticky;
+}
+
+.top-0 {
+  top: 0;
+}
+
+
+.sidebar {
+  @extend .flex, .flex-column, .w-300, .min-w-300, .h-100vh, .p-1-5, .scroll-y-auto, .scroll-x-hidden, .hide-scrollbar, .bg-black, .position-sticky, .top-0, .shadow-right;
+
+  &__content {
+      @extend .flex, .flex-column, .justify-space-between, .h-100;
+  }
+}
+
+.content {
+  @extend .flex-grow-1, .p-1-5, .scroll-y-auto, .bg-white;
 }
