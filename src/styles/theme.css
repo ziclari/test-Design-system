@@ -1,0 +1,186 @@
+/*Colores que se pueden usar en general*/
+/*Fuentes que se usan en general*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+  font-family: 'Open Sans Condensed';
+  src: url('/fonts/OpenSans-CondBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/OpenSans-VariableFont_wdth\,wght.ttf') format('truetype');
+  font-style: normal;
+}
+
+@theme {
+    --font-open-sans: 'Open Sans', Arial, Helvetica, sans-serif;
+    --font-open-condensed: 'Open Sans Condensed', "Roboto Condensed", 'Open Sans', Arial, sans-serif;
+    --color-*: initial;
+    --color-dark-blue: #002669;
+    --color-light-dark-blue: #183380;
+    --color-dark-accent-blue: #0088CC;
+    --color-accent-blue: #40C4FF;
+    --color-light-blue: #B2E1F9;
+    --color-almost-white: #E6F2FF;
+    --color-transparent-teal: rgba(0, 236, 236, 0.05);
+    --color-transparent-white: rgba(255, 255, 255, 0.7);
+    --color-almost-black: #333333;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-grey: #D9D9D9;
+    --color-blue-grey: #D4DCED;
+    --color-dark-grey: #666;
+    --color-yellow: #FFC021;
+    --color-bright-yellow: #e4d725;
+    --color-red: #ff5151;
+    --color-bright-red: #d32525;
+    --color-dark-red: #A31A1F;
+    --color-green: #309b62;
+    --color-bright-green: #25D366;
+    --color-light-grey: #f0f0f0;
+    --color-transparent-light-red: rgba(255, 200, 200, 0.1);
+    --color-transparent-dark-red: rgba(100, 0, 0, 0.1);
+    --color-very-dark-blue: #001133;
+    --color-dark-blue-grey: #0A1A2A;
+    --color-medium-grey: #999999;
+    --color-light-red: #FF8080;
+    --color-transparent-dark-blue: rgba(0, 17, 51, 0.2);
+    
+}
+
+/*Colores que son especificos de componentes*/
+:root {
+    --color-background-header: var(--color-dark-blue);
+    --color-text-header: var(--color-almost-white);
+    --color-background: var(--color-almost-white);
+    --color-primary: var(--color-accent-blue);
+    --color-secondary: var(--color-light-dark-blue);
+    --color-text: var(--color-almost-black);
+    --color-background-card: rgba(255, 255, 255, 0.7);
+    --color-link: var(--color-dark-accent-blue);
+    --color-info: var(--color-dark-accent-blue);
+    --color-error: var(--color-red);
+    --color-warning: var(--color-yellow);
+    --color-success: var(--color-green);
+    --color-grey: var(--color-grey);
+    --color-light-blue: var(--color-light-blue);
+    --color-background-footer: var(--color-black);
+    --color-text-footer: var(--color-white);
+    --color-background-input: var(--color-white);
+    --color-text-input: var(--color-almost-black);
+    --color-border: var(--color-grey);
+    --color-button-primary: var(--color-accent-blue);
+    --color-button-secondary: var(--color-light-dark-blue);
+    --color-button-text: var(--color-black);
+    --color-button-text-secondary: var(--color-white);
+    --color-background-table-header: var(--color-accent-blue);
+    --color-background-table-body: var(--color-light-blue);
+    --color-disabled: var(--color-blue-grey);
+    --color-text-muted: var(--color-dark-grey);
+  }
+
+  .darkblue {
+    --color-background-header: var(--color-dark-blue);
+    --color-text-header: var(--color-almost-white);
+    --color-background: var(--color-light-dark-blue);
+    --color-primary: var(--color-accent-blue);
+    --color-secondary: var(--color-dark-blue);
+    --color-text: var(--color-almost-white);
+    --color-background-card: var(--color-transparent-teal);
+    --color-link: var(--color-accent-blue);
+    --color-info: var(--color-accent-blue);
+    --color-error: var(--color-bright-red);
+    --color-warning: var(--color-bright-yellow);
+    --color-success: var(--color-bright-green);
+    --color-grey: var(--color-grey);
+    --color-light-blue: var(--color-light-blue);
+    --color-background-footer: var(--color-black);
+    --color-text-footer: var(--color-white);
+    --color-background-input: var(--color-white);
+    --color-text-input: var(--color-almost-black);
+    --color-border: var(--color-grey);
+    --color-button-primary: var(--color-accent-blue);
+    --color-button-secondary: var(--color-dark-blue);
+    --color-button-text: var(--color-black);
+    --color-button-text-secondary: var(--color-white);
+    --color-background-table-header: var(--color-dark-blue);
+    --color-background-table-body: var(--color-transparent-teal);
+    --color-disabled: var(--color-blue-grey);
+    --color-text-muted: var(--color-dark-grey);
+    
+    background-color: var(--color-background);
+    color: var(--color-text);
+  }
+
+  .lightred {
+    --color-background-header: var(--color-dark-red);
+    --color-text-header: var(--color-almost-white);
+    --color-background: var(--color-almost-white);
+    --color-primary: var(--color-red);
+    --color-secondary: var(--color-dark-blue);
+    --color-text: var(--color-almost-black);
+    --color-background-card: var(--color-transparent-white);
+    --color-link: var(--color-dark-red);
+    --color-highlight: var(--color-red);
+    --color-red: var(--color-red);
+    --color-yellow: var(--color-yellow);
+    --color-green: var(--color-green);
+    --color-grey: var(--color-grey);
+    --color-light-blue: var(--color-light-blue);
+    --color-background-footer: var(--color-dark-red);
+    --color-text-footer: var(--color-white);
+    --color-background-input: var(--color-white);
+    --color-text-input: var(--color-almost-black);
+    --color-border: var(--color-grey);
+    --color-button-primary: var(--color-red);
+    --color-button-secondary: var(--color-dark-blue);
+    --color-button-text: var(--color-white);
+    --color-background-table-header: var(--color-dark-red);
+    --color-background-table-body: var(--color-transparent-light-red);
+    --color-success: var(--color-green);
+    --color-warning: var(--color-yellow);
+    --color-error: var(--color-red);
+    --color-info: var(--color-dark-blue);
+    --color-disabled: var(--color-light-grey);
+    --color-text-muted: var(--color-dark-grey);
+
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+.darkred {
+    --color-background-header: var(--color-very-dark-blue);
+    --color-text-header: var(--color-almost-white);
+    --color-background: var(--color-dark-blue-grey);
+    --color-primary: var(--color-bright-red);
+    --color-secondary: var(--color-dark-blue);
+    --color-text: var(--color-almost-white);
+    --color-background-card: var(--color-transparent-dark-blue);
+    --color-link: var(--color-light-red);
+    --color-highlight: var(--color-bright-red);
+    --color-red: var(--color-bright-red);
+    --color-yellow: var(--color-bright-yellow);
+    --color-green: var(--color-bright-green);
+    --color-grey: var(--color-medium-grey);
+    --color-light-blue: var(--color-accent-blue);
+    --color-background-footer: var(--color-very-dark-blue);
+    --color-text-footer: var(--color-almost-white);
+    --color-background-input: var(--color-dark-blue);
+    --color-text-input: var(--color-almost-white);
+    --color-border: var(--color-medium-grey);
+    --color-button-primary: var(--color-bright-red);
+    --color-button-secondary: var(--color-dark-blue);
+    --color-button-text: var(--color-almost-white);
+    --color-background-table-header: var(--color-very-dark-blue);
+    --color-background-table-body: var(--color-transparent-dark-blue);
+    --color-success: var(--color-bright-green);
+    --color-warning: var(--color-bright-yellow);
+    --color-error: var(--color-bright-red);
+    --color-info: var(--color-accent-blue);
+    --color-disabled: var(--color-dark-grey);
+    --color-text-muted: var(--color-medium-grey);
+
+    background-color: var(--color-background);
+    color: var(--color-text);
+}

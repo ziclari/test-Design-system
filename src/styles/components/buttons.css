@@ -1,0 +1,117 @@
+@layer components {
+    .button {
+      @apply inline-flex items-center justify-center text-sm font-bold border-2 rounded-lg transition-all cursor-pointer px-6 py-2;
+      /* Colores y bordes personalizados */
+      border-color: transparent;
+      background-color: var(--color-button-primary);
+      color: var(--color-button-text);
+      line-height: 1;
+      text-decoration: none;
+      position: relative;
+      @apply text-base;
+  
+      &:hover {
+        @apply filter brightness-90;
+      }
+  
+      &:focus {
+        outline-offset: -0.4rem;
+        outline: 1px solid;
+      }
+  
+      &:active {
+        transform: scale(0.95);
+      }
+  
+      /* Variantes */
+      &.ghost {
+        border-color: var(--color-button-primary);
+        @apply bg-transparent text-current;
+      }
+
+      &.secondary {
+        background-color: var(--color-button-secondary);
+        color: var(--color-button-text-secondary);
+      }
+      &.dropdown {
+        padding-right: 2rem;
+        position: relative;
+  
+        &::after {
+          content: '▼';
+          position: absolute;
+          right: 0.75rem;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 0.8em;
+        }
+      }
+  
+      &.icon-only {
+        padding: 0.6rem;
+        aspect-ratio: 1 / 1;
+      }
+  
+      &.text {
+        @apply bg-transparent border-none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &.small {
+        @apply text-sm;
+      }
+      &.large {
+        
+        @apply text-lg;
+      }
+      /* Botón de acción flotante (FAB) */
+      &.fab {
+        @apply rounded-full shadow-md;
+        padding: 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+      }
+  
+      /* Estado de carga */
+      &.loading {
+        opacity: 0.7;
+        cursor: wait;
+  
+        &::after {
+          content: '';
+          width: 1em;
+          height: 1em;
+          border: 2px solid currentColor;
+          border-top-color: transparent;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+          margin-left: 0.5em;
+        }
+      }
+  
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
+  
+      /* Transición */
+      transition: all 0.3s ease;
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    }
+    
+  
+    /* Keyframe de carga */
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  }

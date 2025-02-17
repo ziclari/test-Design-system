@@ -1,0 +1,61 @@
+@layer components {
+  .card {
+    @apply mt-4 bg-[var(--color-background-card)] backdrop-blur-sm shadow-xl text-[var(--color-text)] p-2 rounded-lg transition-all duration-300 ease-in-out z-10 overflow-hidden;
+  }
+
+  .card-title {
+    @apply text-2xl font-semibold mb-2;
+  }
+
+  .card-text {
+    @apply text-grey;
+  }
+
+  .card-content {
+    @apply p-2;
+  }
+
+  .card-footer {
+    @apply my-4 flex justify-between items-center;
+  }
+
+  .icon-container {
+    @apply flex space-x-2;
+  }
+
+  .card-image {
+    @apply w-full h-48 object-cover rounded-xl;
+  }
+
+  .card-horizontal {
+    @apply flex flex-col md:flex-row; 
+  }
+
+  .card-horizontal-reverse {
+    @apply flex flex-col md:flex-row-reverse;
+  }
+
+  .card-horizontal-reverse .card-image, .card-horizontal .card-image{
+    @apply w-full md:w-72 h-48 md:h-auto object-cover;
+  }
+
+  .icon-card {
+    @apply rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow;
+  }
+
+  .icon-card-header {
+    @apply flex justify-center mb-4;
+  }
+
+  .icon-card-title {
+    @apply text-xl font-semibold text-center mb-2;
+  }
+
+  .icon-card-text {
+    @apply text-grey text-center;
+  }
+
+  .icon-card-horizontal {
+    @apply flex items-center space-x-4;
+  }
+}

@@ -1,0 +1,11 @@
+@layer components {
+   /* Contenedor generico para todo */
+    .wrapper {
+        @apply max-w-[30rem] mx-auto px-5 
+            sm:max-w-[40rem] 
+            md:max-w-[48rem] 
+            lg:max-w-[64rem] 
+            xl:max-w-[80rem] 
+            2xl:max-w-[96rem];
+    }
+}
