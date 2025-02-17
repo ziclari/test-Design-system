@@ -144,6 +144,32 @@
       width: 16px;
       height: 16px;
     }
-
+    /*Table styles*/
+    .table-group {
+      overflow-x: auto; 
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+    
+    th, td {
+      padding: 0.5rem 1rem;
+      text-align: left;
+    }
+    
+    th {
+      background-color: var(--color-background-table-header);
+      font-weight: bold;
+    }
+    
+    tr:nth-child(odd) td {
+      background-color: var(--color-background-table-body);
+    }
 }
 

@@ -13,3 +13,4 @@ images/
 dist/
 node_modules/
 fonts/fonts.css
+scss/*
