@@ -70,11 +70,11 @@
       &.fab {
         @apply rounded-full shadow-md;
         padding: 0;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 5px oklch(0% 0 0 / 20%);
   
         &:hover {
           transform: translateY(-2px);
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 8px oklch(0% 0 0 / 30%);
         }
       }
   
@@ -105,7 +105,7 @@
       transition: all 0.3s ease;
       &:hover {
         transform: translateY(-2px);
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 4px oklch(0% 0 0 / 20%);
       }
     }
     

@@ -48,11 +48,11 @@
     select,
     textarea {
       display: block;
-      border: 2px solid rgb(180, 180, 180);
+      border: 2px solid oklch(76.99% 0 0);
       border-radius: 8px;
       padding: 0.75rem;
       outline: none;
-      background: #ffffff;
+      background: var(--color-white);
       font-size: 1rem;
       width: 100%;
       max-width: 100%;
@@ -62,7 +62,7 @@
     input:hover,
     select:hover,
     textarea:hover {
-      border: 2px solid #5a5a5a; /* Grey -20% lightness */
+      border: 2px solid oklch(46.76% 0 0); /* Grey -20% lightness */
     }
 
     input:focus,
@@ -71,8 +71,8 @@
     input:active,
     select:active,
     textarea:active {
-      border: 2px solid #007bff; /* Accent blue */
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 6px rgba(0, 123, 255, 0.3);
+      border: 2px solid var(--color-accent-blue); /* Accent blue */
+      box-shadow: inset 0 1px 1px oklch(0% 0 0 / 10%), 0 0 6px oklch(var(--color-accent-blue) / 25%);
     }
 
     textarea {
@@ -95,8 +95,9 @@
     select {
       color: currentColor;
       -webkit-appearance: none;
+      appearance: none;
       -moz-appearance: none;
-      background-color: #ffffff;
+      background-color: var(--color-white);
       background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAJBAMAAADN8WE8AAAAJ1BMVEUAAABHcEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB9YSk7AAAADXRSTlPXABaehSjPsTwKw2xUcKPlSQAAADtJREFUCNdjMGBgYGAWBAKGACCLFcwSAbIcwSyhBAY2RTBLcAMDtyCENYthJZQlw3AQyhIsF4SxOiAsAFMMCKPY35E7AAAAAElFTkSuQmCC);
       background-position: right center;
       background-repeat: no-repeat;
@@ -121,22 +122,22 @@
     input.has-error,
     select.has-error,
     textarea.has-error {
-      border: 1px solid red;
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 6px rgba(255, 0, 0, 0.35);
+      border: 1px solid var(--color-red);
+      box-shadow: inset 0 1px 1px oklch(0% 0 0 / 10%) 0 0 6px oklch(var(--color-red) / 25%);
     }
 
     input.is-success,
     select.is-success,
     textarea.is-success {
-      border: 1px solid green;
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 6px rgba(0, 255, 0, 0.25);
+      border: 1px solid var(--color-green);
+      box-shadow: inset 0 1px 1px oklch(0% 0 0 / 10%), 0 0 6px oklch(var(--color-green) / 25%);
     }
 
     ::-webkit-input-placeholder,
     ::-moz-placeholder,
     :-moz-placeholder,
     :-ms-input-placeholder {
-      color: #b3b3b3;
+      color: oklch(76.68% 0 0);
     }
 
     input[type=checkbox],
