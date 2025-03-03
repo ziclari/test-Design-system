@@ -24,11 +24,55 @@
       }
   
       /* Variantes */
+      /* Variantes */
+      &.edit {
+        background-color: var(--color-button-edit);
+      }
+  
+      &.delete {
+        background-color: var(--color-button-delete);
+      }
+  
+      &.info {
+        background-color: var(--color-button-info);
+      }
+  
+      &.view {
+        background-color: var(--color-button-view);
+      }
+  
+      &.misc {
+        background-color: var(--color-button-misc);
+      }
+
       &.ghost {
         border-color: var(--color-button-primary);
         @apply bg-transparent text-current;
       }
-
+      &.ghost.edit {
+        border-color: var(--color-button-edit);
+        color: var(--color-button-edit);
+      }
+  
+      &.ghost.delete {
+        border-color: var(--color-button-delete);
+        color: var(--color-button-delete);
+      }
+  
+      &.ghost.info {
+        border-color: var(--color-button-info);
+        color: var(--color-button-info);
+      }
+  
+      &.ghost.view {
+        border-color: var(--color-button-view);
+        color: var(--color-button-view);
+      }
+  
+      &.ghost.misc {
+        border-color: var(--color-button-misc);
+        color: var(--color-button-misc);
+      }
       &.secondary {
         background-color: var(--color-button-secondary);
         color: var(--color-button-text-secondary);

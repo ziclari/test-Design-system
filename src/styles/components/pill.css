@@ -1,0 +1,52 @@
+@layer components {
+    .pill {
+      @apply inline-flex items-center justify-center text-sm font-bold px-4 py-1 rounded-full;
+      background-color: var(--color-pill-default);
+      color: var(--color-pill-text);
+      line-height: 1;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .pill.info {
+      background-color: var(--color-pill-info);
+    }
+
+    .pill.success {
+      background-color: var(--color-pill-success);
+    }
+
+    .pill.warning {
+      background-color: var(--color-pill-warning);
+    }
+
+    .pill.error {
+      background-color: var(--color-pill-error);
+    }
+
+    .pill.outline {
+      background-color: transparent;
+      border: 2px solid var(--color-pill-default);
+      color: var(--color-pill-default);
+    }
+
+    .pill.outline.info {
+      border-color: var(--color-pill-info);
+      color: var(--color-pill-info);
+    }
+
+    .pill.outline.success {
+      border-color: var(--color-pill-success);
+      color: var(--color-pill-success);
+    }
+
+    .pill.outline.warning {
+      border-color: var(--color-pill-warning);
+      color: var(--color-pill-warning);
+    }
+
+    .pill.outline.error {
+      border-color: var(--color-pill-error);
+      color: var(--color-pill-error);
+    }
+  }

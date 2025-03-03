@@ -38,7 +38,6 @@
     --color-dark-red: oklch(46.26% 0.1711 25.78);
     --color-green: oklch(61.45% 0.1299 155.67);
     --color-bright-green: oklch(76.1% 0.2015 149.74);
-    --color-light-grey: oklch(95.51% 0 0);
     --color-transparent-light-red: oklch(88.13% 0.0629 18.42 / 10%);
     --color-transparent-dark-red: oklch(31.6% 0.129674 29.2339 / 10%);
     --color-very-dark-blue: oklch(18.86% 0.0728 258.9);
@@ -46,13 +45,18 @@
     --color-medium-grey: oklch(68.3% 0 0);
     --color-light-red: oklch(74.45% 0.155 21.5);
     --color-transparent-dark-blue: oklch(18.86% 0.0728 258.9 / 8%);
-    
-}
-
-@layer base {
-  
-/*Colores que son especificos de componentes*/
-:root {
+    --color-dark-navy: oklch(23.58% 0.0722 253.73);
+    --color-midnight-blue: oklch(30.23% 0.07 258.58);
+    --color-slate-blue: oklch(39.39% 0.0689 260.38);
+    --color-light-grey: oklch(90.26% 0.0017 145.56);
+    --color-teal: oklch(53.92% 0.1023 225.16);
+    --color-sky-blue: oklch(84.46% 0.1019 226.12);
+    --color-pale-aqua: oklch(96.58% 0.0458 196.42);
+    --color-bright-blue: oklch(56.16% 0.1759 253.58);
+    --color-cornflower-blue: oklch(70.86% 0.1522 256.48);
+    --color-off-white: #F0F0F0;
+    /*Colores globales*/
+    /*Colores que son especificos de componentes*/
     --color-background-header: var(--color-dark-blue);
     --color-text-header: var(--color-almost-white);
     --color-background: var(--color-almost-white);
@@ -70,16 +74,100 @@
     --color-background-input: var(--color-white);
     --color-text-input: var(--color-almost-black);
     --color-border: var(--color-grey);
+    
+    /* Botones de Acción */
+    --color-button-edit: var(--color-cornflower-blue);
+    --color-button-delete: var(--color-red);
+    --color-button-info: var(--color-dark-accent-blue);
+    --color-button-view: var(--color-teal);
+    --color-button-misc: var(--color-slate-blue);
     --color-button-primary: var(--color-accent-blue);
     --color-button-secondary: var(--color-light-dark-blue);
     --color-button-text: var(--color-black);
     --color-button-text-secondary: var(--color-white);
+
+
+    /* Tablas Adicionales */
     --color-background-table-header: var(--color-accent-blue);
     --color-background-table-body:var(--color-light-blue);
+    --color-table-stripe: var(--color-almost-white);
+    --color-table-hover: var(--color-light-blue);
+    --color-table-selected: var(--color-sky-blue);
+    --color-table-border: var(--color-grey);
+
+
     --color-disabled: var(--color-blue-grey);
     --color-text-muted: var(--color-dark-grey);
-  }
+    
+    /* Elementos de Formulario */
+    --color-input-border: var(--color-grey);
+    --color-input-background: var(--color-white);
+    --color-input-text: var(--color-black);
+    --color-input-focus-border: var(--color-dark-accent-blue);
+    --color-input-error-border: var(--color-red);
+    --color-input-success-border: var(--color-green);
+    --color-input-disabled: var(--color-light-grey);
+    --color-checkbox-checked: var(--color-accent-blue);
+    --color-radio-checked: var(--color-accent-blue);
+    --color-switch-on: var(--color-accent-blue);
+    --color-switch-off: var(--color-medium-grey);
+    --color-select-hover: var(--color-light-blue);
+    --color-placeholder: var(--color-dark-grey);
 
+    /* Cards Secundarias */
+    --color-card-secondary: var(--color-dark-blue);
+    --color-card-secondary-background: var(--color-light-blue);
+  
+    /* Sidebar */
+    --color-sidebar-text: var(--color-almost-white);
+    --color-sidebar-background: var(--color-very-dark-blue);
+  
+    /* Pills/Chips */
+    --color-pill-info: var(--color-sky-blue);
+    --color-pill-success: var(--color-bright-green);
+    --color-pill-warning: var(--color-bright-yellow);
+    --color-pill-error: var(--color-light-red);
+    --color-pill-default: var(--color-blue-grey);
+    --color-pill-text: var(--color-white);
+
+    /* Overlays y Sombras */
+    --color-overlay: oklch(0% 0 0 / 50%); /* Negro semi-transparente */
+    --color-dropdown-shadow: oklch(0% 0 0 / 15%);
+    --color-modal-shadow: oklch(0% 0 0 / 25%);
+    --color-popup-shadow: oklch(0% 0 0 / 20%);
+
+      /* Estados de Carga y Progreso */
+    --color-loading-background: var(--color-light-grey);
+    --color-loading-foreground: var(--color-accent-blue);
+    --color-progress-background: var(--color-light-grey);
+    --color-progress-foreground: var(--color-accent-blue);
+    --color-skeleton-base: var(--color-light-grey);
+    --color-skeleton-highlight: var(--color-almost-white);
+
+     /* Scrollbar Personalizada */
+     --color-scrollbar-track: var(--color-light-grey);
+     --color-scrollbar-thumb: var(--color-medium-grey);
+     --color-scrollbar-thumb-hover: var(--color-dark-grey);
+     
+     /* Modal */
+     --color-modal-background: var(--color-white);
+     --color-modal-text: var(--color-almost-black);
+   
+      /* Notificaciones y Badges */
+     --color-notification-background: var(--color-bright-red);
+     --color-notification-text: var(--color-white);
+     --color-badge-online: var(--color-bright-green);
+     --color-badge-offline: var(--color-medium-grey);
+     --color-badge-away: var(--color-yellow);
+     --color-badge-busy: var(--color-red);
+     --color-toast-success-background: var(--color-transparent-light-red);
+     --color-toast-error-background: var(--color-transparent-dark-red);
+     --color-toast-info-background: var(--color-transparent-teal);
+ }
+
+@layer base {
+  
+/*Colores que son especificos de componentes*/
   .darkblue {
     --color-background-header: var(--color-dark-blue);
     --color-text-header: var(--color-almost-white);
@@ -172,4 +260,162 @@
     background-color: var(--color-background);
     color: var(--color-text);
 }
+
+.admin-airontools {
+  /* Variables existentes */
+  --color-background-header: var(--color-dark-navy);
+  --color-text-header: var(--color-light-grey);
+  --color-background: var(--color-midnight-blue);
+  --color-primary: var(--color-teal);
+  --color-secondary: var(--color-slate-blue);
+  --color-text: var(--color-light-grey);
+  --color-background-card: var(--color-slate-blue);
+  --color-link: var(--color-sky-blue);
+  --color-info: var(--color-cornflower-blue);
+  --color-error: var(--color-bright-red);
+  --color-warning: var(--color-bright-yellow);
+  --color-success: var(--color-bright-green);
+  --color-background-footer: var(--color-almost-black);
+  --color-text-footer: var(--color-light-grey);
+  --color-background-input: var(--color-slate-blue);
+  --color-text-input: var(--color-light-grey);
+  --color-border: var(--color-slate-blue);
+  --color-button-primary: var(--color-teal);
+  --color-button-secondary: var(--color-slate-blue);
+  --color-button-text: var(--color-light-grey);
+  --color-button-text-secondary: var(--color-light-grey);
+  --color-background-table-header: var(--color-teal);
+  --color-background-table-body: var(--color-midnight-blue);
+  --color-disabled: var(--color-slate-blue);
+  --color-text-muted: var(--color-pale-aqua);
+
+  /* Botones de Acción - Adaptados al tema oscuro */
+  --color-button-edit: var(--color-sky-blue);
+  --color-button-delete: var(--color-bright-red);
+  --color-button-info: var(--color-cornflower-blue);
+  --color-button-view: var(--color-teal);
+  --color-button-misc: var(--color-slate-blue);
+
+  /* Tablas - Adaptadas al tema oscuro */
+  --color-table-stripe: var(--color-dark-navy);
+  --color-table-hover: var(--color-slate-blue);
+  --color-table-selected: var(--color-teal);
+  --color-table-border: var(--color-dark-navy);
+
+  /* Elementos de Formulario - Adaptados al tema oscuro */
+  --color-input-border: var(--color-slate-blue);
+  --color-input-background: var(--color-dark-navy);
+  --color-input-text: var(--color-light-grey);
+  --color-input-focus-border: var(--color-sky-blue);
+  --color-input-error-border: var(--color-bright-red);
+  --color-input-success-border: var(--color-bright-green);
+  --color-input-disabled: var(--color-slate-blue);
+  --color-checkbox-checked: var(--color-teal);
+  --color-radio-checked: var(--color-teal);
+  --color-switch-on: var(--color-teal);
+  --color-switch-off: var(--color-slate-blue);
+  --color-select-hover: var(--color-slate-blue);
+  --color-placeholder: var(--color-pale-aqua);
+
+  /* Cards Secundarias - Adaptadas al tema oscuro */
+  --color-card-secondary: var(--color-light-grey);
+  --color-card-secondary-background: var(--color-dark-navy);
+
+  /* Sidebar - Adaptada al tema oscuro */
+  --color-sidebar-text: var(--color-light-grey);
+  --color-sidebar-background: var(--color-dark-navy);
+
+  /* Pills/Chips - Adaptados al tema oscuro */
+  --color-pill-info: var(--color-cornflower-blue);
+  --color-pill-success: var(--color-bright-green);
+  --color-pill-warning: var(--color-bright-yellow);
+  --color-pill-error: var(--color-bright-red);
+  --color-pill-default: var(--color-slate-blue);
+  --color-pill-text: var(--color-light-grey);
+
+  /* Overlays y Sombras - Adaptados al tema oscuro */
+  --color-overlay: oklch(0% 0 0 / 70%);
+  --color-dropdown-shadow: oklch(0% 0 0 / 35%);
+  --color-modal-shadow: oklch(0% 0 0 / 45%);
+  --color-popup-shadow: oklch(0% 0 0 / 40%);
+
+  /* Estados de Carga y Progreso - Adaptados al tema oscuro */
+  --color-loading-background: var(--color-dark-navy);
+  --color-loading-foreground: var(--color-teal);
+  --color-progress-background: var(--color-dark-navy);
+  --color-progress-foreground: var(--color-teal);
+  --color-skeleton-base: var(--color-dark-navy);
+  --color-skeleton-highlight: var(--color-slate-blue);
+
+  /* Scrollbar - Adaptada al tema oscuro */
+  --color-scrollbar-track: var(--color-dark-navy);
+  --color-scrollbar-thumb: var(--color-slate-blue);
+  --color-scrollbar-thumb-hover: var(--color-teal);
+
+  /* Modal - Adaptado al tema oscuro */
+  --color-modal-background: var(--color-dark-navy);
+  --color-modal-text: var(--color-light-grey);
+
+  /* Notificaciones y Badges - Adaptados al tema oscuro */
+  --color-notification-background: var(--color-dark-navy);
+  --color-notification-text: var(--color-light-grey);
+  --color-badge-online: var(--color-bright-green);
+  --color-badge-offline: var(--color-slate-blue);
+  --color-badge-away: var(--color-bright-yellow);
+  --color-badge-busy: var(--color-bright-red);
+  --color-toast-success-background: oklch(61.45% 0.1299 155.67 / 20%);
+  --color-toast-error-background: oklch(67.75% 0.2105 24.73 / 20%);
+  --color-toast-info-background: oklch(70.86% 0.1522 256.48 / 20%);
+
+  /* Estados de Hover - Nuevos */
+  --color-button-edit-hover: oklch(74.46% 0.1019 226.12);
+  --color-button-delete-hover: oklch(46.26% 0.1711 25.78);
+  --color-button-info-hover: oklch(60.86% 0.1522 256.48);
+  --color-button-view-hover: oklch(48.92% 0.1023 225.16);
+  --color-button-misc-hover: oklch(34.39% 0.0689 260.38);
+  --color-link-hover: var(--color-teal);
+
+  /* Estados de Validación - Nuevos */
+  --color-valid: var(--color-bright-green);
+  --color-invalid: var(--color-bright-red);
+  --color-warning-subtle: oklch(84.28% 0.167 83.54 / 20%);
+  --color-error-subtle: oklch(67.75% 0.2105 24.73 / 20%);
+  --color-success-subtle: oklch(61.45% 0.1299 155.67 / 20%);
+
+  /* Aplicar colores base */
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
+
+
+
+.admin-desumex{
+  --color-background-header: var(--color-blue);
+  --color-text-header: var(--color-white);
+  --color-background: var(--color-off-white);
+  --color-primary: var(--color-red);
+  --color-secondary: var(--color-blue);
+  --color-text: var(--color-dark-gray);
+  --color-background-card: var(--color-white);
+  --color-link: var(--color-light-blue);
+  --color-info: var(--color-light-blue);
+  --color-error: var(--color-dark-red);
+  --color-warning: #FFC300; /* Amarillo para advertencias */
+  --color-success: #4CAF50; /* Verde para éxito */
+  --color-background-footer: var(--color-dark-blue);
+  --color-text-footer: var(--color-white);
+  --color-background-input: var(--color-white);
+  --color-text-input: var(--color-dark-gray);
+  --color-border: var(--color-gray);
+  --color-button-primary: var(--color-red);
+  --color-button-secondary: var(--color-blue);
+  --color-button-text: var(--color-white);
+  --color-button-text-secondary: var(--color-white);
+  --color-background-table-header: var(--color-blue);
+  --color-background-table-body: var(--color-off-white);
+  --color-disabled: var(--color-gray);
+  --color-text-muted: var(--color-dark-gray);
+}
+
+}
+
