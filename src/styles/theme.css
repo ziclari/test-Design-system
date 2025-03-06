@@ -417,5 +417,113 @@
   --color-text-muted: var(--color-dark-gray);
 }
 
+.light-airontools-admin{
+  /*Colores que son especificos de componentes*/
+  --color-background-header: var(--color-dark-blue);
+  --color-text-header: var(--color-almost-white);
+  --color-background: var(--color-almost-white);
+  --color-primary: var(--color-accent-blue);
+  --color-secondary: var(--color-light-dark-blue);
+  --color-text: var(--color-almost-black);
+  --color-background-card: var(--color-transparent-white);
+  --color-link: var(--color-dark-accent-blue);
+  --color-info: var(--color-dark-accent-blue);
+  --color-error: var(--color-red);
+  --color-warning: var(--color-yellow);
+  --color-success: var(--color-green);
+  --color-background-footer: var(--color-black);
+  --color-text-footer: var(--color-white);
+  --color-background-input: var(--color-white);
+  --color-text-input: var(--color-almost-black);
+  --color-border: var(--color-grey);
+  
+  /* Botones de Acción */
+  --color-button-edit: var(--color-cornflower-blue);
+  --color-button-delete: var(--color-red);
+  --color-button-info: var(--color-dark-accent-blue);
+  --color-button-view: var(--color-teal);
+  --color-button-misc: var(--color-slate-blue);
+  --color-button-primary: var(--color-accent-blue);
+  --color-button-secondary: var(--color-light-dark-blue);
+  --color-button-text: var(--color-black);
+  --color-button-text-secondary: var(--color-white);
+
+  /* Tablas Adicionales */
+  --color-background-table-header: var(--color-accent-blue);
+  --color-background-table-body:var(--color-light-blue);
+  --color-table-stripe: var(--color-almost-white);
+  --color-table-hover: var(--color-light-blue);
+  --color-table-selected: var(--color-sky-blue);
+  --color-table-border: var(--color-grey);
+
+  --color-disabled: var(--color-blue-grey);
+  --color-text-muted: var(--color-dark-grey);
+  
+  /* Elementos de Formulario */
+  --color-input-border: var(--color-grey);
+  --color-input-background: var(--color-white);
+  --color-input-text: var(--color-black);
+  --color-input-focus-border: var(--color-dark-accent-blue);
+  --color-input-error-border: var(--color-red);
+  --color-input-success-border: var(--color-green);
+  --color-input-disabled: var(--color-light-grey);
+  --color-checkbox-checked: var(--color-accent-blue);
+  --color-radio-checked: var(--color-accent-blue);
+  --color-switch-on: var(--color-accent-blue);
+  --color-switch-off: var(--color-medium-grey);
+  --color-select-hover: var(--color-light-blue);
+  --color-placeholder: var(--color-dark-grey);
+
+  /* Cards Secundarias */
+  --color-card-secondary: var(--color-dark-blue);
+  --color-card-secondary-background: var(--color-light-blue);
+
+  /* Sidebar */
+  --color-sidebar-text: var(--color-almost-white);
+  --color-sidebar-background: var(--color-very-dark-blue);
+
+  /* Pills/Chips */
+  --color-pill-info: var(--color-sky-blue);
+  --color-pill-success: var(--color-bright-green);
+  --color-pill-warning: var(--color-bright-yellow);
+  --color-pill-error: var(--color-light-red);
+  --color-pill-default: var(--color-blue-grey);
+  --color-pill-text: var(--color-white);
+
+  /* Overlays y Sombras */
+  --color-overlay: oklch(0% 0 0 / 50%); /* Negro semi-transparente */
+  --color-dropdown-shadow: oklch(0% 0 0 / 15%);
+  --color-modal-shadow: oklch(0% 0 0 / 25%);
+  --color-popup-shadow: oklch(0% 0 0 / 20%);
+
+  /* Estados de Carga y Progreso */
+  --color-loading-background: var(--color-light-grey);
+  --color-loading-foreground: var(--color-accent-blue);
+  --color-progress-background: var(--color-light-grey);
+  --color-progress-foreground: var(--color-accent-blue);
+  --color-skeleton-base: var(--color-light-grey);
+  --color-skeleton-highlight: var(--color-almost-white);
+
+  /* Scrollbar Personalizada */
+  --color-scrollbar-track: var(--color-light-grey);
+  --color-scrollbar-thumb: var(--color-medium-grey);
+  --color-scrollbar-thumb-hover: var(--color-dark-grey);
+   
+  /* Modal */
+  --color-modal-background: var(--color-white);
+  --color-modal-text: var(--color-almost-black);
+ 
+  /* Notificaciones y Badges */
+  --color-notification-background: var(--color-bright-red);
+  --color-notification-text: var(--color-white);
+  --color-badge-online: var(--color-bright-green);
+  --color-badge-offline: var(--color-medium-grey);
+  --color-badge-away: var(--color-yellow);
+  --color-badge-busy: var(--color-red);
+  --color-toast-success-background: var(--color-transparent-light-red);
+  --color-toast-error-background: var(--color-transparent-dark-red);
+  --color-toast-info-background: var(--color-transparent-teal);
+}
+
 }
 
